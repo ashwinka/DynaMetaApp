@@ -1,517 +1,301 @@
-(()=>{	
-	window.offline_metadata = {
-	  "formMetadata": {
-	  "module": "USERS",
-		  "FORMS": {
-			"SIMPLE_FORM": {
-			  "formID": "SIMPLE_FORM",
-			  "formName": "User Account",
-			  "version": "1.0",
-			  "layout": {
-				"recordTitleField": "fullName",
-				"enableFilterSection": false,
-				"navigationWidth": "260px",
-				"formPanelWidth": "75%",
-				"responsive": {
-				  "webFieldsPerRow": 3,
-				  "tabletFieldsPerRow": 2,
-				  "mobileFieldsPerRow": 1
-				}
-			  },
-			  "formHeaderActions": [
-				{
-				  "actionId": "save",
-				  "label": "Save",
-				  "icon": "save",
-				  "type": "standard"
-				},
-				{
-				  "actionId": "cancel",
-				  "label": "Cancel",
-				  "icon": "close"
-				},
-				{
-				  "actionId": "formSummary",
-				  "label": "Form Summary",
-				  "icon": "summary",
-				  "type": "moreAction"
-				}
-			  ],
-			  "sections": [
-				{
-				  "sectionId": "usr_1",
-				  "title": "User",
-				  "sequence": 1,
-				  "multiContext": false,
-				  "sections": [
-					{
-					  "sectionId": "usr_1_1",
-					  "title": "User Details",
-					  "sequence": 1,
-					  "multiContext": false,
-					  "tabPanel": true,
-					  "fields": [
-						{
-						  "fieldId": "usr_f01",
-						  "label": "User ID",
-						  "fieldPath": "userId",
-						  "dataType": "text",
-						  "renderAs": "text",
-						  "fieldWidth": 1
-						},
-						{
-						  "fieldId": "usr_f02",
-						  "label": "Full Name",
-						  "fieldPath": "fullName",
-						  "dataType": "text",
-						  "renderAs": "text",
-						  "fieldWidth": 2
-						},
-						{
-						  "fieldId": "usr_f03",
-						  "label": "User Name (Login)",
-						  "fieldPath": "userName",
-						  "dataType": "text",
-						  "renderAs": "text",
-						  "fieldWidth": 1
-						},
-						{
-						  "fieldId": "usr_f04",
-						  "label": "Email",
-						  "fieldPath": "email",
-						  "dataType": "text",
-						  "renderAs": "text",
-						  "fieldWidth": 1
-						},
-						{
-						  "fieldId": "usr_f05",
-						  "label": "Phone",
-						  "fieldPath": "phone",
-						  "dataType": "text",
-						  "renderAs": "text",
-						  "fieldWidth": 1
-						},
-						{
-						  "fieldId": "usr_f06",
-						  "label": "Role",
-						  "fieldPath": "role",
-						  "dataType": "text",
-						  "renderAs": "combo",
-						  "fieldWidth": 1,
-						  "codelist": "USER_ROLE"
-						},
-						{
-						  "fieldId": "usr_f07",
-						  "label": "Department",
-						  "fieldPath": "department",
-						  "dataType": "text",
-						  "renderAs": "text",
-						  "fieldWidth": 1
-						},
-						{
-						  "fieldId": "usr_f08",
-						  "label": "Active",
-						  "fieldPath": "isActive",
-						  "dataType": "text",
-						  "renderAs": "radio",
-						  "fieldWidth": 1,
-						  "codelist": "YES_NO"
-						},
-						{
-						  "fieldId": "usr_f09",
-						  "label": "Last Login",
-						  "fieldPath": "lastLogin",
-						  "dataType": "date",
-						  "renderAs": "text",
-						  "fieldWidth": 1
-						},
-						{
-						  "fieldId": "usr_f10",
-						  "label": "Account Locked",
-						  "fieldPath": "isLocked",
-						  "dataType": "text",
-						  "renderAs": "radio",
-						  "fieldWidth": 1,
-						  "codelist": "YES_NO"
-						}
-					  ]
-					},
-					{
-					  "sectionId": "usr_1_2",
-					  "title": "Permissions",
-					  "sequence": 2,
-					  "multiContext": false,
-					  "tabPanel": true,
-					  "fields": [
-						{
-						  "fieldId": "usr_f11",
-						  "label": "Can Create Cases",
-						  "fieldPath": "perm.canCreateCases",
-						  "dataType": "text",
-						  "renderAs": "radio",
-						  "fieldWidth": 1,
-						  "codelist": "YES_NO"
-						},
-						{
-						  "fieldId": "usr_f12",
-						  "label": "Can Edit Cases",
-						  "fieldPath": "perm.canEditCases",
-						  "dataType": "text",
-						  "renderAs": "radio",
-						  "fieldWidth": 1,
-						  "codelist": "YES_NO"
-						},
-						{
-						  "fieldId": "usr_f13",
-						  "label": "Can Delete Cases",
-						  "fieldPath": "perm.canDeleteCases",
-						  "dataType": "text",
-						  "renderAs": "radio",
-						  "fieldWidth": 1,
-						  "codelist": "YES_NO"
-						},
-						{
-						  "fieldId": "usr_f14",
-						  "label": "Can Submit Reports",
-						  "fieldPath": "perm.canSubmitReports",
-						  "dataType": "text",
-						  "renderAs": "radio",
-						  "fieldWidth": 1,
-						  "codelist": "YES_NO"
-						},
-						{
-						  "fieldId": "usr_f15",
-						  "label": "Can Manage Users",
-						  "fieldPath": "perm.canManageUsers",
-						  "dataType": "text",
-						  "renderAs": "radio",
-						  "fieldWidth": 1,
-						  "codelist": "YES_NO"
-						},
-						{
-						  "fieldId": "usr_f16",
-						  "label": "Can View Audit Trail",
-						  "fieldPath": "perm.canViewAudit",
-						  "dataType": "text",
-						  "renderAs": "radio",
-						  "fieldWidth": 1,
-						  "codelist": "YES_NO"
-						},
-						{
-						  "fieldId": "usr_f17",
-						  "label": "Notes",
-						  "fieldPath": "notes",
-						  "dataType": "text",
-						  "renderAs": "textarea",
-						  "fieldWidth": 3,
-						  "maxLen": 1000
-						}
-					  ]
-					},
-					{
-					  "sectionId": "usr_1_3",
-					  "title": "Assigned Accounts",
-					  "sequence": 3,
-					  "multiContext": true,
-					  "contextPath": "assignedAccounts$",
-					  "editableGrid": true,
-					  "tabPanel": true,
-					  "dataGridConfig": {
-						"allowAdd": true,
-						"allowDelete": true,
-						"allowCopy": false,
-						"pagination": true,
-						"pageSizeOptions": [
-						  5,
-						  10,
-						  25
-						]
-					  },
-					  "fields": [
-						{
-						  "fieldId": "usr_f20",
-						  "label": "Account Code",
-						  "fieldPath": "assignedAccounts$.accountCode",
-						  "dataType": "text",
-						  "renderAs": "text",
-						  "fieldWidth": 1,
-						  "allowSorting": true,
-						  "columnSize": "14ch"
-						},
-						{
-						  "fieldId": "usr_f21",
-						  "label": "Account Name",
-						  "fieldPath": "assignedAccounts$.accountName",
-						  "dataType": "text",
-						  "renderAs": "text",
-						  "fieldWidth": 2,
-						  "allowSorting": true,
-						  "columnSize": "24ch"
-						},
-						{
-						  "fieldId": "usr_f22",
-						  "label": "Access Level",
-						  "fieldPath": "assignedAccounts$.accessLevel",
-						  "dataType": "text",
-						  "renderAs": "combo",
-						  "fieldWidth": 1,
-						  "allowSorting": true,
-						  "columnSize": "14ch",
-						  "codelist": "ACCESS_LEVEL"
-						}
-					  ],
-					  "gridFields": [
-						{
-						  "fieldId": "usr_f20",
-						  "label": "Account Code",
-						  "fieldPath": "assignedAccounts$.accountCode",
-						  "dataType": "text",
-						  "renderAs": "text",
-						  "allowSorting": true,
-						  "columnSize": "14ch"
-						},
-						{
-						  "fieldId": "usr_f21",
-						  "label": "Account Name",
-						  "fieldPath": "assignedAccounts$.accountName",
-						  "dataType": "text",
-						  "renderAs": "text",
-						  "allowSorting": true,
-						  "columnSize": "24ch"
-						},
-						{
-						  "fieldId": "usr_f22",
-						  "label": "Access Level",
-						  "fieldPath": "assignedAccounts$.accessLevel",
-						  "dataType": "text",
-						  "renderAs": "combo",
-						  "allowSorting": true,
-						  "columnSize": "14ch",
-						  "codelist": "ACCESS_LEVEL"
-						}
-					  ]
-					}
-				  ]
-				}
-			  ]
-			}
-		  }
-		},
-	  "listingMetadata": {
-		"module": "USERS",
-		"title": "User Management",
-		"FILTERS_FIELDS": [
-		  {
-			"fieldId": "usr_name",
-			"label": "User Name",
-			"fieldPath": "userName",
-			"renderAs": "text",
-			"fieldWidth": 1
-		  },
-		  {
-			"fieldId": "usr_email",
-			"label": "Email",
-			"fieldPath": "email",
-			"renderAs": "text",
-			"fieldWidth": 1
-		  },
-		  {
-			"fieldId": "usr_role",
-			"label": "Role",
-			"fieldPath": "role",
-			"renderAs": "combo",
-			"codelist": "USER_ROLE",
-			"fieldWidth": 1
-		  },
-		  {
-			"fieldId": "usr_active",
-			"label": "Active",
-			"fieldPath": "isActive",
-			"renderAs": "combo",
-			"codelist": "YES_NO",
-			"fieldWidth": 1
-		  }
-		],
-		"GRID_FIELDS": [
-		  {
-			"fieldId": "usr_id",
-			"label": "User ID",
-			"fieldPath": "userId",
-			"renderAs": "text",
-			"allowSorting": true,
-			"width": "12ch",
-			"primaryKey": true
-		  },
-		  {
-			"fieldId": "usr_name",
-			"label": "Full Name",
-			"fieldPath": "fullName",
-			"renderAs": "text",
-			"allowSorting": true,
-			"width": "20ch"
-		  },
-		  {
-			"fieldId": "usr_email",
-			"label": "Email",
-			"fieldPath": "email",
-			"renderAs": "text",
-			"allowSorting": true,
-			"width": "24ch"
-		  },
-		  {
-			"fieldId": "usr_role",
-			"label": "Role",
-			"fieldPath": "role",
-			"renderAs": "badge",
-			"codelist": "USER_ROLE",
-			"allowSorting": true,
-			"width": "12ch"
-		  },
-		  {
-			"fieldId": "usr_lastLogin",
-			"label": "Last Login",
-			"fieldPath": "lastLogin",
-			"renderAs": "date",
-			"allowSorting": true,
-			"width": "14ch"
-		  },
-		  {
-			"fieldId": "usr_active",
-			"label": "Active",
-			"fieldPath": "isActive",
-			"renderAs": "yesno",
-			"allowSorting": true,
-			"width": "8ch",
-			"align": "center"
-		  }
-		],
-		"DASHBOARD_WIDGETS": [
-		  {
-			"widgetId": "totalUsers",
-			"label": "Total Users",
-			"iconColor": "blue",
-			"icon": "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
-			"filters": []
-		  },
-		  {
-			"widgetId": "activeUsers",
-			"label": "Active Users",
-			"iconColor": "green",
-			"icon": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-			"filters": [
-			  {
-				"field": "isActive",
-				"operator": "eq",
-				"value": "true"
-			  }
-			]
-		  },
-		  {
-			"widgetId": "adminUsers",
-			"label": "Admins",
-			"iconColor": "amber",
-			"icon": "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
-			"filters": [
-			  {
-				"field": "role",
-				"operator": "eq",
-				"value": "ADMIN"
-			  }
-			]
-		  }
-		]
-	  },
-	  "lookupMetadata": {
-		"module": "USERS",
-		"title": "User Management",
-		"FILTERS_FIELDS": [
-		  {
-			"fieldId": "usr_name",
-			"label": "User Name",
-			"fieldPath": "userName",
-			"renderAs": "text",
-			"fieldWidth": 1
-		  },
-		  {
-			"fieldId": "usr_email",
-			"label": "Email",
-			"fieldPath": "email",
-			"renderAs": "text",
-			"fieldWidth": 1
-		  },
-		  {
-			"fieldId": "usr_role",
-			"label": "Role",
-			"fieldPath": "role",
-			"renderAs": "combo",
-			"codelist": "USER_ROLE",
-			"fieldWidth": 1
-		  },
-		  {
-			"fieldId": "usr_active",
-			"label": "Active",
-			"fieldPath": "isActive",
-			"renderAs": "combo",
-			"codelist": "YES_NO",
-			"fieldWidth": 1
-		  }
-		],
-		"GRID_FIELDS": [
-		  {
-			"fieldId": "usr_id",
-			"label": "User ID",
-			"fieldPath": "userId",
-			"renderAs": "text",
-			"allowSorting": true,
-			"width": "12ch",
-			"primaryKey": true
-		  },
-		  {
-			"fieldId": "usr_name",
-			"label": "Full Name",
-			"fieldPath": "fullName",
-			"renderAs": "text",
-			"allowSorting": true,
-			"width": "20ch"
-		  },
-		  {
-			"fieldId": "usr_email",
-			"label": "Email",
-			"fieldPath": "email",
-			"renderAs": "text",
-			"allowSorting": true,
-			"width": "24ch"
-		  },
-		  {
-			"fieldId": "usr_role",
-			"label": "Role",
-			"fieldPath": "role",
-			"renderAs": "badge",
-			"codelist": "USER_ROLE",
-			"allowSorting": true,
-			"width": "12ch"
-		  },
-		  {
-			"fieldId": "usr_lastLogin",
-			"label": "Last Login",
-			"fieldPath": "lastLogin",
-			"renderAs": "date",
-			"allowSorting": true,
-			"width": "14ch"
-		  },
-		  {
-			"fieldId": "usr_active",
-			"label": "Active",
-			"fieldPath": "isActive",
-			"renderAs": "yesno",
-			"allowSorting": true,
-			"width": "8ch",
-			"align": "center"
-		  }
-		]
-	  },
-	  "i18nTrans": {
-		"en": {}
-	  }
-	}
+(() => {
+  window.offline_metadata = {
+    "formMetadata": {
+      "module": "APP_USERS",
+      "FORMS": {
+        "USERS_FULL_FORM": {
+          "formID": "FULL_FORM",
+          "formName": "User Management",
+          "version": "2.0",
+          "layout": {
+            "recordTitleField": "fullName",
+            "enableFilterSection": false,
+            "navigationWidth": "260px",
+            "formPanelWidth": "75%",
+            "responsive": {
+              "webFieldsPerRow": 3,
+              "tabletFieldsPerRow": 2,
+              "mobileFieldsPerRow": 1
+            }
+          },
+          "formHeaderActions": [{
+              "actionId": "save",
+              "label": "app.save",
+              "icon": "save",
+              "type": "standard"
+            },
+            {
+              "actionId": "resetPassword",
+              "label": "app.resetPassword",
+              "icon": "key",
+              "type": "moreAction"
+            },
+            {
+              "actionId": "cancel",
+              "label": "app.cancel",
+              "icon": "close"
+            }
+          ],
+          "sections": [{
+            "sectionId": "130",
+            "title": "lbl.sec_userDetails",
+            "sequence": 1,
+            "multiContext": false,
+            "fields": [{
+                "fieldId": "130001"
+              },
+              {
+                "fieldId": "130002"
+              },
+              {
+                "fieldId": "130003"
+              },
+              {
+                "fieldId": "130007"
+              },
+              {
+                "fieldId": "130005"
+              }
+            ]
+          }]
+        }
+      }
+    },
+    "listingMetadata": {
+      "module": "APP_USERS",
+      "title": "User Management",
+      "FILTERS_FIELDS": [{
+          "fieldId": "130001"
+        },
+        {
+          "fieldId": "130002"
+        },
+        {
+          "fieldId": "130003"
+        },
+        {
+          "fieldId": "130007",
+          "dataValues": [{
+              "code": "Y",
+              "decode": "Yes"
+            },
+            {
+              "code": "N",
+              "decode": "No"
+            }
+          ]
+        }
+      ],
+      "GRID_FIELDS": [{
+          "fieldId": "130001"
+        },
+        {
+          "fieldId": "130002"
+        },
+        {
+          "fieldId": "130003"
+        },
+        {
+          "fieldId": "130005"
+        },
+        {
+          "fieldId": "130006"
+        },
+        {
+          "fieldId": "130007"
+        }
+      ],
+      "DASHBOARD_WIDGETS": [{
+          "widgetId": "totalUsers",
+          "label": "lbl.widget_totalUsers",
+          "iconColor": "blue",
+          "icon": "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
+          "filters": []
+        },
+        {
+          "widgetId": "activeUsers",
+          "label": "lbl.widget_activeUsers",
+          "iconColor": "green",
+          "icon": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+          "filters": [{
+            "field": "isActive",
+            "operator": "eq",
+            "value": "Y"
+          }]
+        }
+      ]
+    },
+    "lookupMetadata": {
+      "module": "APP_USERS",
+      "title": "Users",
+      "FILTERS_FIELDS": [{
+          "fieldId": "130001"
+        },
+        {
+          "fieldId": "130002"
+        }
+      ],
+      "GRID_FIELDS": [{
+          "fieldId": "130001"
+        },
+        {
+          "fieldId": "130002"
+        },
+        {
+          "fieldId": "130003"
+        }
+      ]
+    },
+    "i18nTrans": {
+      "en": {
+        "lbl.userName": "Username",
+        "lbl.fullName": "Full Name",
+        "lbl.emailId": "Email",
+        "lbl.passwordHash": "Password",
+        "lbl.roles": "Roles",
+        "lbl.lastLogin": "Last Login",
+        "lbl.active": "Active",
+        "lbl.sec_userDetails": "User Details",
+        "lbl.widget_totalUsers": "Total Users",
+        "lbl.widget_activeUsers": "Active"
+      },
+      "fr": {
+        "lbl.userName": "Nom d'utilisateur",
+        "lbl.fullName": "Nom complet",
+        "lbl.emailId": "Email",
+        "lbl.passwordHash": "Mot de passe",
+        "lbl.roles": "Rôles",
+        "lbl.lastLogin": "Dernière connexion",
+        "lbl.active": "Actif",
+        "lbl.sec_userDetails": "Détails de l'utilisateur",
+        "lbl.widget_totalUsers": "Total utilisateurs",
+        "lbl.widget_activeUsers": "Actif"
+      },
+      "ja": {
+        "lbl.userName": "ユーザー名",
+        "lbl.fullName": "氏名",
+        "lbl.emailId": "メールアドレス",
+        "lbl.passwordHash": "パスワード",
+        "lbl.roles": "ロール",
+        "lbl.lastLogin": "最終ログイン",
+        "lbl.active": "有効",
+        "lbl.sec_userDetails": "ユーザー詳細",
+        "lbl.widget_totalUsers": "ユーザー合計",
+        "lbl.widget_activeUsers": "有効"
+      }
+    },
+    "fields": [{
+        "id": "4bf0c675-f01d-4c19-b784-5d200144ea9f",
+        "moduleId": "APP_USERS",
+        "tableId": "130",
+        "fieldId": "130001",
+        "columnName": "USER_NAME",
+        "fieldName": "userName",
+        "fieldPath": "userName",
+        "dataType": "TEXT",
+        "maxLength": 300,
+        "requiredField": "Y",
+        "listingAlias": "userName",
+        "label": "lbl.userName",
+        "description": "Unique login username for the user",
+        "uiMetadata": "{\"renderAs\":\"text\",        \"fieldWidth\":\"1\", \"columnWidth\":\"16ch\", \"allowSorting\":true,  \"primaryKey\":true}"
+      },
+      {
+        "id": "9e2dee99-1f08-4f06-aefd-b4536e59697d",
+        "moduleId": "APP_USERS",
+        "tableId": "130",
+        "fieldId": "130007",
+        "columnName": "IS_ACTIVE",
+        "fieldName": "isActive",
+        "fieldPath": "isActive",
+        "dataType": "TEXT",
+        "maxLength": 1,
+        "requiredField": "N",
+        "listingAlias": "isActive",
+        "label": "lbl.active",
+        "description": "Indicates whether the user account is active",
+        "uiMetadata": "{\"renderAs\":\"bool-switch\", \"fieldWidth\":\"1\", \"columnWidth\":\"8ch\",  \"allowSorting\":true,  \"align\":\"center\"}"
+      },
+      {
+        "id": "ba57bdf8-e585-4acc-8ea4-8f6b32c2078d",
+        "moduleId": "APP_USERS",
+        "tableId": "130",
+        "fieldId": "130002",
+        "columnName": "FULL_NAME",
+        "fieldName": "fullName",
+        "fieldPath": "fullName",
+        "dataType": "TEXT",
+        "maxLength": 300,
+        "requiredField": "Y",
+        "listingAlias": "fullName",
+        "label": "lbl.fullName",
+        "description": "Full display name of the user",
+        "uiMetadata": "{\"renderAs\":\"text\",        \"fieldWidth\":\"2\", \"columnWidth\":\"24ch\", \"allowSorting\":true}"
+      },
+      {
+        "id": "cb2fc8ee-3ecc-4e33-abfd-35d57fdce43b",
+        "moduleId": "APP_USERS",
+        "tableId": "130",
+        "fieldId": "130003",
+        "columnName": "EMAIL_ID",
+        "fieldName": "emailId",
+        "fieldPath": "emailId",
+        "dataType": "TEXT",
+        "maxLength": 300,
+        "requiredField": "Y",
+        "listingAlias": "emailId",
+        "label": "lbl.emailId",
+        "description": "Email address used for login and notifications",
+        "uiMetadata": "{\"renderAs\":\"text\",        \"fieldWidth\":\"2\", \"columnWidth\":\"28ch\", \"allowSorting\":true}"
+      },
+      {
+        "id": "f0a8fcaf-8a88-4dea-9f62-1ea99979c3db",
+        "moduleId": "APP_USERS",
+        "tableId": "130",
+        "fieldId": "130004",
+        "columnName": "PASSWORD_HASH",
+        "fieldName": "passwordHash",
+        "fieldPath": "passwordHash",
+        "dataType": "TEXT",
+        "maxLength": 1000,
+        "requiredField": "N",
+        "listingAlias": "passwordHash",
+        "label": "lbl.passwordHash",
+        "description": "BCrypt hashed password — never displayed in UI",
+        "uiMetadata": "{\"renderAs\":\"password\",    \"fieldWidth\":\"2\", \"columnWidth\":\"0\",    \"allowSorting\":false, \"hidden\":true}"
+      },
+      {
+        "id": "f29384ea-ceaa-4ff6-be25-c9709d84960b",
+        "moduleId": "APP_USERS",
+        "tableId": "130",
+        "fieldId": "130005",
+        "columnName": "ROLES",
+        "fieldName": "roles",
+        "fieldPath": "roles",
+        "dataType": "TEXT",
+        "maxLength": 0,
+        "requiredField": "N",
+        "listingAlias": "roles",
+        "label": "lbl.roles",
+        "description": "JSON array of ROLE_IDs assigned to this user",
+        "uiMetadata": "{\"renderAs\":\"ms-lookup\",\"fieldWidth\":\"3\", \"columnWidth\":\"20ch\", \"allowSorting\":false, \"lookupModule\":\"APP_ROLES\", \"storeFormat\":\"JSON\", \"lkpStoreValField\":\"roleId\"}"
+      },
+      {
+        "id": "fbaa7306-b555-4956-bc08-b8f0ab348f8c",
+        "moduleId": "APP_USERS",
+        "tableId": "130",
+        "fieldId": "130006",
+        "columnName": "LAST_LOGIN",
+        "fieldName": "lastLogin",
+        "fieldPath": "lastLogin",
+        "dataType": "DATETIME",
+        "maxLength": 0,
+        "requiredField": "N",
+        "listingAlias": "lastLogin",
+        "label": "lbl.lastLogin",
+        "description": "Timestamp of the user's most recent successful login",
+        "uiMetadata": "{\"renderAs\":\"datetime\",    \"fieldWidth\":\"1\", \"columnWidth\":\"16ch\", \"allowSorting\":true,  \"readOnly\":true}"
+      }
+    ]
+  }
 })();

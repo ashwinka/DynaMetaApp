@@ -33,7 +33,7 @@
 	
 	
 	async function fetchOfflineMetadataRegistry(moduleId){
-		let url = 'metadata/' + moduleId + '_metadata.js'
+		let url = 'metadata/' + moduleId + '.js'
 		return new Promise((resolve, reject) => {
 			const s = document.createElement('script');
 			s.src = url;
@@ -58,8 +58,8 @@
 		
 		if(undefined === CONFIG_API_BASE_URL || !CONFIG_API_BASE_URL){
 			//Offline mode, load the module specific metadata registry from js file by dynamic script tag attach.
-			let offlineMd = fetchOfflineMetadataRegistry(moduleId);
-			
+			let offlineMd = await fetchOfflineMetadataRegistry(moduleId);
+			AppI18N.moduleTrans(moduleId, offlineMd.i18nTrans);
 			return offlineMd;
 		}
 		/* If codelists not yet loaded, use the /full endpoint to get both in one call.
