@@ -33,2194 +33,669 @@ const CODELIST_REGISTRY = {
   ],
   "ACCOUNT_TYPE": [
     {
-      "code": "MAH",
-      "decode": "Marketing Authorisation Holder",
+      "code": "HEALTH_PROF",
+      "decode": "Health Professional",
       "translations": {
-        "en": "Marketing Authorisation Holder"
+        "en": "Health Professional",
+        "fr": "Professionnel de santé",
+        "ja": "医療専門家"
       }
     },
     {
-      "code": "PARTNER",
-      "decode": "Business Partner",
+      "code": "VET_HOSPITAL",
+      "decode": "Veterinary Hospital",
       "translations": {
-        "en": "Business Partner"
+        "en": "Veterinary Hospital",
+        "fr": "Hôpital vétérinaire",
+        "ja": "動物病院"
+      }
+    },
+    {
+      "code": "PHARMA_CO",
+      "decode": "Pharmaceutical Company",
+      "translations": {
+        "en": "Pharmaceutical Company",
+        "fr": "Société pharmaceutique",
+        "ja": "製薬会社"
+      }
+    },
+    {
+      "code": "REG_PV_CENTER",
+      "decode": "Regional Pharmacovigilance Center",
+      "translations": {
+        "en": "Regional Pharmacovigilance Center",
+        "fr": "Centre régional de pharmacovigilance",
+        "ja": "地域ファーマコビジランスセンター"
+      }
+    },
+    {
+      "code": "VET_CENTER",
+      "decode": "Veterinary Center",
+      "translations": {
+        "en": "Veterinary Center",
+        "fr": "Centre vétérinaire",
+        "ja": "獣医センター"
+      }
+    },
+    {
+      "code": "AGENT_DIST",
+      "decode": "Agent / Distributor",
+      "translations": {
+        "en": "Agent / Distributor",
+        "fr": "Agent / Distributeur",
+        "ja": "代理店・販売店"
+      }
+    },
+    {
+      "code": "AUTH_REP_EEA",
+      "decode": "Authorized Representative within EEA and Switzerland",
+      "translations": {
+        "en": "Authorized Representative within EEA and Switzerland",
+        "fr": "Représentant autorisé dans l'EEE et Suisse",
+        "ja": "EEA・スイス域内の認定代理人"
+      }
+    },
+    {
+      "code": "PATIENT",
+      "decode": "Patient / Consumer",
+      "translations": {
+        "en": "Patient / Consumer",
+        "fr": "Patient / Consommateur",
+        "ja": "患者・消費者"
+      }
+    },
+    {
+      "code": "MED_INSTITUTION",
+      "decode": "Medical Institution",
+      "translations": {
+        "en": "Medical Institution",
+        "fr": "Établissement médical",
+        "ja": "医療機関"
+      }
+    },
+    {
+      "code": "REG_AUTH",
+      "decode": "Regulatory Authority",
+      "translations": {
+        "en": "Regulatory Authority",
+        "fr": "Autorité réglementaire",
+        "ja": "規制当局"
+      }
+    },
+    {
+      "code": "WHO_COLLAB",
+      "decode": "WHO Collaborating Center for International Drug Monitoring",
+      "translations": {
+        "en": "WHO Collaborating Center for International Drug Monitoring",
+        "fr": "Centre collaborateur OMS pour la surveillance internationale des médicaments",
+        "ja": "WHO国際医薬品モニタリング協力センター"
+      }
+    },
+    {
+      "code": "CORP_CO",
+      "decode": "Corporate Company",
+      "translations": {
+        "en": "Corporate Company",
+        "fr": "Société commerciale",
+        "ja": "企業"
       }
     },
     {
       "code": "CRO",
-      "decode": "CRO",
+      "decode": "Contract Research Organisation",
       "translations": {
-        "en": "CRO"
-      }
-    },
-    {
-      "code": "AUTHORITY",
-      "decode": "Regulatory Authority",
-      "translations": {
-        "en": "Regulatory Authority"
-      }
-    },
-    {
-      "code": "HOSPITAL",
-      "decode": "Hospital / HCP",
-      "translations": {
-        "en": "Hospital / HCP"
+        "en": "Contract Research Organisation",
+        "fr": "Organisation de recherche sous contrat",
+        "ja": "受託研究機関"
       }
     },
     {
       "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "en": "Other"
-      }
-    }
-  ],
-  "AUTHORITY": [
-    {
-      "code": "FDA",
-      "decode": "FDA (US)",
-      "translations": {
-        "en": "FDA (US)"
-      }
-    },
-    {
-      "code": "EMA",
-      "decode": "EMA (EU)",
-      "translations": {
-        "en": "EMA (EU)"
-      }
-    },
-    {
-      "code": "MHRA",
-      "decode": "MHRA (UK)",
-      "translations": {
-        "en": "MHRA (UK)"
-      }
-    },
-    {
-      "code": "PMDA",
-      "decode": "PMDA (Japan)",
-      "translations": {
-        "en": "PMDA (Japan)"
-      }
-    },
-    {
-      "code": "CDSCO",
-      "decode": "CDSCO (India)",
-      "translations": {
-        "en": "CDSCO (India)"
-      }
-    },
-    {
-      "code": "TGA",
-      "decode": "TGA (Australia)",
-      "translations": {
-        "en": "TGA (Australia)"
-      }
-    },
-    {
-      "code": "HC",
-      "decode": "Health Canada",
-      "translations": {
-        "en": "Health Canada"
-      }
-    },
-    {
-      "code": "SWISSMEDIC",
-      "decode": "Swissmedic",
-      "translations": {
-        "en": "Swissmedic"
-      }
-    },
-    {
-      "code": "OTHER",
-      "decode": "Other",
-      "translations": {
-        "en": "Other"
-      }
-    }
-  ],
-  "CAUSALITY": [
-    {
-      "code": "CERT",
-      "decode": "Certain",
-      "translations": {
-        "en": "Certain",
-        "fr": "Certain",
-        "de": "Sicher"
-      }
-    },
-    {
-      "code": "PROB",
-      "decode": "Probable",
-      "translations": {
-        "en": "Probable",
-        "fr": "Probable",
-        "de": "Wahrscheinlich"
-      }
-    },
-    {
-      "code": "POSS",
-      "decode": "Possible",
-      "translations": {
-        "en": "Possible",
-        "fr": "Possible",
-        "de": "Möglich"
-      }
-    },
-    {
-      "code": "UNLIKELY",
-      "decode": "Unlikely",
-      "translations": {
-        "en": "Unlikely",
-        "fr": "Improbable",
-        "de": "Unwahrscheinlich"
-      }
-    }
-  ],
-  "CORR_STATUS": [
-    {
-      "code": "DRAFT",
-      "decode": "Draft",
-      "translations": {
-        "en": "Draft"
-      }
-    },
-    {
-      "code": "PENDING",
-      "decode": "Pending",
-      "translations": {
-        "en": "Pending"
-      }
-    },
-    {
-      "code": "SENT",
-      "decode": "Sent",
-      "translations": {
-        "en": "Sent"
-      }
-    },
-    {
-      "code": "RECEIVED",
-      "decode": "Received",
-      "translations": {
-        "en": "Received"
-      }
-    },
-    {
-      "code": "CLOSED",
-      "decode": "Closed",
-      "translations": {
-        "en": "Closed"
-      }
-    }
-  ],
-  "CORR_TYPE": [
-    {
-      "code": "QUERY",
-      "decode": "Query",
-      "translations": {
-        "en": "Query"
-      }
-    },
-    {
-      "code": "RESPONSE",
-      "decode": "Response",
-      "translations": {
-        "en": "Response"
-      }
-    },
-    {
-      "code": "FOLLOWUP",
-      "decode": "Follow-up",
-      "translations": {
-        "en": "Follow-up"
-      }
-    },
-    {
-      "code": "CLOSURE",
-      "decode": "Closure",
-      "translations": {
-        "en": "Closure"
-      }
-    }
-  ],
-  "COUNTRY": [
-    {
-      "code": "US",
-      "decode": "United States",
-      "translations": {
-        "en": "United States"
-      }
-    },
-    {
-      "code": "GB",
-      "decode": "United Kingdom",
-      "translations": {
-        "en": "United Kingdom"
-      }
-    },
-    {
-      "code": "IN",
-      "decode": "India",
-      "translations": {
-        "en": "India"
-      }
-    },
-    {
-      "code": "DE",
-      "decode": "Germany",
-      "translations": {
-        "en": "Germany"
-      }
-    },
-    {
-      "code": "FR",
-      "decode": "France",
-      "translations": {
-        "en": "France"
-      }
-    },
-    {
-      "code": "JP",
-      "decode": "Japan",
-      "translations": {
-        "en": "Japan"
-      }
-    },
-    {
-      "code": "AU",
-      "decode": "Australia",
-      "translations": {
-        "en": "Australia"
-      }
-    },
-    {
-      "code": "CA",
-      "decode": "Canada",
-      "translations": {
-        "en": "Canada"
-      }
-    }
-  ],
-  "DIST_METHOD": [
-    {
-      "code": "EMAIL",
-      "decode": "Email",
-      "translations": {
-        "en": "Email"
-      }
-    },
-    {
-      "code": "PORTAL",
-      "decode": "Investigator Portal",
-      "translations": {
-        "en": "Investigator Portal"
-      }
-    },
-    {
-      "code": "FAX",
-      "decode": "Fax",
-      "translations": {
-        "en": "Fax"
-      }
-    },
-    {
-      "code": "POST",
-      "decode": "Post",
-      "translations": {
-        "en": "Post"
-      }
-    }
-  ],
-  "DIST_STATUS": [
-    {
-      "code": "PENDING",
-      "decode": "Pending",
-      "translations": {
-        "en": "Pending"
-      }
-    },
-    {
-      "code": "SENT",
-      "decode": "Sent",
-      "translations": {
-        "en": "Sent"
-      }
-    },
-    {
-      "code": "ACKNOWLEDGED",
-      "decode": "Acknowledged",
-      "translations": {
-        "en": "Acknowledged"
-      }
-    },
-    {
-      "code": "FAILED",
-      "decode": "Failed",
-      "translations": {
-        "en": "Failed"
-      }
-    }
-  ],
-  "DOSAGE_FORM": [
-    {
-      "code": "TABLET",
-      "decode": "Tablet",
-      "translations": {
-        "en": "Tablet"
-      }
-    },
-    {
-      "code": "CAPSULE",
-      "decode": "Capsule",
-      "translations": {
-        "en": "Capsule"
-      }
-    },
-    {
-      "code": "SOLUTION",
-      "decode": "Solution for Injection",
-      "translations": {
-        "en": "Solution for Injection"
-      }
-    },
-    {
-      "code": "SUSPENSION",
-      "decode": "Suspension",
-      "translations": {
-        "en": "Suspension"
-      }
-    },
-    {
-      "code": "PATCH",
-      "decode": "Transdermal Patch",
-      "translations": {
-        "en": "Transdermal Patch"
-      }
-    },
-    {
-      "code": "INHALER",
-      "decode": "Inhaler",
-      "translations": {
-        "en": "Inhaler"
-      }
-    },
-    {
-      "code": "CREAM",
-      "decode": "Cream",
-      "translations": {
-        "en": "Cream"
-      }
-    },
-    {
-      "code": "OTHER",
-      "decode": "Other",
-      "translations": {
-        "en": "Other"
-      }
-    }
-  ],
-  "DOSE_UNIT": [
-    {
-      "code": "MG",
-      "decode": "mg",
-      "translations": {
-        "en": "mg"
-      }
-    },
-    {
-      "code": "G",
-      "decode": "g",
-      "translations": {
-        "en": "g"
-      }
-    },
-    {
-      "code": "ML",
-      "decode": "mL",
-      "translations": {
-        "en": "mL"
-      }
-    },
-    {
-      "code": "MCG",
-      "decode": "mcg",
-      "translations": {
-        "en": "mcg"
-      }
-    }
-  ],
-  "DRUG_TYPE": [
-    {
-      "code": "SUS",
-      "decode": "Suspect",
-      "translations": {
-        "en": "Suspect",
-        "fr": "Suspect",
-        "de": "Verdächtig"
-      }
-    },
-    {
-      "code": "CONV",
-      "decode": "Concomitant",
-      "translations": {
-        "en": "Concomitant",
-        "fr": "Concomitant",
-        "de": "Begleitend"
-      }
-    },
-    {
-      "code": "INTER",
-      "decode": "Interacting",
-      "translations": {
-        "en": "Interacting",
-        "fr": "En interaction",
-        "de": "Interagierend"
-      }
-    }
-  ],
-  "E2B_PROFILE": [
-    {
-      "code": "E2B_R2",
-      "decode": "ICH E2B(R2)",
-      "translations": {
-        "en": "ICH E2B(R2)"
-      }
-    },
-    {
-      "code": "E2B_R3",
-      "decode": "ICH E2B(R3)",
-      "translations": {
-        "en": "ICH E2B(R3)"
-      }
-    },
-    {
-      "code": "NONE",
-      "decode": "None",
-      "translations": {
-        "en": "None"
-      }
-    }
-  ],
-  "EDI_METHOD": [
-    {
-      "code": "AS2",
-      "decode": "AS2",
-      "translations": {
-        "en": "AS2"
-      }
-    },
-    {
-      "code": "SFTP",
-      "decode": "SFTP",
-      "translations": {
-        "en": "SFTP"
-      }
-    },
-    {
-      "code": "EMAIL",
-      "decode": "Email",
-      "translations": {
-        "en": "Email"
-      }
-    },
-    {
-      "code": "MANUAL",
-      "decode": "Manual",
-      "translations": {
-        "en": "Manual"
-      }
-    }
-  ],
-  "FILE_TYPE": [
-    {
-      "code": "PDF",
-      "decode": "PDF",
-      "translations": {
-        "en": "PDF"
-      }
-    },
-    {
-      "code": "DOCX",
-      "decode": "Word Document",
-      "translations": {
-        "en": "Word Document"
-      }
-    },
-    {
-      "code": "XLSX",
-      "decode": "Excel Spreadsheet",
-      "translations": {
-        "en": "Excel Spreadsheet"
-      }
-    },
-    {
-      "code": "XML",
-      "decode": "XML",
-      "translations": {
-        "en": "XML"
-      }
-    },
-    {
-      "code": "TXT",
-      "decode": "Text File",
-      "translations": {
-        "en": "Text File"
-      }
-    },
-    {
-      "code": "OTHER",
-      "decode": "Other",
-      "translations": {
-        "en": "Other"
-      }
-    }
-  ],
-  "ICSR_ACTION_TAKEN": [
-    {
-      "code": "withdrawn",
-      "decode": "Drug Withdrawn",
-      "translations": {
-        "r2": "1",
-        "r3": "withdrawn",
-        "label": "Drug Withdrawn",
-        "fr": "Medicament arrete",
-        "ja": "投与中止",
-        "zh": "停药"
-      }
-    },
-    {
-      "code": "doseReduced",
-      "decode": "Dose Reduced",
-      "translations": {
-        "r2": "2",
-        "r3": "doseReduced",
-        "label": "Dose Reduced",
-        "fr": "Dose reduite",
-        "ja": "減量",
-        "zh": "减量"
-      }
-    },
-    {
-      "code": "doseIncreased",
-      "decode": "Dose Increased",
-      "translations": {
-        "r2": "3",
-        "r3": "doseIncreased",
-        "label": "Dose Increased",
-        "fr": "Dose augmentee",
-        "ja": "増量",
-        "zh": "增量"
-      }
-    },
-    {
-      "code": "notChanged",
-      "decode": "Not Changed",
-      "translations": {
-        "r2": "4",
-        "r3": "notChanged",
-        "label": "Not Changed",
-        "fr": "Non modifie",
-        "ja": "変更なし",
-        "zh": "未更改"
-      }
-    },
-    {
-      "code": "unknown",
-      "decode": "Unknown",
-      "translations": {
-        "r2": "5",
-        "r3": "unknown",
-        "label": "Unknown",
-        "fr": "Inconnu",
-        "ja": "不明",
-        "zh": "未知"
-      }
-    },
-    {
-      "code": "notApplicable",
-      "decode": "Not Applicable",
-      "translations": {
-        "r2": "6",
-        "r3": "notApplicable",
-        "label": "Not Applicable",
-        "fr": "Sans objet",
-        "ja": "該当なし",
-        "zh": "不适用"
-      }
-    }
-  ],
-  "ICSR_AGE_GROUP": [
-    {
-      "code": "neonate",
-      "decode": "Neonate (0-27 days)",
-      "translations": {
-        "r2": "",
-        "r3": "neonate",
-        "label": "Neonate",
-        "fr": "Nouveau-ne",
-        "ja": "新生児",
-        "zh": "新生儿"
-      }
-    },
-    {
-      "code": "infant",
-      "decode": "Infant (28 days-23 mo)",
-      "translations": {
-        "r2": "",
-        "r3": "infant",
-        "label": "Infant",
-        "fr": "Nourrisson",
-        "ja": "乳児",
-        "zh": "婴儿"
-      }
-    },
-    {
-      "code": "child",
-      "decode": "Child (2-11 yr)",
-      "translations": {
-        "r2": "",
-        "r3": "child",
-        "label": "Child",
-        "fr": "Enfant",
-        "ja": "小児",
-        "zh": "儿童"
-      }
-    },
-    {
-      "code": "adolescent",
-      "decode": "Adolescent (12-17 yr)",
-      "translations": {
-        "r2": "",
-        "r3": "adolescent",
-        "label": "Adolescent",
-        "fr": "Adolescent",
-        "ja": "青少年",
-        "zh": "青少年"
-      }
-    },
-    {
-      "code": "adult",
-      "decode": "Adult (18-64 yr)",
-      "translations": {
-        "r2": "",
-        "r3": "adult",
-        "label": "Adult",
-        "fr": "Adulte",
-        "ja": "成人",
-        "zh": "成人"
-      }
-    },
-    {
-      "code": "elderly",
-      "decode": "Elderly (65+ yr)",
-      "translations": {
-        "r2": "",
-        "r3": "elderly",
-        "label": "Elderly",
-        "fr": "Personne agee",
-        "ja": "高齢者",
-        "zh": "老年人"
-      }
-    }
-  ],
-  "ICSR_AGE_UNIT": [
-    {
-      "code": "yr",
-      "decode": "Year",
-      "translations": {
-        "r2": "801",
-        "r3": "a",
-        "label": "Year",
-        "fr": "Annee",
-        "ja": "年",
-        "zh": "年"
-      }
-    },
-    {
-      "code": "mo",
-      "decode": "Month",
-      "translations": {
-        "r2": "802",
-        "r3": "mo",
-        "label": "Month",
-        "fr": "Mois",
-        "ja": "月",
-        "zh": "月"
-      }
-    },
-    {
-      "code": "wk",
-      "decode": "Week",
-      "translations": {
-        "r2": "803",
-        "r3": "wk",
-        "label": "Week",
-        "fr": "Semaine",
-        "ja": "週",
-        "zh": "周"
-      }
-    },
-    {
-      "code": "dy",
-      "decode": "Day",
-      "translations": {
-        "r2": "804",
-        "r3": "d",
-        "label": "Day",
-        "fr": "Jour",
-        "ja": "日",
-        "zh": "天"
-      }
-    },
-    {
-      "code": "hr",
-      "decode": "Hour",
-      "translations": {
-        "r2": "805",
-        "r3": "h",
-        "label": "Hour",
-        "fr": "Heure",
-        "ja": "時間",
-        "zh": "小时"
-      }
-    }
-  ],
-  "ICSR_CAUSALITY": [
-    {
-      "code": "related",
-      "decode": "Related",
-      "translations": {
-        "r2": "1",
-        "r3": "related",
-        "label": "Related",
-        "fr": "Lie",
-        "ja": "関連あり",
-        "zh": "相关"
-      }
-    },
-    {
-      "code": "notRelated",
-      "decode": "Not Related",
-      "translations": {
-        "r2": "2",
-        "r3": "notRelated",
-        "label": "Not Related",
-        "fr": "Non lie",
-        "ja": "関連なし",
-        "zh": "不相关"
-      }
-    },
-    {
-      "code": "unassessable",
-      "decode": "Unassessable",
-      "translations": {
-        "r2": "3",
-        "r3": "unassessable",
-        "label": "Unassessable",
-        "fr": "Non evaluable",
-        "ja": "評価不能",
-        "zh": "无法评估"
-      }
-    }
-  ],
-  "ICSR_DOSE_UNIT": [
-    {
-      "code": "mg",
-      "decode": "Milligram",
-      "translations": {
-        "r2": "mg",
-        "r3": "mg",
-        "label": "Milligram",
-        "fr": "Milligramme",
-        "ja": "ミリグラム",
-        "zh": "毫克"
-      }
-    },
-    {
-      "code": "g",
-      "decode": "Gram",
-      "translations": {
-        "r2": "g",
-        "r3": "g",
-        "label": "Gram",
-        "fr": "Gramme",
-        "ja": "グラム",
-        "zh": "克"
-      }
-    },
-    {
-      "code": "mL",
-      "decode": "Millilitre",
-      "translations": {
-        "r2": "mL",
-        "r3": "mL",
-        "label": "Millilitre",
-        "fr": "Millilitre",
-        "ja": "ミリリットル",
-        "zh": "毫升"
-      }
-    },
-    {
-      "code": "IU",
-      "decode": "Int. Units",
-      "translations": {
-        "r2": "IU",
-        "r3": "[iU]",
-        "label": "Int. Units",
-        "fr": "UI",
-        "ja": "国際単位",
-        "zh": "国际单位"
-      }
-    },
-    {
-      "code": "mcg",
-      "decode": "Microgram",
-      "translations": {
-        "r2": "mcg",
-        "r3": "ug",
-        "label": "Microgram",
-        "fr": "Microgramme",
-        "ja": "マイクログラム",
-        "zh": "微克"
-      }
-    }
-  ],
-  "ICSR_DRUG_CHAR": [
-    {
-      "code": "suspect",
-      "decode": "Suspect",
-      "translations": {
-        "r2": "1",
-        "r3": "suspect",
-        "label": "Suspect",
-        "fr": "Suspect",
-        "ja": "被疑薬",
-        "zh": "可疑药物"
-      }
-    },
-    {
-      "code": "concomitant",
-      "decode": "Concomitant",
-      "translations": {
-        "r2": "2",
-        "r3": "concomitant",
-        "label": "Concomitant",
-        "fr": "Concomitant",
-        "ja": "併用薬",
-        "zh": "合并用药"
-      }
-    },
-    {
-      "code": "interacting",
-      "decode": "Interacting",
-      "translations": {
-        "r2": "3",
-        "r3": "interacting",
-        "label": "Interacting",
-        "fr": "En interaction",
-        "ja": "相互作用薬",
-        "zh": "相互作用药"
-      }
-    }
-  ],
-  "ICSR_ORG_TYPE": [
-    {
-      "code": "pharma",
-      "decode": "Pharmaceutical Company",
-      "translations": {
-        "r2": "1",
-        "r3": "pharmaceuticalCompany",
-        "label": "Pharmaceutical Company",
-        "fr": "Societe pharmaceutique",
-        "ja": "製薬会社",
-        "zh": "制药公司"
-      }
-    },
-    {
-      "code": "regulatory",
-      "decode": "Regulatory Authority",
-      "translations": {
-        "r2": "2",
-        "r3": "regulatoryAuthority",
-        "label": "Regulatory Authority",
-        "fr": "Autorite reglementaire",
-        "ja": "規制当局",
-        "zh": "监管机构"
-      }
-    },
-    {
-      "code": "other",
-      "decode": "Other",
-      "translations": {
-        "r2": "3",
-        "r3": "other",
-        "label": "Other",
+        "en": "Other",
         "fr": "Autre",
-        "ja": "その他",
-        "zh": "其他"
+        "ja": "その他"
       }
     }
   ],
-  "ICSR_OUTCOME": [
+  "ADDRESS_TYPE": [
     {
-      "code": "recovered",
-      "decode": "Recovered / Resolved",
+      "code": "PERMANENT",
+      "decode": "Permanent",
       "translations": {
-        "r2": "1",
-        "r3": "recovered",
-        "label": "Recovered / Resolved",
-        "fr": "Gueri / Resolu",
-        "ja": "回復",
-        "zh": "已恢复"
+        "en": "Permanent",
+        "fr": "Permanent",
+        "ja": "永住所"
       }
     },
     {
-      "code": "recovering",
-      "decode": "Recovering / Resolving",
+      "code": "CURRENT",
+      "decode": "Current",
       "translations": {
-        "r2": "2",
-        "r3": "recovering",
-        "label": "Recovering / Resolving",
-        "fr": "En cours de guerison",
-        "ja": "回復中",
-        "zh": "恢复中"
+        "en": "Current",
+        "fr": "Actuel",
+        "ja": "現住所"
       }
     },
     {
-      "code": "notRecovered",
-      "decode": "Not Recovered / Not Resolved",
+      "code": "OFFICE",
+      "decode": "Office",
       "translations": {
-        "r2": "3",
-        "r3": "notRecovered",
-        "label": "Not Recovered / Not Resolved",
-        "fr": "Non gueri / Non resolu",
-        "ja": "未回復",
-        "zh": "未恢复"
+        "en": "Office",
+        "fr": "Bureau",
+        "ja": "勤務先"
       }
     },
     {
-      "code": "fatal",
-      "decode": "Fatal",
+      "code": "RESIDENTIAL",
+      "decode": "Residential",
       "translations": {
-        "r2": "4",
-        "r3": "fatal",
-        "label": "Fatal",
-        "fr": "Fatal",
-        "ja": "死亡",
-        "zh": "死亡"
+        "en": "Residential",
+        "fr": "Résidentiel",
+        "ja": "居住地"
       }
     },
     {
-      "code": "unknown",
-      "decode": "Unknown",
-      "translations": {
-        "r2": "5",
-        "r3": "unknown",
-        "label": "Unknown",
-        "fr": "Inconnu",
-        "ja": "不明",
-        "zh": "未知"
-      }
-    },
-    {
-      "code": "recoveredWithSequalae",
-      "decode": "Recovered with Sequelae",
-      "translations": {
-        "r2": "6",
-        "r3": "recoveredWithSequelae",
-        "label": "Recovered with Sequelae",
-        "fr": "Gueri avec sequelles",
-        "ja": "後遺症あり回復",
-        "zh": "有后遗症恢复"
-      }
-    }
-  ],
-  "ICSR_PRODUCT_TYPE": [
-    {
-      "code": "medicinal",
-      "decode": "Medicinal Product",
-      "translations": {
-        "r2": "01",
-        "r3": "medicinalProduct",
-        "label": "Medicinal Product",
-        "fr": "Medicament",
-        "ja": "医薬品",
-        "zh": "药品"
-      }
-    },
-    {
-      "code": "vaccine",
-      "decode": "Vaccine",
-      "translations": {
-        "r2": "02",
-        "r3": "vaccine",
-        "label": "Vaccine",
-        "fr": "Vaccin",
-        "ja": "ワクチン",
-        "zh": "疫苗"
-      }
-    },
-    {
-      "code": "biological",
-      "decode": "Biological",
-      "translations": {
-        "r2": "03",
-        "r3": "biological",
-        "label": "Biological",
-        "fr": "Biologique",
-        "ja": "生物製剤",
-        "zh": "生物制品"
-      }
-    }
-  ],
-  "ICSR_QUALIFICATION": [
-    {
-      "code": "physician",
-      "decode": "Physician",
-      "translations": {
-        "r2": "1",
-        "r3": "physician",
-        "label": "Physician",
-        "fr": "Medecin",
-        "ja": "医師",
-        "zh": "医生"
-      }
-    },
-    {
-      "code": "pharmacist",
-      "decode": "Pharmacist",
-      "translations": {
-        "r2": "2",
-        "r3": "pharmacist",
-        "label": "Pharmacist",
-        "fr": "Pharmacien",
-        "ja": "薬剤師",
-        "zh": "药剂师"
-      }
-    },
-    {
-      "code": "otherHcp",
-      "decode": "Other Health Care Professional",
-      "translations": {
-        "r2": "3",
-        "r3": "otherHealthcareProfessional",
-        "label": "Other Health Care Professional",
-        "fr": "Autre professionnel de sante",
-        "ja": "その他の医療専門家",
-        "zh": "其他医疗专业人员"
-      }
-    },
-    {
-      "code": "lawyer",
-      "decode": "Lawyer",
-      "translations": {
-        "r2": "4",
-        "r3": "lawyer",
-        "label": "Lawyer",
-        "fr": "Avocat",
-        "ja": "弁護士",
-        "zh": "律师"
-      }
-    },
-    {
-      "code": "consumer",
-      "decode": "Consumer / Patient",
-      "translations": {
-        "r2": "5",
-        "r3": "consumer",
-        "label": "Consumer / Patient",
-        "fr": "Consommateur / Patient",
-        "ja": "消費者・患者",
-        "zh": "消费者/患者"
-      }
-    }
-  ],
-  "ICSR_REPORT_TYPE": [
-    {
-      "code": "spontaneous",
-      "decode": "Spontaneous Report",
-      "translations": {
-        "r2": "1",
-        "r3": "spontaneous",
-        "label": "Spontaneous Report",
-        "fr": "Rapport spontane",
-        "ja": "自発報告",
-        "zh": "自发报告"
-      }
-    },
-    {
-      "code": "study",
-      "decode": "Study Report",
-      "translations": {
-        "r2": "2",
-        "r3": "study",
-        "label": "Study Report",
-        "fr": "Rapport d etude",
-        "ja": "試験報告",
-        "zh": "研究报告"
-      }
-    },
-    {
-      "code": "other",
+      "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "r2": "3",
-        "r3": "other",
-        "label": "Other",
+        "en": "Other",
         "fr": "Autre",
-        "ja": "その他",
-        "zh": "其他"
-      }
-    },
-    {
-      "code": "notAvailable",
-      "decode": "Not Available",
-      "translations": {
-        "r2": "4",
-        "r3": "notAvailable",
-        "label": "Not Available",
-        "fr": "Non disponible",
-        "ja": "不明",
-        "zh": "不可用"
+        "ja": "その他"
       }
     }
   ],
-  "ICSR_REPORTER_TYPE": [
-    {
-      "code": "spontaneous",
-      "decode": "Spontaneous",
-      "translations": {
-        "r2": "1",
-        "r3": "spontaneous",
-        "label": "Spontaneous",
-        "fr": "Spontane",
-        "ja": "自発",
-        "zh": "自发"
-      }
-    },
-    {
-      "code": "study",
-      "decode": "Study",
-      "translations": {
-        "r2": "2",
-        "r3": "study",
-        "label": "Study",
-        "fr": "Etude",
-        "ja": "試験",
-        "zh": "研究"
-      }
-    },
-    {
-      "code": "other",
-      "decode": "Other",
-      "translations": {
-        "r2": "3",
-        "r3": "other",
-        "label": "Other",
-        "fr": "Autre",
-        "ja": "その他",
-        "zh": "其他"
-      }
-    }
-  ],
-  "ICSR_ROUTE": [
-    {
-      "code": "oral",
-      "decode": "Oral",
-      "translations": {
-        "r2": "001",
-        "r3": "oralUse",
-        "label": "Oral",
-        "fr": "Oral",
-        "ja": "経口",
-        "zh": "口服"
-      }
-    },
-    {
-      "code": "iv",
-      "decode": "Intravenous",
-      "translations": {
-        "r2": "002",
-        "r3": "intravenousUse",
-        "label": "Intravenous",
-        "fr": "Intraveineux",
-        "ja": "静脈内",
-        "zh": "静脉注射"
-      }
-    },
-    {
-      "code": "im",
-      "decode": "Intramuscular",
-      "translations": {
-        "r2": "003",
-        "r3": "intramuscularUse",
-        "label": "Intramuscular",
-        "fr": "Intramusculaire",
-        "ja": "筋肉内",
-        "zh": "肌肉注射"
-      }
-    },
-    {
-      "code": "sc",
-      "decode": "Subcutaneous",
-      "translations": {
-        "r2": "004",
-        "r3": "subcutaneousUse",
-        "label": "Subcutaneous",
-        "fr": "Sous-cutane",
-        "ja": "皮下",
-        "zh": "皮下注射"
-      }
-    },
-    {
-      "code": "topical",
-      "decode": "Topical",
-      "translations": {
-        "r2": "005",
-        "r3": "cutaneousUse",
-        "label": "Topical",
-        "fr": "Topique",
-        "ja": "局所",
-        "zh": "局部"
-      }
-    },
-    {
-      "code": "inhalation",
-      "decode": "Inhalation",
-      "translations": {
-        "r2": "006",
-        "r3": "inhalationUse",
-        "label": "Inhalation",
-        "fr": "Inhalation",
-        "ja": "吸入",
-        "zh": "吸入"
-      }
-    },
-    {
-      "code": "unknown",
-      "decode": "Unknown",
-      "translations": {
-        "r2": "999",
-        "r3": "unknown",
-        "label": "Unknown",
-        "fr": "Inconnu",
-        "ja": "不明",
-        "zh": "未知"
-      }
-    }
-  ],
-  "ICSR_SEX": [
-    {
-      "code": "male",
-      "decode": "Male",
-      "translations": {
-        "r2": "1",
-        "r3": "male",
-        "label": "Male",
-        "fr": "Masculin",
-        "ja": "男性",
-        "zh": "男"
-      }
-    },
-    {
-      "code": "female",
-      "decode": "Female",
-      "translations": {
-        "r2": "2",
-        "r3": "female",
-        "label": "Female",
-        "fr": "Feminin",
-        "ja": "女性",
-        "zh": "女"
-      }
-    },
-    {
-      "code": "unknown",
-      "decode": "Unknown",
-      "translations": {
-        "r2": "0",
-        "r3": "unknown",
-        "label": "Unknown",
-        "fr": "Inconnu",
-        "ja": "不明",
-        "zh": "未知"
-      }
-    }
-  ],
-  "ICSR_STUDY_TYPE": [
-    {
-      "code": "phaseI",
-      "decode": "Phase I",
-      "translations": {
-        "r2": "1",
-        "r3": "phaseI",
-        "label": "Phase I",
-        "fr": "Phase I",
-        "ja": "第I相",
-        "zh": "I期"
-      }
-    },
-    {
-      "code": "phaseII",
-      "decode": "Phase II",
-      "translations": {
-        "r2": "2",
-        "r3": "phaseII",
-        "label": "Phase II",
-        "fr": "Phase II",
-        "ja": "第II相",
-        "zh": "II期"
-      }
-    },
-    {
-      "code": "phaseIII",
-      "decode": "Phase III",
-      "translations": {
-        "r2": "3",
-        "r3": "phaseIII",
-        "label": "Phase III",
-        "fr": "Phase III",
-        "ja": "第III相",
-        "zh": "III期"
-      }
-    },
-    {
-      "code": "phaseIV",
-      "decode": "Phase IV",
-      "translations": {
-        "r2": "4",
-        "r3": "phaseIV",
-        "label": "Phase IV",
-        "fr": "Phase IV",
-        "ja": "第IV相",
-        "zh": "IV期"
-      }
-    },
-    {
-      "code": "observational",
-      "decode": "Observational",
-      "translations": {
-        "r2": "5",
-        "r3": "observational",
-        "label": "Observational",
-        "fr": "Observationnelle",
-        "ja": "観察研究",
-        "zh": "观察性研究"
-      }
-    },
-    {
-      "code": "other",
-      "decode": "Other",
-      "translations": {
-        "r2": "6",
-        "r3": "other",
-        "label": "Other",
-        "fr": "Autre",
-        "ja": "その他",
-        "zh": "其他"
-      }
-    }
-  ],
-  "ICSR_YES_NO_UNK": [
-    {
-      "code": "yes",
-      "decode": "Yes",
-      "translations": {
-        "r2": "1",
-        "r3": "yes",
-        "label": "Yes",
-        "fr": "Oui",
-        "ja": "はい",
-        "zh": "是"
-      }
-    },
-    {
-      "code": "no",
-      "decode": "No",
-      "translations": {
-        "r2": "2",
-        "r3": "no",
-        "label": "No",
-        "fr": "Non",
-        "ja": "いいえ",
-        "zh": "否"
-      }
-    },
-    {
-      "code": "unknown",
-      "decode": "Unknown",
-      "translations": {
-        "r2": "3",
-        "r3": "unknown",
-        "label": "Unknown",
-        "fr": "Inconnu",
-        "ja": "不明",
-        "zh": "未知"
-      }
-    }
-  ],
-  "INGREDIENT_ROLE": [
-    {
-      "code": "ACTIVE",
-      "decode": "Active Substance",
-      "translations": {
-        "en": "Active Substance"
-      }
-    },
-    {
-      "code": "EXCIPIENT",
-      "decode": "Excipient",
-      "translations": {
-        "en": "Excipient"
-      }
-    },
-    {
-      "code": "ADJUVANT",
-      "decode": "Adjuvant",
-      "translations": {
-        "en": "Adjuvant"
-      }
-    }
-  ],
-  "PRODUCT_TYPE": [
-    {
-      "code": "SMALL_MOL",
-      "decode": "Small Molecule",
-      "translations": {
-        "en": "Small Molecule"
-      }
-    },
-    {
-      "code": "BIOLOGIC",
-      "decode": "Biologic",
-      "translations": {
-        "en": "Biologic"
-      }
-    },
-    {
-      "code": "VACCINE",
-      "decode": "Vaccine",
-      "translations": {
-        "en": "Vaccine"
-      }
-    },
-    {
-      "code": "DEVICE",
-      "decode": "Medical Device",
-      "translations": {
-        "en": "Medical Device"
-      }
-    },
-    {
-      "code": "COMBO",
-      "decode": "Combination Product",
-      "translations": {
-        "en": "Combination Product"
-      }
-    },
-    {
-      "code": "HERBAL",
-      "decode": "Herbal / Traditional",
-      "translations": {
-        "en": "Herbal / Traditional"
-      }
-    },
-    {
-      "code": "OTHER",
-      "decode": "Other",
-      "translations": {
-        "en": "Other"
-      }
-    }
-  ],
-  "RELATIONSHIP": [
-    {
-      "code": "PARENT",
-      "decode": "Parent",
-      "translations": {
-        "en": "Parent"
-      }
-    },
-    {
-      "code": "GUARDIAN",
-      "decode": "Legal Guardian",
-      "translations": {
-        "en": "Legal Guardian"
-      }
-    },
-    {
-      "code": "OTHER",
-      "decode": "Other",
-      "translations": {
-        "en": "Other"
-      }
-    }
-  ],
-  "ROUTE": [
-    {
-      "code": "ORAL",
-      "decode": "Oral",
-      "translations": {
-        "en": "Oral",
-        "fr": "Oral",
-        "de": "Oral"
-      }
-    },
-    {
-      "code": "IV",
-      "decode": "Intravenous",
-      "translations": {
-        "en": "Intravenous",
-        "fr": "Intraveineux",
-        "de": "Intravenös"
-      }
-    },
-    {
-      "code": "SC",
-      "decode": "Subcutaneous",
-      "translations": {
-        "en": "Subcutaneous",
-        "fr": "Sous-cutané",
-        "de": "Subkutan"
-      }
-    },
-    {
-      "code": "IM",
-      "decode": "Intramuscular",
-      "translations": {
-        "en": "Intramuscular",
-        "fr": "Intramusculaire",
-        "de": "Intramuskulär"
-      }
-    }
-  ],
-  "SEVERITY": [
-    {
-      "code": "MILD",
-      "decode": "Mild",
-      "translations": {
-        "en": "Mild",
-        "fr": "Léger",
-        "de": "Leicht"
-      }
-    },
-    {
-      "code": "MOD",
-      "decode": "Moderate",
-      "translations": {
-        "en": "Moderate",
-        "fr": "Modéré",
-        "de": "Mäßig"
-      }
-    },
-    {
-      "code": "SEV",
-      "decode": "Severe",
-      "translations": {
-        "en": "Severe",
-        "fr": "Sévère",
-        "de": "Schwer"
-      }
-    },
-    {
-      "code": "FATAL",
-      "decode": "Fatal",
-      "translations": {
-        "en": "Fatal",
-        "fr": "Fatal",
-        "de": "Tödlich"
-      }
-    }
-  ],
-  "SEX": [
-    {
-      "code": "M",
-      "decode": "Male",
-      "translations": {
-        "en": "Male",
-        "fr": "Masculin",
-        "de": "Männlich"
-      }
-    },
-    {
-      "code": "F",
-      "decode": "Female",
-      "translations": {
-        "en": "Female",
-        "fr": "Féminin",
-        "de": "Weiblich"
-      }
-    },
-    {
-      "code": "U",
-      "decode": "Unknown",
-      "translations": {
-        "en": "Unknown",
-        "fr": "Inconnu",
-        "de": "Unbekannt"
-      }
-    }
-  ],
-  "SITE_STATUS": [
-    {
-      "code": "PENDING",
-      "decode": "Pending Activation",
-      "translations": {
-        "en": "Pending Activation"
-      }
-    },
-    {
-      "code": "ACTIVE",
-      "decode": "Active",
-      "translations": {
-        "en": "Active"
-      }
-    },
-    {
-      "code": "SUSPENDED",
-      "decode": "Suspended",
-      "translations": {
-        "en": "Suspended"
-      }
-    },
-    {
-      "code": "CLOSED",
-      "decode": "Closed",
-      "translations": {
-        "en": "Closed"
-      }
-    }
-  ],
-  "STUDY_PRODUCT_ROLE": [
-    {
-      "code": "IMP",
-      "decode": "Investigational Medicinal Product",
-      "translations": {
-        "en": "Investigational Medicinal Product"
-      }
-    },
-    {
-      "code": "COMPARATOR",
-      "decode": "Comparator",
-      "translations": {
-        "en": "Comparator"
-      }
-    },
-    {
-      "code": "PLACEBO",
-      "decode": "Placebo",
-      "translations": {
-        "en": "Placebo"
-      }
-    },
-    {
-      "code": "OTHER",
-      "decode": "Other",
-      "translations": {
-        "en": "Other"
-      }
-    }
-  ],
-  "STUDY_STATUS": [
-    {
-      "code": "PLANNED",
-      "decode": "Planned",
-      "translations": {
-        "en": "Planned"
-      }
-    },
-    {
-      "code": "ACTIVE",
-      "decode": "Active",
-      "translations": {
-        "en": "Active"
-      }
-    },
-    {
-      "code": "SUSPENDED",
-      "decode": "Suspended",
-      "translations": {
-        "en": "Suspended"
-      }
-    },
-    {
-      "code": "COMPLETED",
-      "decode": "Completed",
-      "translations": {
-        "en": "Completed"
-      }
-    },
-    {
-      "code": "TERMINATED",
-      "decode": "Terminated",
-      "translations": {
-        "en": "Terminated"
-      }
-    }
-  ],
-  "SUB_ACTION": [
-    {
-      "code": "CREATED",
-      "decode": "Created",
-      "translations": {
-        "en": "Created"
-      }
-    },
-    {
-      "code": "EDITED",
-      "decode": "Edited",
-      "translations": {
-        "en": "Edited"
-      }
-    },
-    {
-      "code": "SUBMITTED",
-      "decode": "Submitted",
-      "translations": {
-        "en": "Submitted"
-      }
-    },
-    {
-      "code": "RECALLED",
-      "decode": "Recalled",
-      "translations": {
-        "en": "Recalled"
-      }
-    },
-    {
-      "code": "CLOSED",
-      "decode": "Closed",
-      "translations": {
-        "en": "Closed"
-      }
-    }
-  ],
-  "SUB_METHOD": [
-    {
-      "code": "GATEWAY",
-      "decode": "Electronic Gateway",
-      "translations": {
-        "en": "Electronic Gateway"
-      }
-    },
-    {
-      "code": "PORTAL",
-      "decode": "Regulatory Portal",
-      "translations": {
-        "en": "Regulatory Portal"
-      }
-    },
-    {
-      "code": "EMAIL",
-      "decode": "Email",
-      "translations": {
-        "en": "Email"
-      }
-    },
-    {
-      "code": "FAX",
-      "decode": "Fax",
-      "translations": {
-        "en": "Fax"
-      }
-    },
-    {
-      "code": "POST",
-      "decode": "Post",
-      "translations": {
-        "en": "Post"
-      }
-    }
-  ],
-  "SUB_REPORT_TYPE": [
-    {
-      "code": "CIOMS",
-      "decode": "CIOMS I",
-      "translations": {
-        "en": "CIOMS I"
-      }
-    },
-    {
-      "code": "MEDWATCH",
-      "decode": "MedWatch 3500A",
-      "translations": {
-        "en": "MedWatch 3500A"
-      }
-    },
-    {
-      "code": "E2B_R2",
-      "decode": "ICH E2B(R2)",
-      "translations": {
-        "en": "ICH E2B(R2)"
-      }
-    },
-    {
-      "code": "E2B_R3",
-      "decode": "ICH E2B(R3)",
-      "translations": {
-        "en": "ICH E2B(R3)"
-      }
-    },
-    {
-      "code": "PSUR",
-      "decode": "PSUR/PBRER",
-      "translations": {
-        "en": "PSUR/PBRER"
-      }
-    },
-    {
-      "code": "DSUR",
-      "decode": "DSUR",
-      "translations": {
-        "en": "DSUR"
-      }
-    },
-    {
-      "code": "OTHER",
-      "decode": "Other",
-      "translations": {
-        "en": "Other"
-      }
-    }
-  ],
-  "SUB_STATUS": [
-    {
-      "code": "PENDING",
-      "decode": "Pending",
-      "translations": {
-        "en": "Pending"
-      }
-    },
-    {
-      "code": "SUBMITTED",
-      "decode": "Submitted",
-      "translations": {
-        "en": "Submitted"
-      }
-    },
-    {
-      "code": "OVERDUE",
-      "decode": "Overdue",
-      "translations": {
-        "en": "Overdue"
-      }
-    },
-    {
-      "code": "ACCEPTED",
-      "decode": "Accepted",
-      "translations": {
-        "en": "Accepted"
-      }
-    },
-    {
-      "code": "REJECTED",
-      "decode": "Rejected",
-      "translations": {
-        "en": "Rejected"
-      }
-    },
-    {
-      "code": "WITHDRAWN",
-      "decode": "Withdrawn",
-      "translations": {
-        "en": "Withdrawn"
-      }
-    }
-  ],
-  "USER_ROLE": [
-    {
-      "code": "ADMIN",
-      "decode": "Administrator",
-      "translations": {
-        "en": "Administrator"
-      }
-    },
-    {
-      "code": "CASE_MGR",
-      "decode": "Case Manager",
-      "translations": {
-        "en": "Case Manager"
-      }
-    },
-    {
-      "code": "REVIEWER",
-      "decode": "Medical Reviewer",
-      "translations": {
-        "en": "Medical Reviewer"
-      }
-    },
-    {
-      "code": "SUBMITTER",
-      "decode": "Submission Officer",
-      "translations": {
-        "en": "Submission Officer"
-      }
-    },
-    {
-      "code": "READONLY",
-      "decode": "Read Only",
-      "translations": {
-        "en": "Read Only"
-      }
-    }
-  ],
-  "YES_NO": [
-    {
-      "code": "Y",
-      "decode": "Yes",
-      "translations": {
-        "en": "Yes",
-        "fr": "Oui",
-        "de": "Ja"
-      }
-    },
-    {
-      "code": "N",
-      "decode": "No",
-      "translations": {
-        "en": "No",
-        "fr": "Non",
-        "de": "Nein"
-      }
-    }
-  ],
-
-  "ACCESS_LEVEL": [
+  "APPROVAL_TYPE": [
     {
       "code": "FULL",
-      "decode": "Full Access",
+      "decode": "Full Approval",
       "translations": {
-        "en": "Full Access"
+        "en": "Full Approval",
+        "fr": "Approbation complète",
+        "ja": "完全承認"
       }
     },
     {
-      "code": "READONLY",
-      "decode": "Read Only",
+      "code": "CONDITIONAL",
+      "decode": "Conditional Approval",
       "translations": {
-        "en": "Read Only"
+        "en": "Conditional Approval",
+        "fr": "Approbation conditionnelle",
+        "ja": "条件付き承認"
       }
     },
     {
-      "code": "NONE",
-      "decode": "No Access",
+      "code": "EXCEPTIONAL",
+      "decode": "Exceptional Circumstances",
       "translations": {
-        "en": "No Access"
-      }
-    }
-  ],
-  "ACCOUNT_TYPE": [
-    {
-      "code": "MAH",
-      "decode": "Marketing Authorisation Holder",
-      "translations": {
-        "en": "Marketing Authorisation Holder"
+        "en": "Exceptional Circumstances",
+        "fr": "Circonstances exceptionnelles",
+        "ja": "例外的状況"
       }
     },
     {
-      "code": "PARTNER",
-      "decode": "Business Partner",
+      "code": "ACCELERATED",
+      "decode": "Accelerated Assessment",
       "translations": {
-        "en": "Business Partner"
+        "en": "Accelerated Assessment",
+        "fr": "Évaluation accélérée",
+        "ja": "迅速審査"
       }
     },
     {
-      "code": "CRO",
-      "decode": "CRO",
+      "code": "EMERGENCY",
+      "decode": "Emergency Use",
       "translations": {
-        "en": "CRO"
+        "en": "Emergency Use",
+        "fr": "Utilisation d'urgence",
+        "ja": "緊急使用"
       }
     },
     {
-      "code": "AUTHORITY",
-      "decode": "Regulatory Authority",
+      "code": "GENERIC",
+      "decode": "Generic",
       "translations": {
-        "en": "Regulatory Authority"
+        "en": "Generic",
+        "fr": "Générique",
+        "ja": "ジェネリック"
       }
     },
     {
-      "code": "HOSPITAL",
-      "decode": "Hospital / HCP",
+      "code": "BIOSIMILAR",
+      "decode": "Biosimilar",
       "translations": {
-        "en": "Hospital / HCP"
-      }
-    },
-    {
-      "code": "OTHER",
-      "decode": "Other",
-      "translations": {
-        "en": "Other"
-      }
-    }
-  ],
-  "AUTHORITY": [
-    {
-      "code": "FDA",
-      "decode": "FDA (US)",
-      "translations": {
-        "en": "FDA (US)"
-      }
-    },
-    {
-      "code": "EMA",
-      "decode": "EMA (EU)",
-      "translations": {
-        "en": "EMA (EU)"
-      }
-    },
-    {
-      "code": "MHRA",
-      "decode": "MHRA (UK)",
-      "translations": {
-        "en": "MHRA (UK)"
-      }
-    },
-    {
-      "code": "PMDA",
-      "decode": "PMDA (Japan)",
-      "translations": {
-        "en": "PMDA (Japan)"
-      }
-    },
-    {
-      "code": "CDSCO",
-      "decode": "CDSCO (India)",
-      "translations": {
-        "en": "CDSCO (India)"
-      }
-    },
-    {
-      "code": "TGA",
-      "decode": "TGA (Australia)",
-      "translations": {
-        "en": "TGA (Australia)"
-      }
-    },
-    {
-      "code": "HC",
-      "decode": "Health Canada",
-      "translations": {
-        "en": "Health Canada"
-      }
-    },
-    {
-      "code": "SWISSMEDIC",
-      "decode": "Swissmedic",
-      "translations": {
-        "en": "Swissmedic"
+        "en": "Biosimilar",
+        "fr": "Biosimilaire",
+        "ja": "バイオシミラー"
       }
     },
     {
       "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "en": "Other"
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
       }
     }
   ],
-  "CAUSALITY": [
+  "BLINDING_TECHNIQUE": [
     {
-      "code": "CERT",
-      "decode": "Certain",
+      "code": "DOUBLE_BLIND",
+      "decode": "Double blind",
       "translations": {
-        "en": "Certain",
-        "fr": "Certain",
-        "de": "Sicher"
+        "en": "Double blind",
+        "fr": "Double aveugle",
+        "ja": "二重盲検"
       }
     },
     {
-      "code": "PROB",
-      "decode": "Probable",
+      "code": "OPEN_LABEL",
+      "decode": "Open-label",
       "translations": {
-        "en": "Probable",
-        "fr": "Probable",
-        "de": "Wahrscheinlich"
+        "en": "Open-label",
+        "fr": "Ouvert",
+        "ja": "非盲検"
       }
     },
     {
-      "code": "POSS",
-      "decode": "Possible",
+      "code": "SINGLE_BLIND",
+      "decode": "Single blind",
       "translations": {
-        "en": "Possible",
-        "fr": "Possible",
-        "de": "Möglich"
-      }
-    },
-    {
-      "code": "UNLIKELY",
-      "decode": "Unlikely",
-      "translations": {
-        "en": "Unlikely",
-        "fr": "Improbable",
-        "de": "Unwahrscheinlich"
+        "en": "Single blind",
+        "fr": "Simple aveugle",
+        "ja": "単盲検"
       }
     }
   ],
-  "CORR_STATUS": [
+  "CODE_STATUS": [
     {
-      "code": "DRAFT",
-      "decode": "Draft",
+      "code": "CODE_BROKEN",
+      "decode": "Code broken",
       "translations": {
-        "en": "Draft"
+        "en": "Code broken",
+        "fr": "Code levé",
+        "ja": "コード開封済み"
       }
     },
     {
-      "code": "PENDING",
-      "decode": "Pending",
+      "code": "CODE_NOT_BROKEN",
+      "decode": "Code not broken",
       "translations": {
-        "en": "Pending"
+        "en": "Code not broken",
+        "fr": "Code non levé",
+        "ja": "コード未開封"
       }
     },
     {
-      "code": "SENT",
-      "decode": "Sent",
+      "code": "NOT_APPLICABLE",
+      "decode": "Not applicable",
       "translations": {
-        "en": "Sent"
-      }
-    },
-    {
-      "code": "RECEIVED",
-      "decode": "Received",
-      "translations": {
-        "en": "Received"
-      }
-    },
-    {
-      "code": "CLOSED",
-      "decode": "Closed",
-      "translations": {
-        "en": "Closed"
+        "en": "Not applicable",
+        "fr": "Non applicable",
+        "ja": "該当なし"
       }
     }
   ],
-  "CORR_TYPE": [
+  "CONTACT_CATEGORY": [
     {
-      "code": "QUERY",
-      "decode": "Query",
+      "code": "INT_HCP",
+      "decode": "Internal Contact HCP",
       "translations": {
-        "en": "Query"
+        "en": "Internal Contact HCP",
+        "fr": "Contact interne PS",
+        "ja": "社内医療従事者"
       }
     },
     {
-      "code": "RESPONSE",
-      "decode": "Response",
+      "code": "EXT_HCP",
+      "decode": "External Contact HCP",
       "translations": {
-        "en": "Response"
+        "en": "External Contact HCP",
+        "fr": "Contact externe PS",
+        "ja": "社外医療従事者"
       }
     },
     {
-      "code": "FOLLOWUP",
-      "decode": "Follow-up",
+      "code": "INT_NON_HCP",
+      "decode": "Internal Contact Non HCP",
       "translations": {
-        "en": "Follow-up"
+        "en": "Internal Contact Non HCP",
+        "fr": "Contact interne non PS",
+        "ja": "社内非医療従事者"
       }
     },
     {
-      "code": "CLOSURE",
-      "decode": "Closure",
+      "code": "EXT_NON_HCP",
+      "decode": "External Contact Non HCP",
       "translations": {
-        "en": "Closure"
+        "en": "External Contact Non HCP",
+        "fr": "Contact externe non PS",
+        "ja": "社外非医療従事者"
+      }
+    }
+  ],
+  "CONTACT_MEDIUM": [
+    {
+      "code": "EMAIL",
+      "decode": "Email",
+      "translations": {
+        "en": "Email",
+        "fr": "E-mail",
+        "ja": "メール"
+      }
+    },
+    {
+      "code": "PHONE",
+      "decode": "Phone",
+      "translations": {
+        "en": "Phone",
+        "fr": "Téléphone",
+        "ja": "電話"
+      }
+    },
+    {
+      "code": "FAX",
+      "decode": "Fax",
+      "translations": {
+        "en": "Fax",
+        "fr": "Fax",
+        "ja": "ファックス"
+      }
+    },
+    {
+      "code": "POST",
+      "decode": "Post",
+      "translations": {
+        "en": "Post",
+        "fr": "Courrier",
+        "ja": "郵便"
+      }
+    },
+    {
+      "code": "PORTAL",
+      "decode": "Portal",
+      "translations": {
+        "en": "Portal",
+        "fr": "Portail",
+        "ja": "ポータル"
+      }
+    }
+  ],
+  "CONTACT_QUALIFICATION": [
+    {
+      "code": "MD",
+      "decode": "MD (Medical Doctor)",
+      "translations": {
+        "en": "MD (Medical Doctor)",
+        "fr": "Docteur en médecine",
+        "ja": "医学博士"
+      }
+    },
+    {
+      "code": "PHARM",
+      "decode": "PharmD / BPharm",
+      "translations": {
+        "en": "PharmD / BPharm",
+        "fr": "Docteur en pharmacie",
+        "ja": "薬学博士"
+      }
+    },
+    {
+      "code": "PHD",
+      "decode": "PhD",
+      "translations": {
+        "en": "PhD",
+        "fr": "Doctorat",
+        "ja": "博士号"
+      }
+    },
+    {
+      "code": "RN",
+      "decode": "RN (Registered Nurse)",
+      "translations": {
+        "en": "RN (Registered Nurse)",
+        "fr": "Infirmier(ère) diplômé(e)",
+        "ja": "登録看護師"
+      }
+    },
+    {
+      "code": "MSC",
+      "decode": "MSc",
+      "translations": {
+        "en": "MSc",
+        "fr": "Master",
+        "ja": "修士"
+      }
+    },
+    {
+      "code": "BSC",
+      "decode": "BSc",
+      "translations": {
+        "en": "BSc",
+        "fr": "Licence",
+        "ja": "学士"
+      }
+    },
+    {
+      "code": "OTHER",
+      "decode": "Other",
+      "translations": {
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
+      }
+    }
+  ],
+  "CONTACT_SPECIALIZATION": [
+    {
+      "code": "CARDIOLOGY",
+      "decode": "Cardiology",
+      "translations": {
+        "en": "Cardiology",
+        "fr": "Cardiologie",
+        "ja": "循環器科"
+      }
+    },
+    {
+      "code": "ONCOLOGY",
+      "decode": "Oncology",
+      "translations": {
+        "en": "Oncology",
+        "fr": "Oncologie",
+        "ja": "腫瘍科"
+      }
+    },
+    {
+      "code": "NEUROLOGY",
+      "decode": "Neurology",
+      "translations": {
+        "en": "Neurology",
+        "fr": "Neurologie",
+        "ja": "神経科"
+      }
+    },
+    {
+      "code": "INTERNAL_MED",
+      "decode": "Internal Medicine",
+      "translations": {
+        "en": "Internal Medicine",
+        "fr": "Médecine interne",
+        "ja": "内科"
+      }
+    },
+    {
+      "code": "ENDOCRINOLOGY",
+      "decode": "Endocrinology",
+      "translations": {
+        "en": "Endocrinology",
+        "fr": "Endocrinologie",
+        "ja": "内分泌科"
+      }
+    },
+    {
+      "code": "GASTRO",
+      "decode": "Gastroenterology",
+      "translations": {
+        "en": "Gastroenterology",
+        "fr": "Gastroentérologie",
+        "ja": "消化器科"
+      }
+    },
+    {
+      "code": "HAEMATOLOGY",
+      "decode": "Haematology",
+      "translations": {
+        "en": "Haematology",
+        "fr": "Hématologie",
+        "ja": "血液科"
+      }
+    },
+    {
+      "code": "IMMUNOLOGY",
+      "decode": "Immunology",
+      "translations": {
+        "en": "Immunology",
+        "fr": "Immunologie",
+        "ja": "免疫科"
+      }
+    },
+    {
+      "code": "NEPHROLOGY",
+      "decode": "Nephrology",
+      "translations": {
+        "en": "Nephrology",
+        "fr": "Néphrologie",
+        "ja": "腎臓科"
+      }
+    },
+    {
+      "code": "RHEUMATOLOGY",
+      "decode": "Rheumatology",
+      "translations": {
+        "en": "Rheumatology",
+        "fr": "Rhumatologie",
+        "ja": "リウマチ科"
+      }
+    },
+    {
+      "code": "DERMATOLOGY",
+      "decode": "Dermatology",
+      "translations": {
+        "en": "Dermatology",
+        "fr": "Dermatologie",
+        "ja": "皮膚科"
+      }
+    },
+    {
+      "code": "RESPIRATORY",
+      "decode": "Respiratory Medicine",
+      "translations": {
+        "en": "Respiratory Medicine",
+        "fr": "Pneumologie",
+        "ja": "呼吸器科"
+      }
+    },
+    {
+      "code": "CLIN_PHARM",
+      "decode": "Clinical Pharmacology",
+      "translations": {
+        "en": "Clinical Pharmacology",
+        "fr": "Pharmacologie clinique",
+        "ja": "臨床薬理学"
+      }
+    },
+    {
+      "code": "PHARMACY",
+      "decode": "Pharmacy",
+      "translations": {
+        "en": "Pharmacy",
+        "fr": "Pharmacie",
+        "ja": "薬学"
+      }
+    },
+    {
+      "code": "PHARMACOVIG",
+      "decode": "Pharmacovigilance",
+      "translations": {
+        "en": "Pharmacovigilance",
+        "fr": "Pharmacovigilance",
+        "ja": "ファーマコビジランス"
+      }
+    },
+    {
+      "code": "MED_WRITING",
+      "decode": "Medical Writing",
+      "translations": {
+        "en": "Medical Writing",
+        "fr": "Rédaction médicale",
+        "ja": "メディカルライティング"
+      }
+    },
+    {
+      "code": "OTHER",
+      "decode": "Other",
+      "translations": {
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
+      }
+    }
+  ],
+  "CONTACT_TITLE": [
+    {
+      "code": "DR",
+      "decode": "Dr.",
+      "translations": {
+        "en": "Dr.",
+        "fr": "Dr.",
+        "ja": "博士"
+      }
+    },
+    {
+      "code": "PROF",
+      "decode": "Prof.",
+      "translations": {
+        "en": "Prof.",
+        "fr": "Prof.",
+        "ja": "教授"
+      }
+    },
+    {
+      "code": "MR",
+      "decode": "Mr.",
+      "translations": {
+        "en": "Mr.",
+        "fr": "M.",
+        "ja": "氏"
+      }
+    },
+    {
+      "code": "MS",
+      "decode": "Ms.",
+      "translations": {
+        "en": "Ms.",
+        "fr": "Mme.",
+        "ja": "様"
+      }
+    },
+    {
+      "code": "MRS",
+      "decode": "Mrs.",
+      "translations": {
+        "en": "Mrs.",
+        "fr": "Mme.",
+        "ja": "様"
+      }
+    },
+    {
+      "code": "MISS",
+      "decode": "Miss",
+      "translations": {
+        "en": "Miss",
+        "fr": "Mlle.",
+        "ja": "様"
       }
     }
   ],
@@ -2282,114 +757,404 @@ const CODELIST_REGISTRY = {
       }
     }
   ],
-  "DIST_METHOD": [
+  "CQ_APPLICABLE_TO": [
+    {
+      "code": "ICSR",
+      "decode": "ICSR Cases",
+      "translations": {
+        "en": "ICSR Cases",
+        "fr": "Cas ICSR",
+        "ja": "ICSRケース"
+      }
+    },
+    {
+      "code": "LITERATURE",
+      "decode": "Literature Cases",
+      "translations": {
+        "en": "Literature Cases",
+        "fr": "Cas de littérature",
+        "ja": "文献ケース"
+      }
+    },
+    {
+      "code": "EMAIL",
+      "decode": "Email Cases",
+      "translations": {
+        "en": "Email Cases",
+        "fr": "Cas par email",
+        "ja": "メールケース"
+      }
+    },
+    {
+      "code": "ALL",
+      "decode": "All Cases",
+      "translations": {
+        "en": "All Cases",
+        "fr": "Tous les cas",
+        "ja": "全ケース"
+      }
+    }
+  ],
+  "CQ_CATEGORY": [
+    {
+      "code": "PATIENT_INFO",
+      "decode": "Patient Information",
+      "translations": {
+        "en": "Patient Information",
+        "fr": "Informations patient",
+        "ja": "患者情報"
+      }
+    },
+    {
+      "code": "DRUG_INFO",
+      "decode": "Drug Information",
+      "translations": {
+        "en": "Drug Information",
+        "fr": "Informations médicament",
+        "ja": "薬剤情報"
+      }
+    },
+    {
+      "code": "EVENT_INFO",
+      "decode": "Event Information",
+      "translations": {
+        "en": "Event Information",
+        "fr": "Informations événement",
+        "ja": "事象情報"
+      }
+    },
+    {
+      "code": "REPORTER_INFO",
+      "decode": "Reporter Information",
+      "translations": {
+        "en": "Reporter Information",
+        "fr": "Informations déclarant",
+        "ja": "報告者情報"
+      }
+    },
+    {
+      "code": "LITERATURE",
+      "decode": "Literature",
+      "translations": {
+        "en": "Literature",
+        "fr": "Littérature",
+        "ja": "文献"
+      }
+    },
+    {
+      "code": "EMAIL_CASE",
+      "decode": "Email Case",
+      "translations": {
+        "en": "Email Case",
+        "fr": "Cas par email",
+        "ja": "メールケース"
+      }
+    },
+    {
+      "code": "OTHER",
+      "decode": "Other",
+      "translations": {
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
+      }
+    }
+  ],
+  "CQ_CHANNEL": [
     {
       "code": "EMAIL",
       "decode": "Email",
       "translations": {
-        "en": "Email"
+        "en": "Email",
+        "fr": "E-mail",
+        "ja": "メール"
       }
     },
     {
-      "code": "PORTAL",
-      "decode": "Investigator Portal",
+      "code": "PHONE",
+      "decode": "Phone",
       "translations": {
-        "en": "Investigator Portal"
+        "en": "Phone",
+        "fr": "Téléphone",
+        "ja": "電話"
       }
     },
     {
       "code": "FAX",
       "decode": "Fax",
       "translations": {
-        "en": "Fax"
+        "en": "Fax",
+        "fr": "Fax",
+        "ja": "ファックス"
+      }
+    },
+    {
+      "code": "PORTAL",
+      "decode": "Portal",
+      "translations": {
+        "en": "Portal",
+        "fr": "Portail",
+        "ja": "ポータル"
       }
     },
     {
       "code": "POST",
       "decode": "Post",
       "translations": {
-        "en": "Post"
+        "en": "Post",
+        "fr": "Courrier",
+        "ja": "郵便"
       }
     }
   ],
-  "DIST_STATUS": [
+  "CQ_RESPONSE_TYPE": [
     {
-      "code": "PENDING",
-      "decode": "Pending",
+      "code": "FREE_TEXT",
+      "decode": "Free Text",
       "translations": {
-        "en": "Pending"
+        "en": "Free Text",
+        "fr": "Texte libre",
+        "ja": "自由記述"
       }
     },
     {
-      "code": "SENT",
-      "decode": "Sent",
+      "code": "DATE",
+      "decode": "Date",
       "translations": {
-        "en": "Sent"
+        "en": "Date",
+        "fr": "Date",
+        "ja": "日付"
       }
     },
     {
-      "code": "ACKNOWLEDGED",
-      "decode": "Acknowledged",
+      "code": "YES_NO",
+      "decode": "Yes / No",
       "translations": {
-        "en": "Acknowledged"
+        "en": "Yes / No",
+        "fr": "Oui / Non",
+        "ja": "はい/いいえ"
       }
     },
     {
-      "code": "FAILED",
-      "decode": "Failed",
+      "code": "CODELIST",
+      "decode": "Codelist",
       "translations": {
-        "en": "Failed"
+        "en": "Codelist",
+        "fr": "Liste de codes",
+        "ja": "コードリスト"
       }
     }
   ],
-  "DOSAGE_FORM": [
+  "CQ_SUB_CATEGORY": [
     {
-      "code": "TABLET",
-      "decode": "Tablet",
+      "code": "DEMOGRAPHICS",
+      "decode": "Demographics",
       "translations": {
-        "en": "Tablet"
+        "en": "Demographics",
+        "fr": "Données démographiques",
+        "ja": "人口統計"
       }
     },
     {
-      "code": "CAPSULE",
-      "decode": "Capsule",
+      "code": "MEDICAL_HISTORY",
+      "decode": "Medical History",
       "translations": {
-        "en": "Capsule"
+        "en": "Medical History",
+        "fr": "Antécédents médicaux",
+        "ja": "病歴"
       }
     },
     {
-      "code": "SOLUTION",
-      "decode": "Solution for Injection",
+      "code": "DOSING",
+      "decode": "Dosing",
       "translations": {
-        "en": "Solution for Injection"
+        "en": "Dosing",
+        "fr": "Posologie",
+        "ja": "用量"
       }
     },
     {
-      "code": "SUSPENSION",
-      "decode": "Suspension",
+      "code": "INDICATION",
+      "decode": "Indication",
       "translations": {
-        "en": "Suspension"
+        "en": "Indication",
+        "fr": "Indication",
+        "ja": "適応症"
       }
     },
     {
-      "code": "PATCH",
-      "decode": "Transdermal Patch",
+      "code": "ACTION_TAKEN",
+      "decode": "Action Taken",
       "translations": {
-        "en": "Transdermal Patch"
+        "en": "Action Taken",
+        "fr": "Mesure prise",
+        "ja": "措置"
       }
     },
     {
-      "code": "INHALER",
-      "decode": "Inhaler",
+      "code": "RECHALLENGE",
+      "decode": "Rechallenge",
       "translations": {
-        "en": "Inhaler"
+        "en": "Rechallenge",
+        "fr": "Réintroduction",
+        "ja": "再投与"
       }
     },
     {
-      "code": "CREAM",
-      "decode": "Cream",
+      "code": "DECHALLENGE",
+      "decode": "Dechallenge",
       "translations": {
-        "en": "Cream"
+        "en": "Dechallenge",
+        "fr": "Arrêt du traitement",
+        "ja": "投与中止"
+      }
+    },
+    {
+      "code": "PRODUCT",
+      "decode": "Product",
+      "translations": {
+        "en": "Product",
+        "fr": "Produit",
+        "ja": "製品"
+      }
+    },
+    {
+      "code": "TIMELINE",
+      "decode": "Timeline",
+      "translations": {
+        "en": "Timeline",
+        "fr": "Chronologie",
+        "ja": "タイムライン"
+      }
+    },
+    {
+      "code": "OUTCOME",
+      "decode": "Outcome",
+      "translations": {
+        "en": "Outcome",
+        "fr": "Issue",
+        "ja": "転帰"
+      }
+    },
+    {
+      "code": "SERIOUSNESS",
+      "decode": "Seriousness",
+      "translations": {
+        "en": "Seriousness",
+        "fr": "Gravité",
+        "ja": "重篤性"
+      }
+    },
+    {
+      "code": "CLINICAL",
+      "decode": "Clinical",
+      "translations": {
+        "en": "Clinical",
+        "fr": "Clinique",
+        "ja": "臨床"
+      }
+    },
+    {
+      "code": "QUALIFICATION",
+      "decode": "Qualification",
+      "translations": {
+        "en": "Qualification",
+        "fr": "Qualification",
+        "ja": "資格"
+      }
+    },
+    {
+      "code": "CONTACT",
+      "decode": "Contact",
+      "translations": {
+        "en": "Contact",
+        "fr": "Contact",
+        "ja": "連絡先"
+      }
+    },
+    {
+      "code": "REFERENCE",
+      "decode": "Reference",
+      "translations": {
+        "en": "Reference",
+        "fr": "Référence",
+        "ja": "参考文献"
+      }
+    },
+    {
+      "code": "CONSENT",
+      "decode": "Consent",
+      "translations": {
+        "en": "Consent",
+        "fr": "Consentement",
+        "ja": "同意"
+      }
+    }
+  ],
+  "CQL_APPLICABLE_TO": [
+    {
+      "code": "ICSR",
+      "decode": "ICSR Cases",
+      "translations": {
+        "en": "ICSR Cases"
+      }
+    },
+    {
+      "code": "LITERATURE",
+      "decode": "Literature Cases",
+      "translations": {
+        "en": "Literature Cases"
+      }
+    },
+    {
+      "code": "EMAIL",
+      "decode": "Email Cases",
+      "translations": {
+        "en": "Email Cases"
+      }
+    },
+    {
+      "code": "ALL",
+      "decode": "All",
+      "translations": {
+        "en": "All"
+      }
+    }
+  ],
+  "CQL_CATEGORY": [
+    {
+      "code": "CLINICAL",
+      "decode": "Clinical",
+      "translations": {
+        "en": "Clinical"
+      }
+    },
+    {
+      "code": "REGULATORY",
+      "decode": "Regulatory",
+      "translations": {
+        "en": "Regulatory"
+      }
+    },
+    {
+      "code": "PRODUCT",
+      "decode": "Product",
+      "translations": {
+        "en": "Product"
+      }
+    },
+    {
+      "code": "PATIENT",
+      "decode": "Patient",
+      "translations": {
+        "en": "Patient"
+      }
+    },
+    {
+      "code": "REPORTER",
+      "decode": "Reporter",
+      "translations": {
+        "en": "Reporter"
       }
     },
     {
@@ -2400,115 +1165,158 @@ const CODELIST_REGISTRY = {
       }
     }
   ],
-  "DOSE_UNIT": [
+  "CQL_RESPONSE_TYPE": [
     {
-      "code": "MG",
-      "decode": "mg",
+      "code": "FREE_TEXT",
+      "decode": "Free Text",
       "translations": {
-        "en": "mg"
+        "en": "Free Text"
       }
     },
     {
-      "code": "G",
-      "decode": "g",
+      "code": "DATE",
+      "decode": "Date",
       "translations": {
-        "en": "g"
+        "en": "Date"
       }
     },
     {
-      "code": "ML",
-      "decode": "mL",
+      "code": "YES_NO",
+      "decode": "Yes / No",
       "translations": {
-        "en": "mL"
+        "en": "Yes / No"
       }
     },
     {
-      "code": "MCG",
-      "decode": "mcg",
+      "code": "CODELIST",
+      "decode": "Codelist",
       "translations": {
-        "en": "mcg"
+        "en": "Codelist"
+      }
+    },
+    {
+      "code": "NUMBER",
+      "decode": "Number",
+      "translations": {
+        "en": "Number"
       }
     }
   ],
-  "DRUG_TYPE": [
+  "DEPT_TYPE": [
     {
-      "code": "SUS",
-      "decode": "Suspect",
+      "code": "SAFETY",
+      "decode": "Drug Safety",
       "translations": {
-        "en": "Suspect",
-        "fr": "Suspect",
-        "de": "Verdächtig"
+        "en": "Drug Safety"
       }
     },
     {
-      "code": "CONV",
-      "decode": "Concomitant",
+      "code": "REGULATORY",
+      "decode": "Regulatory Affairs",
       "translations": {
-        "en": "Concomitant",
-        "fr": "Concomitant",
-        "de": "Begleitend"
+        "en": "Regulatory Affairs"
       }
     },
     {
-      "code": "INTER",
-      "decode": "Interacting",
+      "code": "MEDICAL",
+      "decode": "Medical Affairs",
       "translations": {
-        "en": "Interacting",
-        "fr": "En interaction",
-        "de": "Interagierend"
+        "en": "Medical Affairs"
+      }
+    },
+    {
+      "code": "CLINICAL",
+      "decode": "Clinical",
+      "translations": {
+        "en": "Clinical"
+      }
+    },
+    {
+      "code": "IT",
+      "decode": "IT",
+      "translations": {
+        "en": "IT"
+      }
+    },
+    {
+      "code": "QUALITY",
+      "decode": "Quality",
+      "translations": {
+        "en": "Quality"
+      }
+    },
+    {
+      "code": "OTHER",
+      "decode": "Other",
+      "translations": {
+        "en": "Other"
       }
     }
   ],
-  "E2B_PROFILE": [
+  "EC_STATUS": [
     {
-      "code": "E2B_R2",
-      "decode": "ICH E2B(R2)",
+      "code": "NEW",
+      "decode": "New",
       "translations": {
-        "en": "ICH E2B(R2)"
+        "en": "New",
+        "fr": "Nouveau",
+        "ja": "新規"
       }
     },
     {
-      "code": "E2B_R3",
-      "decode": "ICH E2B(R3)",
+      "code": "IN_REVIEW",
+      "decode": "In Review",
       "translations": {
-        "en": "ICH E2B(R3)"
+        "en": "In Review",
+        "fr": "En révision",
+        "ja": "レビュー中"
       }
     },
     {
-      "code": "NONE",
-      "decode": "None",
+      "code": "TRIAGED",
+      "decode": "Triaged",
       "translations": {
-        "en": "None"
+        "en": "Triaged",
+        "fr": "Trié",
+        "ja": "トリアージ済み"
+      }
+    },
+    {
+      "code": "CLOSED",
+      "decode": "Closed",
+      "translations": {
+        "en": "Closed",
+        "fr": "Fermé",
+        "ja": "クローズ"
       }
     }
   ],
-  "EDI_METHOD": [
+  "EC_TRIAGE_DECISION": [
     {
-      "code": "AS2",
-      "decode": "AS2",
+      "code": "CREATE_CASE",
+      "decode": "Create ICSR Case",
       "translations": {
-        "en": "AS2"
+        "en": "Create ICSR Case",
+        "fr": "Créer un cas ICSR",
+        "ja": "ICSRケース作成"
       }
     },
     {
-      "code": "SFTP",
-      "decode": "SFTP",
+      "code": "NON_SAFETY",
+      "decode": "Non-Safety",
       "translations": {
-        "en": "SFTP"
+        "en": "Non-Safety",
+        "fr": "Non lié à la sécurité",
+        "ja": "非安全性"
       }
     },
     {
-      "code": "EMAIL",
-      "decode": "Email",
+      "code": "PENDING_REVIEW",
+      "decode": "Pending Review",
       "translations": {
-        "en": "Email"
-      }
-    },
-    {
-      "code": "MANUAL",
-      "decode": "Manual",
-      "translations": {
-        "en": "Manual"
+        "en": "Pending Review",
+        "fr": "En attente de révision",
+        "ja": "レビュー待ち"
       }
     }
   ],
@@ -2517,1034 +1325,803 @@ const CODELIST_REGISTRY = {
       "code": "PDF",
       "decode": "PDF",
       "translations": {
-        "en": "PDF"
+        "en": "PDF",
+        "fr": "PDF",
+        "ja": "PDF"
       }
     },
     {
-      "code": "DOCX",
+      "code": "WORD",
       "decode": "Word Document",
       "translations": {
-        "en": "Word Document"
+        "en": "Word Document",
+        "fr": "Document Word",
+        "ja": "Wordドキュメント"
       }
     },
     {
-      "code": "XLSX",
+      "code": "EXCEL",
       "decode": "Excel Spreadsheet",
       "translations": {
-        "en": "Excel Spreadsheet"
+        "en": "Excel Spreadsheet",
+        "fr": "Feuille Excel",
+        "ja": "Excelスプレッドシート"
+      }
+    },
+    {
+      "code": "IMAGE",
+      "decode": "Image",
+      "translations": {
+        "en": "Image",
+        "fr": "Image",
+        "ja": "画像"
+      }
+    },
+    {
+      "code": "TEXT",
+      "decode": "Text File",
+      "translations": {
+        "en": "Text File",
+        "fr": "Fichier texte",
+        "ja": "テキストファイル"
       }
     },
     {
       "code": "XML",
       "decode": "XML",
       "translations": {
-        "en": "XML"
-      }
-    },
-    {
-      "code": "TXT",
-      "decode": "Text File",
-      "translations": {
-        "en": "Text File"
+        "en": "XML",
+        "fr": "XML",
+        "ja": "XML"
       }
     },
     {
       "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "en": "Other"
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
       }
     }
   ],
-  "ICSR_ACTION_TAKEN": [
+  "FORM_OF_ADMIN": [
     {
-      "code": "withdrawn",
-      "decode": "Drug Withdrawn",
+      "code": "TABLET",
+      "decode": "Tablet",
       "translations": {
-        "r2": "1",
-        "r3": "withdrawn",
-        "label": "Drug Withdrawn",
-        "fr": "Medicament arrete",
-        "ja": "投与中止",
-        "zh": "停药"
+        "en": "Tablet",
+        "fr": "Comprimé",
+        "ja": "錠剤"
       }
     },
     {
-      "code": "doseReduced",
-      "decode": "Dose Reduced",
+      "code": "CAPSULE",
+      "decode": "Capsule",
       "translations": {
-        "r2": "2",
-        "r3": "doseReduced",
-        "label": "Dose Reduced",
-        "fr": "Dose reduite",
-        "ja": "減量",
-        "zh": "减量"
+        "en": "Capsule",
+        "fr": "Gélule",
+        "ja": "カプセル"
       }
     },
     {
-      "code": "doseIncreased",
-      "decode": "Dose Increased",
+      "code": "SOLUTION",
+      "decode": "Solution for injection",
       "translations": {
-        "r2": "3",
-        "r3": "doseIncreased",
-        "label": "Dose Increased",
-        "fr": "Dose augmentee",
-        "ja": "増量",
-        "zh": "增量"
+        "en": "Solution for injection",
+        "fr": "Solution injectable",
+        "ja": "注射液"
       }
     },
     {
-      "code": "notChanged",
-      "decode": "Not Changed",
+      "code": "POWDER",
+      "decode": "Powder for solution",
       "translations": {
-        "r2": "4",
-        "r3": "notChanged",
-        "label": "Not Changed",
-        "fr": "Non modifie",
-        "ja": "変更なし",
-        "zh": "未更改"
+        "en": "Powder for solution",
+        "fr": "Poudre pour solution",
+        "ja": "溶解用粉末"
       }
     },
     {
-      "code": "unknown",
-      "decode": "Unknown",
+      "code": "SUSPENSION",
+      "decode": "Suspension",
       "translations": {
-        "r2": "5",
-        "r3": "unknown",
-        "label": "Unknown",
-        "fr": "Inconnu",
-        "ja": "不明",
-        "zh": "未知"
+        "en": "Suspension",
+        "fr": "Suspension",
+        "ja": "懸濁液"
       }
     },
     {
-      "code": "notApplicable",
-      "decode": "Not Applicable",
+      "code": "CREAM",
+      "decode": "Cream",
       "translations": {
-        "r2": "6",
-        "r3": "notApplicable",
-        "label": "Not Applicable",
-        "fr": "Sans objet",
-        "ja": "該当なし",
-        "zh": "不适用"
-      }
-    }
-  ],
-  "ICSR_AGE_GROUP": [
-    {
-      "code": "neonate",
-      "decode": "Neonate (0-27 days)",
-      "translations": {
-        "r2": "",
-        "r3": "neonate",
-        "label": "Neonate",
-        "fr": "Nouveau-ne",
-        "ja": "新生児",
-        "zh": "新生儿"
+        "en": "Cream",
+        "fr": "Crème",
+        "ja": "クリーム"
       }
     },
     {
-      "code": "infant",
-      "decode": "Infant (28 days-23 mo)",
+      "code": "OINTMENT",
+      "decode": "Ointment",
       "translations": {
-        "r2": "",
-        "r3": "infant",
-        "label": "Infant",
-        "fr": "Nourrisson",
-        "ja": "乳児",
-        "zh": "婴儿"
+        "en": "Ointment",
+        "fr": "Pommade",
+        "ja": "軟膏"
       }
     },
     {
-      "code": "child",
-      "decode": "Child (2-11 yr)",
+      "code": "PATCH",
+      "decode": "Transdermal patch",
       "translations": {
-        "r2": "",
-        "r3": "child",
-        "label": "Child",
-        "fr": "Enfant",
-        "ja": "小児",
-        "zh": "儿童"
+        "en": "Transdermal patch",
+        "fr": "Patch transdermique",
+        "ja": "経皮パッチ"
       }
     },
     {
-      "code": "adolescent",
-      "decode": "Adolescent (12-17 yr)",
+      "code": "INHALER",
+      "decode": "Inhalation solution",
       "translations": {
-        "r2": "",
-        "r3": "adolescent",
-        "label": "Adolescent",
-        "fr": "Adolescent",
-        "ja": "青少年",
-        "zh": "青少年"
+        "en": "Inhalation solution",
+        "fr": "Solution pour inhalation",
+        "ja": "吸入液"
       }
     },
     {
-      "code": "adult",
-      "decode": "Adult (18-64 yr)",
+      "code": "DROPS",
+      "decode": "Eye drops",
       "translations": {
-        "r2": "",
-        "r3": "adult",
-        "label": "Adult",
-        "fr": "Adulte",
-        "ja": "成人",
-        "zh": "成人"
+        "en": "Eye drops",
+        "fr": "Collyre",
+        "ja": "点眼液"
       }
     },
     {
-      "code": "elderly",
-      "decode": "Elderly (65+ yr)",
+      "code": "SUPPOSITORY",
+      "decode": "Suppository",
       "translations": {
-        "r2": "",
-        "r3": "elderly",
-        "label": "Elderly",
-        "fr": "Personne agee",
-        "ja": "高齢者",
-        "zh": "老年人"
-      }
-    }
-  ],
-  "ICSR_AGE_UNIT": [
-    {
-      "code": "yr",
-      "decode": "Year",
-      "translations": {
-        "r2": "801",
-        "r3": "a",
-        "label": "Year",
-        "fr": "Annee",
-        "ja": "年",
-        "zh": "年"
+        "en": "Suppository",
+        "fr": "Suppositoire",
+        "ja": "坐剤"
       }
     },
     {
-      "code": "mo",
-      "decode": "Month",
+      "code": "SYRUP",
+      "decode": "Oral solution / Syrup",
       "translations": {
-        "r2": "802",
-        "r3": "mo",
-        "label": "Month",
-        "fr": "Mois",
-        "ja": "月",
-        "zh": "月"
+        "en": "Oral solution / Syrup",
+        "fr": "Solution orale / Sirop",
+        "ja": "内服液・シロップ"
       }
     },
     {
-      "code": "wk",
-      "decode": "Week",
-      "translations": {
-        "r2": "803",
-        "r3": "wk",
-        "label": "Week",
-        "fr": "Semaine",
-        "ja": "週",
-        "zh": "周"
-      }
-    },
-    {
-      "code": "dy",
-      "decode": "Day",
-      "translations": {
-        "r2": "804",
-        "r3": "d",
-        "label": "Day",
-        "fr": "Jour",
-        "ja": "日",
-        "zh": "天"
-      }
-    },
-    {
-      "code": "hr",
-      "decode": "Hour",
-      "translations": {
-        "r2": "805",
-        "r3": "h",
-        "label": "Hour",
-        "fr": "Heure",
-        "ja": "時間",
-        "zh": "小时"
-      }
-    }
-  ],
-  "ICSR_CAUSALITY": [
-    {
-      "code": "related",
-      "decode": "Related",
-      "translations": {
-        "r2": "1",
-        "r3": "related",
-        "label": "Related",
-        "fr": "Lie",
-        "ja": "関連あり",
-        "zh": "相关"
-      }
-    },
-    {
-      "code": "notRelated",
-      "decode": "Not Related",
-      "translations": {
-        "r2": "2",
-        "r3": "notRelated",
-        "label": "Not Related",
-        "fr": "Non lie",
-        "ja": "関連なし",
-        "zh": "不相关"
-      }
-    },
-    {
-      "code": "unassessable",
-      "decode": "Unassessable",
-      "translations": {
-        "r2": "3",
-        "r3": "unassessable",
-        "label": "Unassessable",
-        "fr": "Non evaluable",
-        "ja": "評価不能",
-        "zh": "无法评估"
-      }
-    }
-  ],
-  "ICSR_DOSE_UNIT": [
-    {
-      "code": "mg",
-      "decode": "Milligram",
-      "translations": {
-        "r2": "mg",
-        "r3": "mg",
-        "label": "Milligram",
-        "fr": "Milligramme",
-        "ja": "ミリグラム",
-        "zh": "毫克"
-      }
-    },
-    {
-      "code": "g",
-      "decode": "Gram",
-      "translations": {
-        "r2": "g",
-        "r3": "g",
-        "label": "Gram",
-        "fr": "Gramme",
-        "ja": "グラム",
-        "zh": "克"
-      }
-    },
-    {
-      "code": "mL",
-      "decode": "Millilitre",
-      "translations": {
-        "r2": "mL",
-        "r3": "mL",
-        "label": "Millilitre",
-        "fr": "Millilitre",
-        "ja": "ミリリットル",
-        "zh": "毫升"
-      }
-    },
-    {
-      "code": "IU",
-      "decode": "Int. Units",
-      "translations": {
-        "r2": "IU",
-        "r3": "[iU]",
-        "label": "Int. Units",
-        "fr": "UI",
-        "ja": "国際単位",
-        "zh": "国际单位"
-      }
-    },
-    {
-      "code": "mcg",
-      "decode": "Microgram",
-      "translations": {
-        "r2": "mcg",
-        "r3": "ug",
-        "label": "Microgram",
-        "fr": "Microgramme",
-        "ja": "マイクログラム",
-        "zh": "微克"
-      }
-    }
-  ],
-  "ICSR_DRUG_CHAR": [
-    {
-      "code": "suspect",
-      "decode": "Suspect",
-      "translations": {
-        "r2": "1",
-        "r3": "suspect",
-        "label": "Suspect",
-        "fr": "Suspect",
-        "ja": "被疑薬",
-        "zh": "可疑药物"
-      }
-    },
-    {
-      "code": "concomitant",
-      "decode": "Concomitant",
-      "translations": {
-        "r2": "2",
-        "r3": "concomitant",
-        "label": "Concomitant",
-        "fr": "Concomitant",
-        "ja": "併用薬",
-        "zh": "合并用药"
-      }
-    },
-    {
-      "code": "interacting",
-      "decode": "Interacting",
-      "translations": {
-        "r2": "3",
-        "r3": "interacting",
-        "label": "Interacting",
-        "fr": "En interaction",
-        "ja": "相互作用薬",
-        "zh": "相互作用药"
-      }
-    }
-  ],
-  "ICSR_ORG_TYPE": [
-    {
-      "code": "pharma",
-      "decode": "Pharmaceutical Company",
-      "translations": {
-        "r2": "1",
-        "r3": "pharmaceuticalCompany",
-        "label": "Pharmaceutical Company",
-        "fr": "Societe pharmaceutique",
-        "ja": "製薬会社",
-        "zh": "制药公司"
-      }
-    },
-    {
-      "code": "regulatory",
-      "decode": "Regulatory Authority",
-      "translations": {
-        "r2": "2",
-        "r3": "regulatoryAuthority",
-        "label": "Regulatory Authority",
-        "fr": "Autorite reglementaire",
-        "ja": "規制当局",
-        "zh": "监管机构"
-      }
-    },
-    {
-      "code": "other",
+      "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "r2": "3",
-        "r3": "other",
-        "label": "Other",
+        "en": "Other",
         "fr": "Autre",
-        "ja": "その他",
-        "zh": "其他"
+        "ja": "その他"
       }
     }
   ],
-  "ICSR_OUTCOME": [
+  "HEALTH_AUTHORITY": [
     {
-      "code": "recovered",
-      "decode": "Recovered / Resolved",
+      "code": "FDA",
+      "decode": "FDA (USA)",
       "translations": {
-        "r2": "1",
-        "r3": "recovered",
-        "label": "Recovered / Resolved",
-        "fr": "Gueri / Resolu",
-        "ja": "回復",
-        "zh": "已恢复"
+        "en": "FDA (USA)",
+        "fr": "FDA (États-Unis)",
+        "ja": "FDA（米国）"
       }
     },
     {
-      "code": "recovering",
-      "decode": "Recovering / Resolving",
+      "code": "EMA",
+      "decode": "EMA (European Union)",
       "translations": {
-        "r2": "2",
-        "r3": "recovering",
-        "label": "Recovering / Resolving",
-        "fr": "En cours de guerison",
-        "ja": "回復中",
-        "zh": "恢复中"
+        "en": "EMA (European Union)",
+        "fr": "EMA (Union européenne)",
+        "ja": "EMA（欧州連合）"
       }
     },
     {
-      "code": "notRecovered",
-      "decode": "Not Recovered / Not Resolved",
+      "code": "MHRA",
+      "decode": "MHRA (United Kingdom)",
       "translations": {
-        "r2": "3",
-        "r3": "notRecovered",
-        "label": "Not Recovered / Not Resolved",
-        "fr": "Non gueri / Non resolu",
-        "ja": "未回復",
-        "zh": "未恢复"
+        "en": "MHRA (United Kingdom)",
+        "fr": "MHRA (Royaume-Uni)",
+        "ja": "MHRA（英国）"
       }
     },
     {
-      "code": "fatal",
-      "decode": "Fatal",
+      "code": "PMDA",
+      "decode": "PMDA (Japan)",
       "translations": {
-        "r2": "4",
-        "r3": "fatal",
-        "label": "Fatal",
-        "fr": "Fatal",
-        "ja": "死亡",
-        "zh": "死亡"
+        "en": "PMDA (Japan)",
+        "fr": "PMDA (Japon)",
+        "ja": "PMDA（日本）"
       }
     },
     {
-      "code": "unknown",
-      "decode": "Unknown",
+      "code": "BFARM",
+      "decode": "BfArM (Germany)",
       "translations": {
-        "r2": "5",
-        "r3": "unknown",
-        "label": "Unknown",
-        "fr": "Inconnu",
-        "ja": "不明",
-        "zh": "未知"
+        "en": "BfArM (Germany)",
+        "fr": "BfArM (Allemagne)",
+        "ja": "BfArM（ドイツ）"
       }
     },
     {
-      "code": "recoveredWithSequalae",
-      "decode": "Recovered with Sequelae",
+      "code": "ANSM",
+      "decode": "ANSM (France)",
       "translations": {
-        "r2": "6",
-        "r3": "recoveredWithSequelae",
-        "label": "Recovered with Sequelae",
-        "fr": "Gueri avec sequelles",
-        "ja": "後遺症あり回復",
-        "zh": "有后遗症恢复"
-      }
-    }
-  ],
-  "ICSR_PRODUCT_TYPE": [
-    {
-      "code": "medicinal",
-      "decode": "Medicinal Product",
-      "translations": {
-        "r2": "01",
-        "r3": "medicinalProduct",
-        "label": "Medicinal Product",
-        "fr": "Medicament",
-        "ja": "医薬品",
-        "zh": "药品"
+        "en": "ANSM (France)",
+        "fr": "ANSM (France)",
+        "ja": "ANSM（フランス）"
       }
     },
     {
-      "code": "vaccine",
-      "decode": "Vaccine",
+      "code": "CDSCO",
+      "decode": "CDSCO (India)",
       "translations": {
-        "r2": "02",
-        "r3": "vaccine",
-        "label": "Vaccine",
-        "fr": "Vaccin",
-        "ja": "ワクチン",
-        "zh": "疫苗"
+        "en": "CDSCO (India)",
+        "fr": "CDSCO (Inde)",
+        "ja": "CDSCO（インド）"
       }
     },
     {
-      "code": "biological",
-      "decode": "Biological",
+      "code": "TGA",
+      "decode": "TGA (Australia)",
       "translations": {
-        "r2": "03",
-        "r3": "biological",
-        "label": "Biological",
-        "fr": "Biologique",
-        "ja": "生物製剤",
-        "zh": "生物制品"
-      }
-    }
-  ],
-  "ICSR_QUALIFICATION": [
-    {
-      "code": "physician",
-      "decode": "Physician",
-      "translations": {
-        "r2": "1",
-        "r3": "physician",
-        "label": "Physician",
-        "fr": "Medecin",
-        "ja": "医師",
-        "zh": "医生"
+        "en": "TGA (Australia)",
+        "fr": "TGA (Australie)",
+        "ja": "TGA（オーストラリア）"
       }
     },
     {
-      "code": "pharmacist",
-      "decode": "Pharmacist",
+      "code": "HEALTH_CA",
+      "decode": "Health Canada",
       "translations": {
-        "r2": "2",
-        "r3": "pharmacist",
-        "label": "Pharmacist",
-        "fr": "Pharmacien",
-        "ja": "薬剤師",
-        "zh": "药剂师"
+        "en": "Health Canada",
+        "fr": "Santé Canada",
+        "ja": "ヘルスカナダ"
       }
     },
     {
-      "code": "otherHcp",
-      "decode": "Other Health Care Professional",
+      "code": "SWISSMEDIC",
+      "decode": "Swissmedic (Switzerland)",
       "translations": {
-        "r2": "3",
-        "r3": "otherHealthcareProfessional",
-        "label": "Other Health Care Professional",
-        "fr": "Autre professionnel de sante",
-        "ja": "その他の医療専門家",
-        "zh": "其他医疗专业人员"
+        "en": "Swissmedic (Switzerland)",
+        "fr": "Swissmedic (Suisse)",
+        "ja": "スイスメディック（スイス）"
       }
     },
     {
-      "code": "lawyer",
-      "decode": "Lawyer",
+      "code": "ANVISA",
+      "decode": "ANVISA (Brazil)",
       "translations": {
-        "r2": "4",
-        "r3": "lawyer",
-        "label": "Lawyer",
-        "fr": "Avocat",
-        "ja": "弁護士",
-        "zh": "律师"
+        "en": "ANVISA (Brazil)",
+        "fr": "ANVISA (Brésil)",
+        "ja": "ANVISA（ブラジル）"
       }
     },
     {
-      "code": "consumer",
-      "decode": "Consumer / Patient",
+      "code": "HSA",
+      "decode": "HSA (Singapore)",
       "translations": {
-        "r2": "5",
-        "r3": "consumer",
-        "label": "Consumer / Patient",
-        "fr": "Consommateur / Patient",
-        "ja": "消費者・患者",
-        "zh": "消费者/患者"
-      }
-    }
-  ],
-  "ICSR_REPORT_TYPE": [
-    {
-      "code": "spontaneous",
-      "decode": "Spontaneous Report",
-      "translations": {
-        "r2": "1",
-        "r3": "spontaneous",
-        "label": "Spontaneous Report",
-        "fr": "Rapport spontane",
-        "ja": "自発報告",
-        "zh": "自发报告"
+        "en": "HSA (Singapore)",
+        "fr": "HSA (Singapour)",
+        "ja": "HSA（シンガポール）"
       }
     },
     {
-      "code": "study",
-      "decode": "Study Report",
-      "translations": {
-        "r2": "2",
-        "r3": "study",
-        "label": "Study Report",
-        "fr": "Rapport d etude",
-        "ja": "試験報告",
-        "zh": "研究报告"
-      }
-    },
-    {
-      "code": "other",
+      "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "r2": "3",
-        "r3": "other",
-        "label": "Other",
+        "en": "Other",
         "fr": "Autre",
-        "ja": "その他",
-        "zh": "其他"
-      }
-    },
-    {
-      "code": "notAvailable",
-      "decode": "Not Available",
-      "translations": {
-        "r2": "4",
-        "r3": "notAvailable",
-        "label": "Not Available",
-        "fr": "Non disponible",
-        "ja": "不明",
-        "zh": "不可用"
+        "ja": "その他"
       }
     }
   ],
-  "ICSR_REPORTER_TYPE": [
+  "INGREDIENT_CLASS": [
     {
-      "code": "spontaneous",
-      "decode": "Spontaneous",
+      "code": "CONSUMER",
+      "decode": "Consumer",
       "translations": {
-        "r2": "1",
-        "r3": "spontaneous",
-        "label": "Spontaneous",
-        "fr": "Spontane",
-        "ja": "自発",
-        "zh": "自发"
+        "en": "Consumer",
+        "fr": "Consommateur",
+        "ja": "消費者"
       }
     },
     {
-      "code": "study",
-      "decode": "Study",
+      "code": "NON_PHARMA",
+      "decode": "Non-Pharmaceutical Product",
       "translations": {
-        "r2": "2",
-        "r3": "study",
-        "label": "Study",
-        "fr": "Etude",
-        "ja": "試験",
-        "zh": "研究"
+        "en": "Non-Pharmaceutical Product",
+        "fr": "Produit non pharmaceutique",
+        "ja": "非医薬品"
       }
     },
     {
-      "code": "other",
+      "code": "PHARMA",
+      "decode": "Pharmaceutical Product",
+      "translations": {
+        "en": "Pharmaceutical Product",
+        "fr": "Produit pharmaceutique",
+        "ja": "医薬品"
+      }
+    }
+  ],
+  "LANGUAGE": [
+    {
+      "code": "EN",
+      "decode": "English",
+      "translations": {
+        "en": "English",
+        "fr": "Anglais",
+        "ja": "英語"
+      }
+    },
+    {
+      "code": "FR",
+      "decode": "French",
+      "translations": {
+        "en": "French",
+        "fr": "Français",
+        "ja": "フランス語"
+      }
+    },
+    {
+      "code": "JA",
+      "decode": "Japanese",
+      "translations": {
+        "en": "Japanese",
+        "fr": "Japonais",
+        "ja": "日本語"
+      }
+    },
+    {
+      "code": "DE",
+      "decode": "German",
+      "translations": {
+        "en": "German",
+        "fr": "Allemand",
+        "ja": "ドイツ語"
+      }
+    },
+    {
+      "code": "ES",
+      "decode": "Spanish",
+      "translations": {
+        "en": "Spanish",
+        "fr": "Espagnol",
+        "ja": "スペイン語"
+      }
+    },
+    {
+      "code": "IT",
+      "decode": "Italian",
+      "translations": {
+        "en": "Italian",
+        "fr": "Italien",
+        "ja": "イタリア語"
+      }
+    },
+    {
+      "code": "PT",
+      "decode": "Portuguese",
+      "translations": {
+        "en": "Portuguese",
+        "fr": "Portugais",
+        "ja": "ポルトガル語"
+      }
+    },
+    {
+      "code": "ZH",
+      "decode": "Chinese",
+      "translations": {
+        "en": "Chinese",
+        "fr": "Chinois",
+        "ja": "中国語"
+      }
+    }
+  ],
+  "LIT_SEARCH_STRATEGY": [
+    {
+      "code": "WEEKLY",
+      "decode": "Weekly",
+      "translations": {
+        "en": "Weekly",
+        "fr": "Hebdomadaire",
+        "ja": "週次"
+      }
+    },
+    {
+      "code": "MONTHLY",
+      "decode": "Monthly",
+      "translations": {
+        "en": "Monthly",
+        "fr": "Mensuel",
+        "ja": "月次"
+      }
+    },
+    {
+      "code": "ADHOC",
+      "decode": "Ad-hoc",
+      "translations": {
+        "en": "Ad-hoc",
+        "fr": "Ponctuel",
+        "ja": "随時"
+      }
+    }
+  ],
+  "LIT_SOURCE_TYPE": [
+    {
+      "code": "PUBMED",
+      "decode": "PubMed",
+      "translations": {
+        "en": "PubMed",
+        "fr": "PubMed",
+        "ja": "PubMed"
+      }
+    },
+    {
+      "code": "EMBASE",
+      "decode": "Embase",
+      "translations": {
+        "en": "Embase",
+        "fr": "Embase",
+        "ja": "Embase"
+      }
+    },
+    {
+      "code": "MANUAL",
+      "decode": "Manual Entry",
+      "translations": {
+        "en": "Manual Entry",
+        "fr": "Saisie manuelle",
+        "ja": "手動入力"
+      }
+    },
+    {
+      "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "r2": "3",
-        "r3": "other",
-        "label": "Other",
+        "en": "Other",
         "fr": "Autre",
-        "ja": "その他",
-        "zh": "其他"
+        "ja": "その他"
       }
     }
   ],
-  "ICSR_ROUTE": [
+  "LIT_STATUS": [
     {
-      "code": "oral",
-      "decode": "Oral",
+      "code": "NEW",
+      "decode": "New",
       "translations": {
-        "r2": "001",
-        "r3": "oralUse",
-        "label": "Oral",
-        "fr": "Oral",
-        "ja": "経口",
-        "zh": "口服"
+        "en": "New",
+        "fr": "Nouveau",
+        "ja": "新規"
       }
     },
     {
-      "code": "iv",
-      "decode": "Intravenous",
+      "code": "IN_REVIEW",
+      "decode": "In Review",
       "translations": {
-        "r2": "002",
-        "r3": "intravenousUse",
-        "label": "Intravenous",
-        "fr": "Intraveineux",
-        "ja": "静脈内",
-        "zh": "静脉注射"
+        "en": "In Review",
+        "fr": "En révision",
+        "ja": "レビュー中"
       }
     },
     {
-      "code": "im",
-      "decode": "Intramuscular",
+      "code": "ASSESSED",
+      "decode": "Assessed",
       "translations": {
-        "r2": "003",
-        "r3": "intramuscularUse",
-        "label": "Intramuscular",
-        "fr": "Intramusculaire",
-        "ja": "筋肉内",
-        "zh": "肌肉注射"
+        "en": "Assessed",
+        "fr": "Évalué",
+        "ja": "評価済み"
       }
     },
     {
-      "code": "sc",
-      "decode": "Subcutaneous",
+      "code": "CLOSED",
+      "decode": "Closed",
       "translations": {
-        "r2": "004",
-        "r3": "subcutaneousUse",
-        "label": "Subcutaneous",
-        "fr": "Sous-cutane",
-        "ja": "皮下",
-        "zh": "皮下注射"
-      }
-    },
-    {
-      "code": "topical",
-      "decode": "Topical",
-      "translations": {
-        "r2": "005",
-        "r3": "cutaneousUse",
-        "label": "Topical",
-        "fr": "Topique",
-        "ja": "局所",
-        "zh": "局部"
-      }
-    },
-    {
-      "code": "inhalation",
-      "decode": "Inhalation",
-      "translations": {
-        "r2": "006",
-        "r3": "inhalationUse",
-        "label": "Inhalation",
-        "fr": "Inhalation",
-        "ja": "吸入",
-        "zh": "吸入"
-      }
-    },
-    {
-      "code": "unknown",
-      "decode": "Unknown",
-      "translations": {
-        "r2": "999",
-        "r3": "unknown",
-        "label": "Unknown",
-        "fr": "Inconnu",
-        "ja": "不明",
-        "zh": "未知"
+        "en": "Closed",
+        "fr": "Fermé",
+        "ja": "クローズ"
       }
     }
   ],
-  "ICSR_SEX": [
+  "MADE_BY": [
     {
-      "code": "male",
-      "decode": "Male",
+      "code": "COMPANY",
+      "decode": "Company",
       "translations": {
-        "r2": "1",
-        "r3": "male",
-        "label": "Male",
-        "fr": "Masculin",
-        "ja": "男性",
-        "zh": "男"
+        "en": "Company",
+        "fr": "Société",
+        "ja": "自社"
       }
     },
     {
-      "code": "female",
-      "decode": "Female",
+      "code": "PARTNER",
+      "decode": "Partner",
       "translations": {
-        "r2": "2",
-        "r3": "female",
-        "label": "Female",
-        "fr": "Feminin",
-        "ja": "女性",
-        "zh": "女"
+        "en": "Partner",
+        "fr": "Partenaire",
+        "ja": "パートナー"
       }
     },
     {
-      "code": "unknown",
-      "decode": "Unknown",
+      "code": "THIRD_PARTY",
+      "decode": "Third Party",
       "translations": {
-        "r2": "0",
-        "r3": "unknown",
-        "label": "Unknown",
-        "fr": "Inconnu",
-        "ja": "不明",
-        "zh": "未知"
-      }
-    }
-  ],
-  "ICSR_STUDY_TYPE": [
-    {
-      "code": "phaseI",
-      "decode": "Phase I",
-      "translations": {
-        "r2": "1",
-        "r3": "phaseI",
-        "label": "Phase I",
-        "fr": "Phase I",
-        "ja": "第I相",
-        "zh": "I期"
+        "en": "Third Party",
+        "fr": "Tiers",
+        "ja": "第三者"
       }
     },
     {
-      "code": "phaseII",
-      "decode": "Phase II",
+      "code": "GENERIC",
+      "decode": "Generic",
       "translations": {
-        "r2": "2",
-        "r3": "phaseII",
-        "label": "Phase II",
-        "fr": "Phase II",
-        "ja": "第II相",
-        "zh": "II期"
+        "en": "Generic",
+        "fr": "Générique",
+        "ja": "ジェネリック"
       }
     },
     {
-      "code": "phaseIII",
-      "decode": "Phase III",
-      "translations": {
-        "r2": "3",
-        "r3": "phaseIII",
-        "label": "Phase III",
-        "fr": "Phase III",
-        "ja": "第III相",
-        "zh": "III期"
-      }
-    },
-    {
-      "code": "phaseIV",
-      "decode": "Phase IV",
-      "translations": {
-        "r2": "4",
-        "r3": "phaseIV",
-        "label": "Phase IV",
-        "fr": "Phase IV",
-        "ja": "第IV相",
-        "zh": "IV期"
-      }
-    },
-    {
-      "code": "observational",
-      "decode": "Observational",
-      "translations": {
-        "r2": "5",
-        "r3": "observational",
-        "label": "Observational",
-        "fr": "Observationnelle",
-        "ja": "観察研究",
-        "zh": "观察性研究"
-      }
-    },
-    {
-      "code": "other",
+      "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "r2": "6",
-        "r3": "other",
-        "label": "Other",
+        "en": "Other",
         "fr": "Autre",
-        "ja": "その他",
-        "zh": "其他"
+        "ja": "その他"
       }
     }
   ],
-  "ICSR_YES_NO_UNK": [
+  "PRIORITY": [
     {
-      "code": "yes",
-      "decode": "Yes",
+      "code": "HIGH",
+      "decode": "High",
       "translations": {
-        "r2": "1",
-        "r3": "yes",
-        "label": "Yes",
-        "fr": "Oui",
-        "ja": "はい",
-        "zh": "是"
+        "en": "High"
       }
     },
     {
-      "code": "no",
-      "decode": "No",
+      "code": "MEDIUM",
+      "decode": "Medium",
       "translations": {
-        "r2": "2",
-        "r3": "no",
-        "label": "No",
-        "fr": "Non",
-        "ja": "いいえ",
-        "zh": "否"
+        "en": "Medium"
       }
     },
     {
-      "code": "unknown",
-      "decode": "Unknown",
+      "code": "LOW",
+      "decode": "Low",
       "translations": {
-        "r2": "3",
-        "r3": "unknown",
-        "label": "Unknown",
-        "fr": "Inconnu",
-        "ja": "不明",
-        "zh": "未知"
+        "en": "Low"
       }
     }
   ],
-  "INGREDIENT_ROLE": [
+  "PRODUCT_CLASS": [
     {
-      "code": "ACTIVE",
-      "decode": "Active Substance",
+      "code": "CLASS_1",
+      "decode": "Class 1",
       "translations": {
-        "en": "Active Substance"
+        "en": "Class 1",
+        "fr": "Classe 1",
+        "ja": "クラス1"
       }
     },
     {
-      "code": "EXCIPIENT",
-      "decode": "Excipient",
+      "code": "CLASS_2",
+      "decode": "Class 2",
       "translations": {
-        "en": "Excipient"
+        "en": "Class 2",
+        "fr": "Classe 2",
+        "ja": "クラス2"
       }
     },
     {
-      "code": "ADJUVANT",
-      "decode": "Adjuvant",
+      "code": "CLASS_3",
+      "decode": "Class 3",
       "translations": {
-        "en": "Adjuvant"
+        "en": "Class 3",
+        "fr": "Classe 3",
+        "ja": "クラス3"
+      }
+    },
+    {
+      "code": "CLASS_4",
+      "decode": "Class 4",
+      "translations": {
+        "en": "Class 4",
+        "fr": "Classe 4",
+        "ja": "クラス4"
+      }
+    },
+    {
+      "code": "CLASS_5",
+      "decode": "Class 5",
+      "translations": {
+        "en": "Class 5",
+        "fr": "Classe 5",
+        "ja": "クラス5"
       }
     }
   ],
-  "PRODUCT_TYPE": [
+  "PRODUCT_FLAG": [
     {
-      "code": "SMALL_MOL",
-      "decode": "Small Molecule",
+      "code": "DRUG",
+      "decode": "Drug",
       "translations": {
-        "en": "Small Molecule"
+        "en": "Drug",
+        "fr": "Médicament",
+        "ja": "医薬品"
       }
     },
     {
-      "code": "BIOLOGIC",
-      "decode": "Biologic",
+      "code": "DEVICE",
+      "decode": "Device",
       "translations": {
-        "en": "Biologic"
+        "en": "Device",
+        "fr": "Dispositif médical",
+        "ja": "医療機器"
       }
     },
     {
       "code": "VACCINE",
       "decode": "Vaccine",
       "translations": {
-        "en": "Vaccine"
+        "en": "Vaccine",
+        "fr": "Vaccin",
+        "ja": "ワクチン"
       }
     },
     {
-      "code": "DEVICE",
-      "decode": "Medical Device",
+      "code": "BIOLOGIC",
+      "decode": "Biologic",
       "translations": {
-        "en": "Medical Device"
+        "en": "Biologic",
+        "fr": "Biologique",
+        "ja": "生物製剤"
       }
     },
     {
-      "code": "COMBO",
+      "code": "COMBINATION",
       "decode": "Combination Product",
       "translations": {
-        "en": "Combination Product"
+        "en": "Combination Product",
+        "fr": "Produit combiné",
+        "ja": "配合製品"
       }
     },
     {
-      "code": "HERBAL",
-      "decode": "Herbal / Traditional",
+      "code": "NUTRACEUTICAL",
+      "decode": "Nutraceutical",
       "translations": {
-        "en": "Herbal / Traditional"
-      }
-    },
-    {
-      "code": "OTHER",
-      "decode": "Other",
-      "translations": {
-        "en": "Other"
-      }
-    }
-  ],
-  "RELATIONSHIP": [
-    {
-      "code": "PARENT",
-      "decode": "Parent",
-      "translations": {
-        "en": "Parent"
-      }
-    },
-    {
-      "code": "GUARDIAN",
-      "decode": "Legal Guardian",
-      "translations": {
-        "en": "Legal Guardian"
+        "en": "Nutraceutical",
+        "fr": "Nutraceutique",
+        "ja": "機能性食品"
       }
     },
     {
       "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "en": "Other"
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
       }
     }
   ],
-  "ROUTE": [
+  "REG_AUTHORITY": [
+    {
+      "code": "FDA",
+      "decode": "FDA",
+      "translations": {
+        "en": "FDA",
+        "fr": "FDA",
+        "ja": "FDA"
+      }
+    },
+    {
+      "code": "EMA",
+      "decode": "EMA",
+      "translations": {
+        "en": "EMA",
+        "fr": "EMA",
+        "ja": "EMA"
+      }
+    },
+    {
+      "code": "EUDAMED",
+      "decode": "EUDAMED",
+      "translations": {
+        "en": "EUDAMED",
+        "fr": "EUDAMED",
+        "ja": "EUDAMED"
+      }
+    },
+    {
+      "code": "MHRA",
+      "decode": "MHRA",
+      "translations": {
+        "en": "MHRA",
+        "fr": "MHRA",
+        "ja": "MHRA"
+      }
+    },
+    {
+      "code": "PMDA",
+      "decode": "PMDA",
+      "translations": {
+        "en": "PMDA",
+        "fr": "PMDA",
+        "ja": "PMDA"
+      }
+    },
+    {
+      "code": "BFARM",
+      "decode": "BfArM",
+      "translations": {
+        "en": "BfArM",
+        "fr": "BfArM",
+        "ja": "BfArM"
+      }
+    },
+    {
+      "code": "ANSM",
+      "decode": "ANSM",
+      "translations": {
+        "en": "ANSM",
+        "fr": "ANSM",
+        "ja": "ANSM"
+      }
+    },
+    {
+      "code": "HEALTH_CA",
+      "decode": "Health Canada",
+      "translations": {
+        "en": "Health Canada",
+        "fr": "Santé Canada",
+        "ja": "ヘルスカナダ"
+      }
+    },
+    {
+      "code": "TGA",
+      "decode": "TGA",
+      "translations": {
+        "en": "TGA",
+        "fr": "TGA",
+        "ja": "TGA"
+      }
+    },
+    {
+      "code": "SWISSMEDIC",
+      "decode": "Swissmedic",
+      "translations": {
+        "en": "Swissmedic",
+        "fr": "Swissmedic",
+        "ja": "スイスメディック"
+      }
+    },
+    {
+      "code": "OTHER",
+      "decode": "Other",
+      "translations": {
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
+      }
+    }
+  ],
+  "ROUTE_OF_ADMIN": [
     {
       "code": "ORAL",
       "decode": "Oral",
       "translations": {
         "en": "Oral",
         "fr": "Oral",
-        "de": "Oral"
+        "ja": "経口"
       }
     },
     {
@@ -3553,16 +2130,7 @@ const CODELIST_REGISTRY = {
       "translations": {
         "en": "Intravenous",
         "fr": "Intraveineux",
-        "de": "Intravenös"
-      }
-    },
-    {
-      "code": "SC",
-      "decode": "Subcutaneous",
-      "translations": {
-        "en": "Subcutaneous",
-        "fr": "Sous-cutané",
-        "de": "Subkutan"
+        "ja": "静脈内"
       }
     },
     {
@@ -3571,45 +2139,106 @@ const CODELIST_REGISTRY = {
       "translations": {
         "en": "Intramuscular",
         "fr": "Intramusculaire",
-        "de": "Intramuskulär"
-      }
-    }
-  ],
-  "SEVERITY": [
-    {
-      "code": "MILD",
-      "decode": "Mild",
-      "translations": {
-        "en": "Mild",
-        "fr": "Léger",
-        "de": "Leicht"
+        "ja": "筋肉内"
       }
     },
     {
-      "code": "MOD",
-      "decode": "Moderate",
+      "code": "SC",
+      "decode": "Subcutaneous",
       "translations": {
-        "en": "Moderate",
-        "fr": "Modéré",
-        "de": "Mäßig"
+        "en": "Subcutaneous",
+        "fr": "Sous-cutané",
+        "ja": "皮下"
       }
     },
     {
-      "code": "SEV",
-      "decode": "Severe",
+      "code": "TOPICAL",
+      "decode": "Topical",
       "translations": {
-        "en": "Severe",
-        "fr": "Sévère",
-        "de": "Schwer"
+        "en": "Topical",
+        "fr": "Topique",
+        "ja": "局所"
       }
     },
     {
-      "code": "FATAL",
-      "decode": "Fatal",
+      "code": "INHALED",
+      "decode": "Inhalation",
       "translations": {
-        "en": "Fatal",
-        "fr": "Fatal",
-        "de": "Tödlich"
+        "en": "Inhalation",
+        "fr": "Inhalation",
+        "ja": "吸入"
+      }
+    },
+    {
+      "code": "TRANSDERMAL",
+      "decode": "Transdermal",
+      "translations": {
+        "en": "Transdermal",
+        "fr": "Transdermique",
+        "ja": "経皮"
+      }
+    },
+    {
+      "code": "OPHTHALMIC",
+      "decode": "Ophthalmic",
+      "translations": {
+        "en": "Ophthalmic",
+        "fr": "Ophtalmique",
+        "ja": "眼科"
+      }
+    },
+    {
+      "code": "NASAL",
+      "decode": "Nasal",
+      "translations": {
+        "en": "Nasal",
+        "fr": "Nasal",
+        "ja": "鼻腔内"
+      }
+    },
+    {
+      "code": "RECTAL",
+      "decode": "Rectal",
+      "translations": {
+        "en": "Rectal",
+        "fr": "Rectal",
+        "ja": "直腸内"
+      }
+    },
+    {
+      "code": "VAGINAL",
+      "decode": "Vaginal",
+      "translations": {
+        "en": "Vaginal",
+        "fr": "Vaginal",
+        "ja": "膣内"
+      }
+    },
+    {
+      "code": "INTRATHECAL",
+      "decode": "Intrathecal",
+      "translations": {
+        "en": "Intrathecal",
+        "fr": "Intrathécal",
+        "ja": "髄腔内"
+      }
+    },
+    {
+      "code": "UNKNOWN",
+      "decode": "Unknown",
+      "translations": {
+        "en": "Unknown",
+        "fr": "Inconnu",
+        "ja": "不明"
+      }
+    },
+    {
+      "code": "OTHER",
+      "decode": "Other",
+      "translations": {
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
       }
     }
   ],
@@ -3642,306 +2271,909 @@ const CODELIST_REGISTRY = {
       }
     }
   ],
-  "SITE_STATUS": [
+  "SPONSOR_TYPE": [
     {
-      "code": "PENDING",
-      "decode": "Pending Activation",
+      "code": "COMPANY_SPONSORED",
+      "decode": "Company Sponsored",
       "translations": {
-        "en": "Pending Activation"
+        "en": "Company Sponsored",
+        "fr": "Sponsorisé par la société",
+        "ja": "企業スポンサー"
       }
     },
     {
-      "code": "ACTIVE",
-      "decode": "Active",
+      "code": "NON_COMPANY_SPONSORED",
+      "decode": "Non-Company Sponsored",
       "translations": {
-        "en": "Active"
+        "en": "Non-Company Sponsored",
+        "fr": "Non sponsorisé",
+        "ja": "非企業スポンサー"
       }
     },
     {
-      "code": "SUSPENDED",
-      "decode": "Suspended",
+      "code": "CO_DEVELOPED",
+      "decode": "Co-developed",
       "translations": {
-        "en": "Suspended"
-      }
-    },
-    {
-      "code": "CLOSED",
-      "decode": "Closed",
-      "translations": {
-        "en": "Closed"
+        "en": "Co-developed",
+        "fr": "Co-développé",
+        "ja": "共同開発"
       }
     }
   ],
-  "STUDY_PRODUCT_ROLE": [
-    {
-      "code": "IMP",
-      "decode": "Investigational Medicinal Product",
-      "translations": {
-        "en": "Investigational Medicinal Product"
-      }
-    },
+  "STUDY_DESIGN": [
     {
       "code": "COMPARATOR",
       "decode": "Comparator",
       "translations": {
-        "en": "Comparator"
+        "en": "Comparator",
+        "fr": "Comparateur",
+        "ja": "比較試験"
+      }
+    },
+    {
+      "code": "CROSS_OVER",
+      "decode": "Cross-over",
+      "translations": {
+        "en": "Cross-over",
+        "fr": "Croisé",
+        "ja": "クロスオーバー"
+      }
+    },
+    {
+      "code": "INTERVENTIONAL",
+      "decode": "Interventional",
+      "translations": {
+        "en": "Interventional",
+        "fr": "Interventionnel",
+        "ja": "介入試験"
+      }
+    },
+    {
+      "code": "OBSERVATIONAL",
+      "decode": "Observational",
+      "translations": {
+        "en": "Observational",
+        "fr": "Observationnel",
+        "ja": "観察試験"
+      }
+    },
+    {
+      "code": "OTHERS",
+      "decode": "Others",
+      "translations": {
+        "en": "Others",
+        "fr": "Autres",
+        "ja": "その他"
+      }
+    }
+  ],
+  "STUDY_PHASE": [
+    {
+      "code": "MICRODOSE",
+      "decode": "Microdose Study",
+      "translations": {
+        "en": "Microdose Study",
+        "fr": "Étude microdose",
+        "ja": "マイクロドーズ試験"
+      }
+    },
+    {
+      "code": "PHASE_I",
+      "decode": "Phase I",
+      "translations": {
+        "en": "Phase I",
+        "fr": "Phase I",
+        "ja": "第I相"
+      }
+    },
+    {
+      "code": "PHASE_II",
+      "decode": "Phase II",
+      "translations": {
+        "en": "Phase II",
+        "fr": "Phase II",
+        "ja": "第II相"
+      }
+    },
+    {
+      "code": "PHASE_III",
+      "decode": "Phase III",
+      "translations": {
+        "en": "Phase III",
+        "fr": "Phase III",
+        "ja": "第III相"
+      }
+    },
+    {
+      "code": "PHASE_I_II",
+      "decode": "Phase I/II",
+      "translations": {
+        "en": "Phase I/II",
+        "fr": "Phase I/II",
+        "ja": "第I/II相"
+      }
+    },
+    {
+      "code": "PHASE_II_III",
+      "decode": "Phase II/III",
+      "translations": {
+        "en": "Phase II/III",
+        "fr": "Phase II/III",
+        "ja": "第II/III相"
+      }
+    },
+    {
+      "code": "PHASE_I_III",
+      "decode": "Phase I/III",
+      "translations": {
+        "en": "Phase I/III",
+        "fr": "Phase I/III",
+        "ja": "第I/III相"
+      }
+    },
+    {
+      "code": "PHASE_IV",
+      "decode": "Phase IV",
+      "translations": {
+        "en": "Phase IV",
+        "fr": "Phase IV",
+        "ja": "第IV相"
+      }
+    },
+    {
+      "code": "BIO_EQUIV",
+      "decode": "Bio Equivalence Study",
+      "translations": {
+        "en": "Bio Equivalence Study",
+        "fr": "Étude de bioéquivalence",
+        "ja": "生物学的同等性試験"
+      }
+    },
+    {
+      "code": "CLIN_PHARM",
+      "decode": "Clinical Pharmacology Test",
+      "translations": {
+        "en": "Clinical Pharmacology Test",
+        "fr": "Test de pharmacologie clinique",
+        "ja": "臨床薬理試験"
+      }
+    },
+    {
+      "code": "PREP_SUBMIT",
+      "decode": "Under preparation for submission",
+      "translations": {
+        "en": "Under preparation for submission",
+        "fr": "En préparation pour soumission",
+        "ja": "申請準備中"
+      }
+    },
+    {
+      "code": "UNDER_APPLIC",
+      "decode": "Under Application",
+      "translations": {
+        "en": "Under Application",
+        "fr": "En cours de demande",
+        "ja": "申請中"
+      }
+    },
+    {
+      "code": "OTHER",
+      "decode": "Other",
+      "translations": {
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
+      }
+    }
+  ],
+  "STUDY_PRIMARY_SOURCE": [
+    {
+      "code": "AFFILIATE",
+      "decode": "Affiliate",
+      "translations": {
+        "en": "Affiliate",
+        "fr": "Affilié",
+        "ja": "関連会社"
+      }
+    },
+    {
+      "code": "BIOMEDICAL",
+      "decode": "Biomedical",
+      "translations": {
+        "en": "Biomedical",
+        "fr": "Biomédical",
+        "ja": "生物医学"
+      }
+    },
+    {
+      "code": "CLINICAL_TRIAL",
+      "decode": "Clinical Trial",
+      "translations": {
+        "en": "Clinical Trial",
+        "fr": "Essai clinique",
+        "ja": "臨床試験"
+      }
+    },
+    {
+      "code": "COMPANY_REP",
+      "decode": "Company representative",
+      "translations": {
+        "en": "Company representative",
+        "fr": "Représentant de la société",
+        "ja": "会社代表者"
+      }
+    },
+    {
+      "code": "DISTRIBUTOR",
+      "decode": "Distributor",
+      "translations": {
+        "en": "Distributor",
+        "fr": "Distributeur",
+        "ja": "販売店"
+      }
+    },
+    {
+      "code": "DRUG_MONITORING",
+      "decode": "Drug Monitoring",
+      "translations": {
+        "en": "Drug Monitoring",
+        "fr": "Surveillance des médicaments",
+        "ja": "医薬品モニタリング"
+      }
+    },
+    {
+      "code": "FOREIGN",
+      "decode": "Foreign",
+      "translations": {
+        "en": "Foreign",
+        "fr": "Étranger",
+        "ja": "外国"
+      }
+    },
+    {
+      "code": "HEALTH_AUTHORITY",
+      "decode": "Health authority",
+      "translations": {
+        "en": "Health authority",
+        "fr": "Autorité de santé",
+        "ja": "保健当局"
+      }
+    },
+    {
+      "code": "OBSERVATIONAL_STUDY",
+      "decode": "Observational study",
+      "translations": {
+        "en": "Observational study",
+        "fr": "Étude observationnelle",
+        "ja": "観察研究"
+      }
+    },
+    {
+      "code": "OTHER",
+      "decode": "Other",
+      "translations": {
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
+      }
+    },
+    {
+      "code": "PARTNER",
+      "decode": "Partner",
+      "translations": {
+        "en": "Partner",
+        "fr": "Partenaire",
+        "ja": "パートナー"
+      }
+    },
+    {
+      "code": "PSP",
+      "decode": "Patient Support Program",
+      "translations": {
+        "en": "Patient Support Program",
+        "fr": "Programme de soutien aux patients",
+        "ja": "患者支援プログラム"
+      }
+    },
+    {
+      "code": "PSUR_SPONTANEOUS",
+      "decode": "Psur_spontaneous",
+      "translations": {
+        "en": "Psur_spontaneous",
+        "fr": "PSUR spontané",
+        "ja": "PSUR自発報告"
+      }
+    },
+    {
+      "code": "PSUR_STUDY",
+      "decode": "Psur_study",
+      "translations": {
+        "en": "Psur_study",
+        "fr": "PSUR étude",
+        "ja": "PSUR試験"
+      }
+    },
+    {
+      "code": "USE_RESULT_SURV",
+      "decode": "Use result Surveillance",
+      "translations": {
+        "en": "Use result Surveillance",
+        "fr": "Surveillance des résultats",
+        "ja": "使用結果調査"
+      }
+    },
+    {
+      "code": "USER_FACILITY",
+      "decode": "User Facility",
+      "translations": {
+        "en": "User Facility",
+        "fr": "Établissement utilisateur",
+        "ja": "使用施設"
+      }
+    }
+  ],
+  "STUDY_PRODUCT_TYPE": [
+    {
+      "code": "AUXILIARY",
+      "decode": "Auxiliary product",
+      "translations": {
+        "en": "Auxiliary product",
+        "fr": "Produit auxiliaire",
+        "ja": "補助製品"
+      }
+    },
+    {
+      "code": "BACKGROUND",
+      "decode": "Background Product",
+      "translations": {
+        "en": "Background Product",
+        "fr": "Produit de fond",
+        "ja": "背景製品"
+      }
+    },
+    {
+      "code": "BLINDED",
+      "decode": "Blinded",
+      "translations": {
+        "en": "Blinded",
+        "fr": "En aveugle",
+        "ja": "盲検"
+      }
+    },
+    {
+      "code": "COMPARATOR",
+      "decode": "Comparator Product (Reference Drug)",
+      "translations": {
+        "en": "Comparator Product (Reference Drug)",
+        "fr": "Produit comparateur (médicament de référence)",
+        "ja": "比較薬（参照薬）"
+      }
+    },
+    {
+      "code": "NOT_ADMINISTERED",
+      "decode": "Drug Not administered",
+      "translations": {
+        "en": "Drug Not administered",
+        "fr": "Médicament non administré",
+        "ja": "未投与薬"
       }
     },
     {
       "code": "PLACEBO",
-      "decode": "Placebo",
+      "decode": "Placebo/Vehicle",
       "translations": {
-        "en": "Placebo"
+        "en": "Placebo/Vehicle",
+        "fr": "Placebo/Véhicule",
+        "ja": "プラセボ/媒体"
+      }
+    },
+    {
+      "code": "RUN_IN",
+      "decode": "Run in Product",
+      "translations": {
+        "en": "Run in Product",
+        "fr": "Produit de rodage",
+        "ja": "導入製品"
+      }
+    },
+    {
+      "code": "STUDY_PRODUCT",
+      "decode": "Study Product (Test Drug)",
+      "translations": {
+        "en": "Study Product (Test Drug)",
+        "fr": "Produit d'étude (médicament test)",
+        "ja": "試験製品（被験薬）"
+      }
+    },
+    {
+      "code": "CONTROL",
+      "decode": "Control (Negative or Positive)",
+      "translations": {
+        "en": "Control (Negative or Positive)",
+        "fr": "Contrôle (négatif ou positif)",
+        "ja": "対照（陰性または陽性）"
+      }
+    },
+    {
+      "code": "DRUG_ADMIN",
+      "decode": "Drug Administered",
+      "translations": {
+        "en": "Drug Administered",
+        "fr": "Médicament administré",
+        "ja": "投与薬"
+      }
+    },
+    {
+      "code": "OTHERS",
+      "decode": "Others",
+      "translations": {
+        "en": "Others",
+        "fr": "Autres",
+        "ja": "その他"
+      }
+    }
+  ],
+  "STUDY_TYPE": [
+    {
+      "code": "CLINICAL_TRIAL",
+      "decode": "Clinical Trials",
+      "translations": {
+        "en": "Clinical Trials",
+        "fr": "Essais cliniques",
+        "ja": "臨床試験"
+      }
+    },
+    {
+      "code": "INDIVIDUAL_USE",
+      "decode": "Individual Patient Use",
+      "translations": {
+        "en": "Individual Patient Use",
+        "fr": "Utilisation individuelle",
+        "ja": "個別患者使用"
+      }
+    },
+    {
+      "code": "OTHER_STUDIES",
+      "decode": "Other Studies",
+      "translations": {
+        "en": "Other Studies",
+        "fr": "Autres études",
+        "ja": "その他の試験"
+      }
+    },
+    {
+      "code": "IND_STUDY",
+      "decode": "IND Study",
+      "translations": {
+        "en": "IND Study",
+        "fr": "Étude IND",
+        "ja": "IND試験"
+      }
+    },
+    {
+      "code": "NON_IND_STUDY",
+      "decode": "Non IND Study",
+      "translations": {
+        "en": "Non IND Study",
+        "fr": "Étude non IND",
+        "ja": "非IND試験"
+      }
+    },
+    {
+      "code": "POST_MARKETING",
+      "decode": "Post Marketing Study",
+      "translations": {
+        "en": "Post Marketing Study",
+        "fr": "Étude post-commercialisation",
+        "ja": "市販後試験"
+      }
+    },
+    {
+      "code": "PSP",
+      "decode": "Patient Support Program",
+      "translations": {
+        "en": "Patient Support Program",
+        "fr": "Programme de soutien patients",
+        "ja": "患者支援プログラム"
+      }
+    },
+    {
+      "code": "AGGREGATE",
+      "decode": "Aggregate",
+      "translations": {
+        "en": "Aggregate",
+        "fr": "Agrégé",
+        "ja": "集積"
+      }
+    }
+  ],
+  "SUBMISSION_TYPE": [
+    {
+      "code": "NDA",
+      "decode": "NDA (New Drug Application)",
+      "translations": {
+        "en": "NDA (New Drug Application)",
+        "fr": "NDA",
+        "ja": "新薬承認申請"
+      }
+    },
+    {
+      "code": "BLA",
+      "decode": "BLA (Biologics License Application)",
+      "translations": {
+        "en": "BLA (Biologics License Application)",
+        "fr": "BLA",
+        "ja": "生物製剤ライセンス申請"
+      }
+    },
+    {
+      "code": "MAA",
+      "decode": "MAA (Marketing Authorisation Application)",
+      "translations": {
+        "en": "MAA (Marketing Authorisation Application)",
+        "fr": "MAA",
+        "ja": "販売承認申請"
+      }
+    },
+    {
+      "code": "ANDA",
+      "decode": "ANDA (Abbreviated NDA)",
+      "translations": {
+        "en": "ANDA (Abbreviated NDA)",
+        "fr": "ANDA",
+        "ja": "簡略新薬承認申請"
+      }
+    },
+    {
+      "code": "IND",
+      "decode": "IND (Investigational New Drug)",
+      "translations": {
+        "en": "IND (Investigational New Drug)",
+        "fr": "IND",
+        "ja": "治験薬申請"
+      }
+    },
+    {
+      "code": "VARIATION",
+      "decode": "Variation",
+      "translations": {
+        "en": "Variation",
+        "fr": "Variation",
+        "ja": "変更申請"
+      }
+    },
+    {
+      "code": "RENEWAL",
+      "decode": "Renewal",
+      "translations": {
+        "en": "Renewal",
+        "fr": "Renouvellement",
+        "ja": "更新申請"
       }
     },
     {
       "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "en": "Other"
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
       }
     }
   ],
-  "STUDY_STATUS": [
+  "SUBSTANCE_ROLE": [
+    {
+      "code": "ACTIVE",
+      "decode": "Active Substance",
+      "translations": {
+        "en": "Active Substance",
+        "fr": "Substance active",
+        "ja": "有効成分"
+      }
+    },
+    {
+      "code": "EXCIPIENT",
+      "decode": "Excipient",
+      "translations": {
+        "en": "Excipient",
+        "fr": "Excipient",
+        "ja": "添加剤"
+      }
+    },
+    {
+      "code": "ADJUVANT",
+      "decode": "Adjuvant",
+      "translations": {
+        "en": "Adjuvant",
+        "fr": "Adjuvant",
+        "ja": "アジュバント"
+      }
+    }
+  ],
+  "SUBSTANCE_UNIT": [
+    {
+      "code": "mg",
+      "decode": "mg (milligram)",
+      "translations": {
+        "en": "mg (milligram)",
+        "fr": "mg (milligramme)",
+        "ja": "mg（ミリグラム）"
+      }
+    },
+    {
+      "code": "g",
+      "decode": "g (gram)",
+      "translations": {
+        "en": "g (gram)",
+        "fr": "g (gramme)",
+        "ja": "g（グラム）"
+      }
+    },
+    {
+      "code": "mcg",
+      "decode": "mcg (microgram)",
+      "translations": {
+        "en": "mcg (microgram)",
+        "fr": "mcg (microgramme)",
+        "ja": "mcg（マイクログラム）"
+      }
+    },
+    {
+      "code": "ng",
+      "decode": "ng (nanogram)",
+      "translations": {
+        "en": "ng (nanogram)",
+        "fr": "ng (nanogramme)",
+        "ja": "ng（ナノグラム）"
+      }
+    },
+    {
+      "code": "mL",
+      "decode": "mL (millilitre)",
+      "translations": {
+        "en": "mL (millilitre)",
+        "fr": "mL (millilitre)",
+        "ja": "mL（ミリリットル）"
+      }
+    },
+    {
+      "code": "L",
+      "decode": "L (litre)",
+      "translations": {
+        "en": "L (litre)",
+        "fr": "L (litre)",
+        "ja": "L（リットル）"
+      }
+    },
+    {
+      "code": "IU",
+      "decode": "IU (international unit)",
+      "translations": {
+        "en": "IU (international unit)",
+        "fr": "UI (unité internationale)",
+        "ja": "IU（国際単位）"
+      }
+    },
+    {
+      "code": "mIU",
+      "decode": "mIU (milli-IU)",
+      "translations": {
+        "en": "mIU (milli-IU)",
+        "fr": "mUI (milli-UI)",
+        "ja": "mIU（ミリ国際単位）"
+      }
+    },
+    {
+      "code": "mmol",
+      "decode": "mmol (millimole)",
+      "translations": {
+        "en": "mmol (millimole)",
+        "fr": "mmol (millimole)",
+        "ja": "mmol（ミリモル）"
+      }
+    },
+    {
+      "code": "meq",
+      "decode": "mEq (milliequivalent)",
+      "translations": {
+        "en": "mEq (milliequivalent)",
+        "fr": "mEq (milliéquivalent)",
+        "ja": "mEq（ミリ当量）"
+      }
+    },
+    {
+      "code": "mg_mL",
+      "decode": "mg/mL",
+      "translations": {
+        "en": "mg/mL",
+        "fr": "mg/mL",
+        "ja": "mg/mL"
+      }
+    },
+    {
+      "code": "mcg_mL",
+      "decode": "mcg/mL",
+      "translations": {
+        "en": "mcg/mL",
+        "fr": "mcg/mL",
+        "ja": "mcg/mL"
+      }
+    },
+    {
+      "code": "mg_g",
+      "decode": "mg/g",
+      "translations": {
+        "en": "mg/g",
+        "fr": "mg/g",
+        "ja": "mg/g"
+      }
+    },
+    {
+      "code": "percent",
+      "decode": "% (percent)",
+      "translations": {
+        "en": "% (percent)",
+        "fr": "% (pourcentage)",
+        "ja": "%（パーセント）"
+      }
+    },
+    {
+      "code": "CFU",
+      "decode": "CFU (colony forming unit)",
+      "translations": {
+        "en": "CFU (colony forming unit)",
+        "fr": "UFC (unité formant colonie)",
+        "ja": "CFU（コロニー形成単位）"
+      }
+    },
+    {
+      "code": "OTHER",
+      "decode": "Other",
+      "translations": {
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
+      }
+    }
+  ],
+  "TRIAL_STATUS": [
     {
       "code": "PLANNED",
       "decode": "Planned",
       "translations": {
-        "en": "Planned"
+        "en": "Planned",
+        "fr": "Planifié",
+        "ja": "計画中"
       }
     },
     {
-      "code": "ACTIVE",
-      "decode": "Active",
+      "code": "ONGOING",
+      "decode": "Ongoing",
       "translations": {
-        "en": "Active"
+        "en": "Ongoing",
+        "fr": "En cours",
+        "ja": "進行中"
       }
     },
     {
-      "code": "SUSPENDED",
-      "decode": "Suspended",
+      "code": "FINALIZED",
+      "decode": "Finalized",
       "translations": {
-        "en": "Suspended"
-      }
-    },
-    {
-      "code": "COMPLETED",
-      "decode": "Completed",
-      "translations": {
-        "en": "Completed"
-      }
-    },
-    {
-      "code": "TERMINATED",
-      "decode": "Terminated",
-      "translations": {
-        "en": "Terminated"
+        "en": "Finalized",
+        "fr": "Finalisé",
+        "ja": "完了"
       }
     }
   ],
-  "SUB_ACTION": [
+  "VACCINE_TYPE": [
     {
-      "code": "CREATED",
-      "decode": "Created",
+      "code": "LIVE_ATTENUATED",
+      "decode": "Live Attenuated",
       "translations": {
-        "en": "Created"
+        "en": "Live Attenuated",
+        "fr": "Vivant atténué",
+        "ja": "生弱毒化"
       }
     },
     {
-      "code": "EDITED",
-      "decode": "Edited",
+      "code": "INACTIVATED",
+      "decode": "Inactivated",
       "translations": {
-        "en": "Edited"
+        "en": "Inactivated",
+        "fr": "Inactivé",
+        "ja": "不活化"
       }
     },
     {
-      "code": "SUBMITTED",
-      "decode": "Submitted",
+      "code": "SUBUNIT",
+      "decode": "Subunit",
       "translations": {
-        "en": "Submitted"
+        "en": "Subunit",
+        "fr": "Sous-unité",
+        "ja": "サブユニット"
       }
     },
     {
-      "code": "RECALLED",
-      "decode": "Recalled",
+      "code": "MRNA",
+      "decode": "mRNA",
       "translations": {
-        "en": "Recalled"
+        "en": "mRNA",
+        "fr": "ARNm",
+        "ja": "mRNA"
       }
     },
     {
-      "code": "CLOSED",
-      "decode": "Closed",
+      "code": "VIRAL_VECTOR",
+      "decode": "Viral Vector",
       "translations": {
-        "en": "Closed"
-      }
-    }
-  ],
-  "SUB_METHOD": [
-    {
-      "code": "GATEWAY",
-      "decode": "Electronic Gateway",
-      "translations": {
-        "en": "Electronic Gateway"
+        "en": "Viral Vector",
+        "fr": "Vecteur viral",
+        "ja": "ウイルスベクター"
       }
     },
     {
-      "code": "PORTAL",
-      "decode": "Regulatory Portal",
+      "code": "TOXOID",
+      "decode": "Toxoid",
       "translations": {
-        "en": "Regulatory Portal"
-      }
-    },
-    {
-      "code": "EMAIL",
-      "decode": "Email",
-      "translations": {
-        "en": "Email"
-      }
-    },
-    {
-      "code": "FAX",
-      "decode": "Fax",
-      "translations": {
-        "en": "Fax"
-      }
-    },
-    {
-      "code": "POST",
-      "decode": "Post",
-      "translations": {
-        "en": "Post"
-      }
-    }
-  ],
-  "SUB_REPORT_TYPE": [
-    {
-      "code": "CIOMS",
-      "decode": "CIOMS I",
-      "translations": {
-        "en": "CIOMS I"
-      }
-    },
-    {
-      "code": "MEDWATCH",
-      "decode": "MedWatch 3500A",
-      "translations": {
-        "en": "MedWatch 3500A"
-      }
-    },
-    {
-      "code": "E2B_R2",
-      "decode": "ICH E2B(R2)",
-      "translations": {
-        "en": "ICH E2B(R2)"
-      }
-    },
-    {
-      "code": "E2B_R3",
-      "decode": "ICH E2B(R3)",
-      "translations": {
-        "en": "ICH E2B(R3)"
-      }
-    },
-    {
-      "code": "PSUR",
-      "decode": "PSUR/PBRER",
-      "translations": {
-        "en": "PSUR/PBRER"
-      }
-    },
-    {
-      "code": "DSUR",
-      "decode": "DSUR",
-      "translations": {
-        "en": "DSUR"
+        "en": "Toxoid",
+        "fr": "Anatoxine",
+        "ja": "トキソイド"
       }
     },
     {
       "code": "OTHER",
       "decode": "Other",
       "translations": {
-        "en": "Other"
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
       }
     }
   ],
-  "SUB_STATUS": [
+  "VIGILANCE_TYPE": [
     {
-      "code": "PENDING",
-      "decode": "Pending",
+      "code": "PHARMACOVIG",
+      "decode": "Pharmacovigilance",
       "translations": {
-        "en": "Pending"
+        "en": "Pharmacovigilance",
+        "fr": "Pharmacovigilance",
+        "ja": "ファーマコビジランス"
       }
     },
     {
-      "code": "SUBMITTED",
-      "decode": "Submitted",
+      "code": "MATERIOVIG",
+      "decode": "Materiovigilance",
       "translations": {
-        "en": "Submitted"
+        "en": "Materiovigilance",
+        "fr": "Matériovigilance",
+        "ja": "マテリオビジランス"
       }
     },
     {
-      "code": "OVERDUE",
-      "decode": "Overdue",
+      "code": "COSMETOVIG",
+      "decode": "Cosmetovigilance",
       "translations": {
-        "en": "Overdue"
+        "en": "Cosmetovigilance",
+        "fr": "Cosmétovigilance",
+        "ja": "コスメトビジランス"
       }
     },
     {
-      "code": "ACCEPTED",
-      "decode": "Accepted",
+      "code": "NUTRIVIG",
+      "decode": "Nutrivigilance",
       "translations": {
-        "en": "Accepted"
+        "en": "Nutrivigilance",
+        "fr": "Nutrivigilance",
+        "ja": "ニュートリビジランス"
       }
     },
     {
-      "code": "REJECTED",
-      "decode": "Rejected",
+      "code": "OTHER",
+      "decode": "Other",
       "translations": {
-        "en": "Rejected"
-      }
-    },
-    {
-      "code": "WITHDRAWN",
-      "decode": "Withdrawn",
-      "translations": {
-        "en": "Withdrawn"
-      }
-    }
-  ],
-  "USER_ROLE": [
-    {
-      "code": "ADMIN",
-      "decode": "Administrator",
-      "translations": {
-        "en": "Administrator"
-      }
-    },
-    {
-      "code": "CASE_MGR",
-      "decode": "Case Manager",
-      "translations": {
-        "en": "Case Manager"
-      }
-    },
-    {
-      "code": "REVIEWER",
-      "decode": "Medical Reviewer",
-      "translations": {
-        "en": "Medical Reviewer"
-      }
-    },
-    {
-      "code": "SUBMITTER",
-      "decode": "Submission Officer",
-      "translations": {
-        "en": "Submission Officer"
-      }
-    },
-    {
-      "code": "READONLY",
-      "decode": "Read Only",
-      "translations": {
-        "en": "Read Only"
+        "en": "Other",
+        "fr": "Autre",
+        "ja": "その他"
       }
     }
   ],
