@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MetaDyna</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+  <!-- Make sure to keep these scripts are placed at bigining -->
+  <script src="config/app-config.js"></script>
+  <script src="config/menu_registry.js"></script>
+  <script src="config/app_i18n_trans.js"></script>
+  <script src="core/app-i18n.js"></script>
+  <script src="core/app-cl.js"></script>
+  <script src="core/app-api.js"></script>
+  <script src="core/app-metadata.js"></script>
+  
+  <link rel="stylesheet" href="styles/metadyna.css" />
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { background: var(--md-bg); display: flex; flex-direction: column; min-height: 100vh; font-family: var(--md-font); }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+<!-- APP BAR -->
+<header class="app-bar">
+  
+</header>
+
+<!-- MENU BACKDROP -->
+<div class="menu-backdrop" id="menuBackdrop" onclick="closeMenu()"></div>
+
+
+<!-- MAIN Listing CONTENT -->
+<div id="main-view" class="main-view">
+  <div id="content-view" class="content-view"></div>
+</div>
+
+<!-- Lookup OVERLAY -->
+<div class="module-lookup md-modal-backdrop" style="display:none;">
+  <div class="lookup-view md-modal md-modal--lg" style="margin-left:5%;">
+	<div class="md-modal__header">
+		<span class="md-modal__title">Lookup Screen</span>
+		<button class="md-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+	</div>
+	<div class="lookup-container" style="flex:1; display:flex; flex-direction:column; min-height:0; overflow:hidden;"></div>
+	<div class="md-modal__footer">
+		<button class="md-btn md-btn--primary" onclick="selectLookup()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Select</button>
+		<button class="md-btn md-btn--outlined" onclick="closeLookup()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Cancel</button>
+	</div>
+  </div>
+</div>
+
+<!-- CASE EDIT OVERLAY -->
+<div id="case-edit-overlay" class="case-edit-overlay">
+  <div id="case-edit-app" class="case-edit-app"></></div>
+</div>
+
+<!-- Module-specific metadata and data files are loaded dynamically by
+     MetaDynaAPI when a module is first accessed. Codelists are loaded
+     together with the first module's metadata via /api/metadata/ui/{id}/full. -->
+
+
+<!-- SCRIPTS -->
+<script src="core/utils.js"></script>
+<script src="components/app-form-field.js"></script>
+<script src="components/app-header-menu.js"></script>
+<script src="components/app-data-listing.js"></script>
+<script src="components/app-data-form.js"></script>
+<script src="app.js"></script>
+<script src="config/menu_registry.js"></script>
+<script src="components/commons.js"></script>
+
+<script>
+
+/* ══════════════════════════════════════════════ AUTH TOKEN VALIDATION ══════════════════════════════════════════════ */
+	/*Get the JWT token, cached menu registry and user information from session store. tenantID from URL params */
+	/* Validate all the above parameters and redirect to login page if anything is invalid.*/
+	(function () {
+	  /* Sync tenantId from URL param into sessionStorage (handles direct links) */
+	  var params = new URLSearchParams(window.location.search);
+	  var urlTenant = (params.get('tenantId') || '').trim();
+	  if (urlTenant) sessionStorage.setItem('md_tenant_id', urlTenant);
+
+	  var tenantId = sessionStorage.getItem('md_tenant_id') || '';
+	  var jwt      = sessionStorage.getItem('md_auth') || '';
+
+	  if (!jwt || !tenantId) {
+		/* Redirect to login preserving tenantId if available */
+		var dest = 'login.html' + (tenantId ? '?tenantId=' + encodeURIComponent(tenantId) : '');
+		window.location.href = dest;
+		return;
+	  }
+
+	 
+	})();
+
+	function logout() {
+	  var tenantId = sessionStorage.getItem('md_tenant_id') || '';
+	  sessionStorage.clear();
+	  window.location.href = 'login.html' + (tenantId ? '?tenantId=' + encodeURIComponent(tenantId) : '');
+	}
+
+/* ══════════════════════════════════════════════ META_DYNA APP INIT ══════════════════════════════════════════════ */
+	//Fallback if the AppI18n is undefined
+	document.addEventListener('DOMContentLoaded', function() {
+	  initMetadaDynaApp();
+	  registerAppClickEvents();
+	});
+
+	
+</script>
+</body>
+</html>
