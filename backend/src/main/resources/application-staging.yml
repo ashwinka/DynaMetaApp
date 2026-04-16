@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${MASTER_DB_URL}
+    username: ${MASTER_DB_USERNAME}
+    password: ${MASTER_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: master-pool
+      maximum-pool-size: 10
+      minimum-idle: 3
+
+logging:
+  level:
+    com.metadyna: INFO
