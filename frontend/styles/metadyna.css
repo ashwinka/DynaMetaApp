@@ -203,6 +203,9 @@ html, body { height: 100%; font-family: var(--md-font); font-size: 14px; color: 
   flex-shrink: 0;
   z-index: var(--md-z-nav);
 }
+.md-nav.hide{
+	width:40px !important;
+}
 
 /* Collapsed: nav shrinks to exactly 40px to fit the icon only */
 .md-nav.collapsed {
@@ -215,7 +218,7 @@ html, body { height: 100%; font-family: var(--md-font); font-size: 14px; color: 
   justify-content: space-between;
   padding: var(--md-sp-sm) var(--md-sp-sm);
   border-bottom: 1px solid var(--md-border);
-  min-height: 40px;
+  min-height: 38px;
   width: 100%;
   flex-shrink: 0;
   box-sizing: border-box;
@@ -245,6 +248,7 @@ html, body { height: 100%; font-family: var(--md-font); font-size: 14px; color: 
 /* Collapse button: far right when expanded, centred when collapsed */
 .md-nav__collapse-btn { margin-left: auto; flex-shrink: 0; }
 .md-nav.collapsed .md-nav__collapse-btn { margin-left: 0; }
+.md-nav__collapse-btn.hide { transform: rotate(180deg) }
 
 .md-nav__list {
   flex: 1;
