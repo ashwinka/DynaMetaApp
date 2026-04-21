@@ -22,8 +22,26 @@
 		
 	}
 	
+	function toggleMenuDrawer(targetCmp){
+		$(targetCmp).parents('.md-dropdown__menu').removeClass('open');
+	}
 	
-	function setActiveMenuItem(menuId, e){
+	function performMenuNavigation(){
+		let menuItemObj = _activeModule && _menuItems[_activeModule];
+		if(!menuItemObj){
+			return;		
+		}
+		
+		AppListScreen.listing();
+	}
+	
+	function setActiveMenuItem(menuCmp){
+		let menuId = $(menuCmp).attr('data-item-id');
+		
+		if(!menuId){
+			return;
+		}
+	
 		if(_menuItems[menuId]){
 			_activeModule = menuId;
 			sessionStorage.setItem('md_act_module', _activeModule);
@@ -33,12 +51,12 @@
 			var itemLabel = itemTrans?.label ? itemTrans?.label : item.label
 			$('#appBarPageTitle').text(itemLabel);
 		}
-		toggleMenuGeneric(e);
-		
 		
 		$('.menu-item').removeClass('active');
 		$('.menu-item[data-item-id="'+menuId+'"]').addClass('active');
 
+		toggleMenuDrawer(menuCmp);
+		performMenuNavigation();
 		
 	}
 	function getMenuItem(menuId){
@@ -54,14 +72,7 @@
 		$('#drawerUserName').text(_loggedUser);
 		$('#drawerAvatarEl').text(_loggedUser.slice(0,2).toUpperCase());
 		
-		//Register onclick event for the menu item.
-		$('.menu-drawer__close').click(e=>{toggleMenuGeneric(e)});
-		$('#menuDrawerBody .menu-item').click((e)=>{			
-			_activeModule = $(e.target).parents('.menu-item').attr('data-item-id');
-			setActiveMenuItem(_activeModule, e);
-			menuNavigation();
-		});
-		
+
 		/* Auto-navigate to first non-disabled item */
 		if(!_activeModule){
 			for (var gi = 0; gi < (_menu_registry.groups || []).length; gi++) {
@@ -200,6 +211,8 @@
 		setMenu:		setActiveMenuItem,
 		getMenu: 		getMenuItem,
 		build: 			buildAppMenuBar,
-		activeModule:	()=>{return _menuItems[_activeModule]}
+		activeModule:	()=>{return _menuItems[_activeModule]},
+		toggle:			toggleMenuDrawer,
+		navigate:		performMenuNavigation
 	};
 })(window);
