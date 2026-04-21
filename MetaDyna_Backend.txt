@@ -1,0 +1,230 @@
+MetaDyna API:
+
+This is the Java backend Application/Micro Service that needs to be developed.
+
+Please use the following tech stack:
+	1. Java
+	2. Spring Boot (latest)
+	3. Postgre DB
+	4. No JPA is required, just JDBC Template needs to be used for all DB operations.
+
+Description:
+	This is the Backend API java application which will be integrated with Another frontend application.
+	The Application is Multi-tenant application which is isolated at DB schema level. There will be "MASTER-TENANT" which has all the child tenant info in the master tenant DB. for all the API calls X-Tenant-ID will be associated with the request header.
+	The application needs to support the Basic authentication with username and password which generates the JWT Tokens, (later we will also use Auto0 integrations).
+	The Application will not have any fixed Java JPA Entities for any of the functional modules. Entities can be maintained for some of the framework metadata objects which will be details later.
+	All the Data between UI to Backend will be managed through JSON. 
+	The Application functional Module data are maintained in the relational DB. And the DB Tables and columns will be maintained as metadata in a separate metadata tables which will be explained later.
+	Since there is no JPA is used, Application needs to fetch the functional module data from relational DB by creating the dynamic queries based on the module metadata, and then JSON needs to be created according the metadata relational DB structure.
+	Application also needs to save the module specific Data JSON to DB by creating the insert/update/delete scripts according to the JSON changes.
+
+Architecture Flow:
+	This application is completly driven through metadata.
+	The application has core pillars called "Modules" which is uniqely identified as "ModeuleID".
+	For each module there are 3 metadata maintained, Table Structure Metadata, Listing Metadata and Form Metadata.
+
+	
+	1. User Login along with credentials and TENANT_ID in the API request header.
+	2. Application will load the user roles and privileges after authentication.
+		User can associated with Multiple roles
+		Each Role will be associated with multiple privileges on the Modules.
+	3. Build the "menu_metadata" dynamically based on the user privileges. structure of menu_metadata will be explained later.
+	3. while returning the JWT token post authentication, menu_metadata json needs to be sent along with jwt token.
+	4. API Call, To load the module specific listing and form metadata.
+	5. Based on Listing metadata, the data listing screen will be rendered and an API call will be made to load the module specific data records.
+	6. API call, to load the module specific data records based on the moduleID and search criteria. JSON contract for the API will be explained later.
+	7. Module specific listing screen wil be rendered, user will edit the record which will make an API call to load the module specific data record.
+	8. API call, to load the module specific data record based on the recordID and moduleID.
+	9. Application needs to fetch the entire relational DB data structure as json using dynamix queries.
+	10. Module specific Form will be rendered, user will edit and make API call to save record.
+	10. API call, to save the record with the 2 approaches
+		a. saveObject: moduleID, recordID and modified JSON (complete json) as parameters
+		b. updateObject: moduleID, recordID and updated JSON (only modified JSON), deletedRec JSON(records which as deleted)
+			both updated JSON and deleteRec JSON follows the same structure as complete json.
+		c. Validation rules framework to validation data, derive the data (can be planned later)
+		d. Script engine to support running of the custom scripts during save and retrival operations (can be planned later)	
+	11. Post Save, return the complete JSON to the UI back.
+
+
+Metadata DB structure:
+	1. MENU_GROUPS:
+		This table will have information on the Menu Builder informaiton, it will have have information like Menu ID, icons and status
+		MENU_GROUP(
+			RECORD_ID 	BIG_INT				Record ID for DB Row.
+			MENU_ID		TEXT(300 char)		Menu ID which is unique, and this is the groups created in the Menu in UI.
+			ICON		TEXT(1000 char)		svg icon to be used for menu group.
+			LABEL		TEXT(300 char)		Label of the Menu.	
+		)
+	
+	2. MODULE:
+		This table will have information on all the modules in the application which will be uniquely identified by ModuleID.
+		Table Structure:
+		MODULE(
+			RECORD_ID 		BIG_INT			Record ID for DB Row.
+			MODULE_ID 		TEXT(300 char) 	Module ID which is uniqiue.
+			LABEL			TEXT(300 char)	Label of the Module.
+			MENU_GROUP_ID	TEXT(300 char)	Menu group ID under which the module needs to be rendered in the UI menu, which is refered in MENU_GROUP table
+			ICON			TEXT(1000 char) svg icon which is used in the menu in UI
+			DB_ROOT_TABLE: 	TEXT(300 char)	Root table where the module specific data is stored.
+		)
+		
+	3. TABLE_METADATA and TABLE_COLUMN_METADATA
+		All the APplication Module specific Relational DB structure will be maintained in these tables.
+		TABLE_METADATA(
+			RECORD_ID 		BIG_INT			Record ID for DB Row.
+			MODULE_ID 		TEXT(300 char)	Module ID which is refered in MODULE Table.
+			TABLE_ID		TEXT(100 char)	Table ID which is unique.
+			PARENT_TABLE_ID	TEXT(100 char)	Parent Table ID, to maintain the relationship with its hierarchy
+			DB_TABLE_NAME	TEXT(100 char)	DB table where the module speicific data is present.
+			CONTEXT_NAME	TEXT(100 char)	Context name to be used while creating the JSON.
+			JOIN_COLUMN		TEXT(100 char)	Column to be used for joining with its parent table
+			REF_JOIN_COLUMN	TEXT(100 char)	Parent Table Column to be used while joining during dynamic query generation.
+			MULTI_CONTEXT	TEXT(1 char)	Y/N, tell the data context is repeatable data or multi-context data.
+			CONTEXT_PATH	TEXT(1000 char)	Context path which describes the entity path.
+		)
+		
+		TABLE_COLUMN_METADATA(
+			RECORD_ID		BIG_INT			Record ID for DB Row.
+			MODULE_ID		TEXT(300 char)	Module ID which is refered in MODULE Table.
+			TABLE_ID 		TEXT(300 char)	TABLE ID to which the field belongs to.
+			FIELD_ID 		TEXT(300 char)	FIELD ID which is unique.
+			COLUMN_NAME 	TEXT(300 char)	DB COlumne name
+			CONTEXT_NAME 	TEXT(300 char)	context name which will be used as key in the json for the field.
+			DATA_TYPE 		TEXT(300 char)	Column data type TEXT/NUMBER/DATE
+			MAX_LENGTH 		INT				Max data that column can store.
+			REQUIRED_FIELD	TEXT(1 char)	Y/N, DB contrinat for the required field.
+			LISTING_ALIAS	TEXT(300 char)	alisa name which will be used for listing query construction.
+		)
+
+	4. Module's Listing and Forms Metadata
+	
+		UI_METADATA(
+			RECORD_ID		BIG_INT			Record ID for DB Row.
+			MODULE_ID		TEXT(300 char)	Module ID which is refered in MODULE Table.
+			NAME			TEXT(300 chat) 	Name of the metadata which is unique.
+			TYPE			TEXT(100 char)	LISTING/FORM/LOOKUP, type of the metadata which is listing or form or lookup listing.
+			METADTA_JSON	CLOB			its a JSON data of the metadata.
+			S3_PATH			TEXT(1000 chat) S3 path of the metadata, if its stored in S3 Bucket.
+		)
+
+CENTAL TENANT DB Structure:
+	1. Tenant Info:
+		this table is only specific to the Mater tenant which maintains all the child tenant DB informations.
+	
+	TENANT_INFO(
+		RECORD_ID 		BIG_INT			Record ID for DB Row.
+		TENANT_ID		TEXT(300 char)	Tenant ID which is unique.
+		TENANT_NAME		TEXT(300 char)	Tenant name
+		DB_URL			TEXT(300 char)	DB URL of the tenant schema.
+		DB_USERNAME		TEXT(300 char)	username of the DB schema.
+		DB_PASSWORD		TEXT(300 char)	password of the DB schema.
+		IS_ACTIVE		TEXT(1 char)	Y/N active status of the tenant.
+	)
+
+Application Framework Generic Tables:
+	This section will have all the tables which is common for all the tenants which maintains information on Users, Roles, Privileges and Codelist_Lib
+	
+	ROLE_PRIVILEGES(
+		RECORD_ID	BIG_INT			Record ID for DB Row.
+		ROLE_ID		TEXT(300 char)	Role ID which is unique.
+		ROLE_NAME 	TEXT(300 char)	Role name
+		PRIVILEGES 	TEXT(4000 char)	JSON array of privileges on each module Read and Write Access
+	)
+	
+	APP_USERS(
+		RECORD_ID		BIG_INT			Record ID for DB Row.
+		USER_NAME		TEXT(300 char)	User ID which is unique.
+		FULL_NAME		TEXT(300 char)	User full name.
+		EMAIL_ID		TEXT(300 char) 	Email ID of the user.
+		PASSWORD_HASH	TEXT(1000 char) Password of the user.
+		LAST_LOGIN		DATETIME		Last logged in time
+	)
+	
+	CODE_LIST_LIB(
+		RECORD_ID		BIG_INT			Record ID for DB Row.
+		CODE_LIST_ID	TEXT(300 char)	Codelist ID which is unique.
+		DESCRIPTION		TEXT(300 char)	Codelist ID which is unique.
+		IS_ACTIVE		TEXT(1 char)	Y/N status of active.
+	)
+	
+
+	CODE_LIST_VALUES(
+		RECORD_ID		BIG_INT			Record ID for DB Row.
+		CODE_LIST_ID	TEXT(300 char)	References to CODE_LIST_LIB table
+		CODE			TEXT(100 char)	Code value of the codelist entry
+		DECODE			TEXT(300 char)	Decode value of the codelist entry
+		SEQUENCE		INT				Sequence order of the values.
+		IS_ACTIVE		TEXT(1 char)	Y/N status of active.
+	)
+
+Tenant specific DB sample.
+*** HERE IS AN e.g. FOR THE TENANT SPECIFIC MODULE DATABASE AND METADATA DB STRUCTURE  for ICSR patient cases module ***.
+
+ICSR case Data Tables:
+ICSR_CASES:
+	RECORD_ID	CASE_ID		COUNTRY_OF_DETECTION	PRIMARY_SOURCE_COUNTRY		RECEIVED_DATE	REPORT_TYPE
+	--------------------------------------------------------------------------------------------------------
+	112200		RCT-001		US						US							12-05-2025		01
+	
+ICSR_PATIENT:
+	RECORD_ID	CASE_REC_ID		PATIENT_NAME	WEIGHT		AGE		HEIGHT
+	------------------------------------------------------------------------
+	112211		112200			JOHN			40			33		180
+	
+ICSR_EVENTS:
+	RECORD_ID	CASE_REC_ID		EVENT_NAME		START_DATE		END_DATE	SERIOUSNESS		DEATH	LIFE_THREATENING
+	------------------------------------------------------------------------------------------------
+	112222		112200			FEVER			12-01-2025		12-05-2025	Y				N		N 
+	112221		112200			HEADACHE		12-01-2025		12-05-2025	Y				N		N 
+	
+ICSR_DRUG_PRODUCTS:
+	RECORD_ID	CASE_REC_ID		PRODUCT_NAME	SUSPECT	DRUG_CHARACTERZATION		PRODUCT_TYPE	COMPANY_PRODUCT		STUDY_PRODUCT
+	-----------------------------------------------------------------------------------------------------------------------------
+	1122331		112200			Crocin			Y		01							02				Y					Y 
+	1122332		112200			Crocin			Y		01							02				Y					Y 
+
+
+	
+ICSR_DRUG_CAUSALITY:
+	RECORD_ID	PRODUCT_REC_ID	EVENT_REC_ID	COMPANY_CAUSALITY	REPORTER_CAUSALITY
+	-----------------------------------------------------------------------------------------------------------------------------
+	1122441		1122331			112222			N					Y
+	1122442		1122331			112221			Y					Y
+	1122443		1122332			112222			Y					Y
+	1122444		1122332			112221			Y					N
+	
+
+Metadata DATA base Sample:
+MODULES:
+	RECORD_ID	MODULE_ID	MODULE_NAME 	DB_ROOT_TABLE	IS_ACTIVE
+	------------------------------------------------------------------
+	110011		ICSR		Patient Cases	ICSR_CASES		Y
+	
+	
+TABLE_METADATA:
+	MODULE_ID	TABLE_ID	DB_TABLE_NAME		CONTEXT_NAME	PARENT_TABLE_ID		JOIN_COLUMN		REF_JOIN_COLUMN		MULTI_CONTEXT
+----------------------------------------------------------------------------------------------------------------------------------
+	ICSR		100			ICSR_CASES			aerInfo			null				null			null				N
+	ICSR		120			ICSR_PATIENT		patient			100					CASE_REC_ID		RECORD_ID			N
+	ICSR		130			ICSR_EVENTS			reactions		100					CASE_REC_ID		RECORD_ID			Y
+	ICSR		140			ICSR_DRUG_PRODUCTS	products		100					CASE_REC_ID		RECORD_ID			Y
+	ICSR		150			ICSR_DRUG_CAUSALITY	causality		140					PRODUCT_REC_ID	RECORD_ID			Y
+	
+	
+TABLE_COLUMN_METADATA:
+	MODULE_ID	TABLE_ID	FIELD_ID	COLUMN_NAME				CONTEXT_NAME	DATA_TYPE	MAX_LENGTH	REQUIRED_FIELD
+	----------------------------------------------------------------------------------------------------------
+	ICSR		100			100001		CASE_ID					caseID			TEXT		100			Y 
+	ICSR		100			100002		COUNTRY_OF_DETECTION	cod				TEXT		100			N 
+	ICSR		100			100003		PRIMARY_SOURCE_COUNTRY	psc				TEXT		100			N 
+	ICSR		120			120001		PATIENT_NAME			patName			TEXT		100			Y 
+	ICSR		120			120002		WEIGHT					patWeight		NUMBER		100			N
+	ICSR		120			120003		AGE						patAge			NUMBER		100			N 
+	ICSR		130			130001		EVENT_NAME				eventName		TEXT		100			Y 
+	ICSR		130			130002		START_DATE				eventStartDate	DATETIME	100			Y 
+	ICSR		140			140001		PRODUCT_NAME			productName		TEXT		100			Y 
+	ICSR		140			140002		DRUG_CHARACTERZATION	drugChar		TEXT		100			N 
+	ICSR		150			150001		EVENT_REC_ID			eventRecId		TEXT		100			Y 
+	ICSR		150			150002		COMPANY_CAUSALITY		companyRate		TEXT		100			Y 
+
+	
