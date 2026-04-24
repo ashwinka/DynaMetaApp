@@ -10,6 +10,7 @@
 	let _activeForm = null;
 	let _sectionCache = {};
 	let _fieldsCache = {};
+	let _renderRulesComutations = {};
 	 
 	 
 	/*navStack maintains the section navigation flows and multi-context data record ids*/
@@ -60,6 +61,213 @@
 	function toggleNavPanel(currCmp){
 		$(currCmp).parents('.md-nav').toggleClass('hide')
 		$(currCmp).toggleClass('hide')
+	}
+	
+		
+	function msComboSearchHandler(srchCmp){
+		let fieldId = $(srchCmp).parents('.md-msc').attr('fieldId');
+		let flMd = fieldId && _fieldsCache[fieldId];
+		let optVal = $(srchCmp).attr('value');
+		if(!fieldId || !flMd || !flMd.fieldPath){
+			return;
+		}
+		let flPath = flMd?.fieldPath;
+		let flName = flPath && flPath.indexOf('.') > 0 ? flPath.substr(flPath.lastIndexOf('.')+1) : flPath;
+		
+		//Set data to the _dataJson and _editJson
+		let navObj = _navStack.at(-1);
+		let ctxIds = navObj?.ctxIds || {};		
+		let secPath = flPath.indexOf('.') > 0 ? flPath.substr(0, flPath.lastIndexOf('.')) : null;
+		let ctxObj = getCtxByPath(secPath, _dataJson, ctxIds);
+		
+		let currSelVals = (flName && ctxObj[flName]) || ''
+		let currValArr = currSelVals ? currSelVals.split('|') : [];
+				
+		let storeFormat = flMd.storeFormat === 'FIELDS' ? 'FIELDS' : 'TEXT'
+		let storeFlMapping = storeFormat === 'FIELDS' && flMd.storeFieldMappings;
+		let storeFlName = null;
+		
+		if(typeof storeFlMapping === 'object'){
+			storeFlName = storeFlMapping[optVal];
+			currValArr = [];
+			for(let code in storeFlMapping){
+				let fl = storeFlMapping[code];
+				if(fl && ctxObj[fl] == 'Y'){
+					currValArr.push(code);
+				}
+			}			
+		}
+		let selVals = currValArr.reduce((acc, key) => {
+			  acc[key] = "Y";
+			  return acc;
+		}, {});
+		
+		let clValues = (flMd.codelist && AppCL.values(flMd.codelist)) || [];
+		if(clValues.length == 0 && Array.isArray(flMd.codelistVal)){
+			clValues = flMd.codelistVal;
+		}
+		
+		//Perform Search
+		
+		let searchStr = srchCmp.value;
+		if(searchStr){
+			searchStr = searchStr.toLowerCase().trim();
+			clValues = clValues.filter(o=>o.decode.toLowerCase().indexOf(searchStr)>=0);
+		}
+		let opt = '<div style="text-align:center;">No Data</span>'
+		if(clValues.length > 0){
+			opt = _getMsComboOptions(clValues, selVals, flMd);
+		}
+		
+		$(srchCmp).parents('.md-msc').find('.md-msc__options').html(opt);
+	}
+	
+	function msComboSelectHandler(mscOpt){
+		let fieldId = $(mscOpt).parents('.md-msc').attr('fieldId');
+		let flMd = fieldId && _fieldsCache[fieldId];
+		let optVal = $(mscOpt).attr('value');
+		if(!fieldId || !flMd || !flMd.fieldPath){
+			return;
+		}
+		
+		let flPath = flMd?.fieldPath;
+		let flName = flPath && flPath.indexOf('.') > 0 ? flPath.substr(flPath.lastIndexOf('.')+1) : flPath;
+		
+		//Set data to the _dataJson and _editJson
+		let navObj = _navStack.at(-1);
+		let ctxIds = navObj?.ctxIds || {};		
+		let secPath = flPath.indexOf('.') > 0 ? flPath.substr(0, flPath.lastIndexOf('.')) : null;
+		let ctxObj = getCtxByPath(secPath, _dataJson, ctxIds);
+		let editCtxObj = getCtxByPath(secPath, _editJson, ctxIds, true) || {};
+		
+		let currSelVals = (flName && ctxObj[flName]) || ''
+		let currValArr = currSelVals ? currSelVals.split('|') : [];
+		
+		
+		let storeFormat = flMd.storeFormat === 'FIELDS' ? 'FIELDS' : 'TEXT'
+		let storeFlMapping = storeFormat === 'FIELDS' && flMd.storeFieldMappings;
+		let storeFlName = null;
+		
+		if(typeof storeFlMapping === 'object'){
+			storeFlName = storeFlMapping[optVal];
+			currValArr = [];
+			for(let code in storeFlMapping){
+				let fl = storeFlMapping[code];
+				if(fl && ctxObj[fl] == 'Y'){
+					currValArr.push(code);
+				}
+			}			
+		}
+		
+		if(currValArr.find(v=>v==optVal)){
+			//If the current selection is already selected
+			let valInd = currValArr.findIndex(v=>v==optVal);
+			currValArr.splice(valInd, 1);
+			if(storeFlName){
+				ctxObj[storeFlName] = 'N';
+				editCtxObj[storeFlName] = 'N';
+			}
+			
+			
+			if(currValArr.length == 0){
+				$(mscOpt).parents('.md-msc').find('.md-msc__tags').html(AppI18N.t('Select...'))
+			} else {
+				$(mscOpt).parents('.md-msc').find('.md-msc__options .md-msc__option[value="'+optVal+'"] svg').remove()
+				$(mscOpt).parents('.md-msc').find('.md-msc__tags .md-msc__tag[value="'+optVal+'"]').remove();	
+			}
+		} else {
+			if(currValArr.length == 0){
+				$(mscOpt).parents('.md-msc').find('.md-msc__tags').html('')
+			}
+		
+		
+			//if the current selection is new
+			currValArr.push(optVal);
+			if(storeFlName){
+				ctxObj[storeFlName] = 'Y';
+				editCtxObj[storeFlName] = 'Y';
+			}
+			
+			$(mscOpt).parents('.md-msc').find('.md-msc__tags').append(`<div class="md-msc__tag" value="${optVal}">${AppI18N.clT(optVal, flMd.codelist)}<span class="md-msc__tag-remove md-ms-combo-clear">${MDUtils.icon('close')}</span></div>`);
+			$(mscOpt).parents('.md-msc').find('.md-msc__options .md-msc__option[value="'+optVal+'"] .md-msc__chk').html(MDUtils.icon('select'));
+		}
+		
+		if(flName){
+			ctxObj[flName] = currValArr.join('|');
+			editCtxObj[flName] = currValArr.join('|');
+		}
+		
+	}
+	
+	function handleFieldEditImpacts(fieldId){
+		
+		
+	}
+	
+	function switchInputHandler(switchCmp){
+		let fieldId = $(switchCmp).parents('.md-switch').attr('fieldId');
+		let flMd = _fieldsCache[fieldId];
+		let flPath = flMd?.fieldPath;
+		
+		if(!flMd || !flPath){
+			return;
+		}
+		
+		
+		let navObj = _navStack.at(-1);
+		let ctxIds = navObj?.ctxIds || {};
+		let secPath = flPath.indexOf('.') > 0 ? flPath.substr(0, flPath.lastIndexOf('.')) : null;
+		let flName = flPath.indexOf('.') > 0 ? flPath.substr(flPath.lastIndexOf('.')+1) : flPath;
+		let ctxObj = getCtxByPath(secPath, _dataJson, ctxIds);
+		let editCtxObj = getCtxByPath(secPath, _editJson, ctxIds, true) || {};
+		
+		if($(switchCmp).hasClass('on')){
+			ctxObj[flName] = 'N';
+			editCtxObj[flName] = 'N';
+		} else {			
+			ctxObj[flName] = 'Y';
+			editCtxObj[flName] = 'Y';
+		}
+		$(switchCmp).toggleClass('on')
+	}
+	
+	function formFieldChangeHandler(inpCmp){
+		let fieldId = $(inpCmp).parents('.md-field-wrapper').attr('field-id');
+		let flMd = fieldId && _fieldsCache[fieldId];
+		
+		if(!fieldId || !flMd){
+			return;
+		}
+		
+		let flPath = flMd.fieldPath;
+		let navObj = _navStack.at(-1);
+		let ctxIds = navObj?.ctxIds || {};
+			
+		
+		//Set data to the _dataJson and _editJson
+		let secPath = flPath.indexOf('.') > 0 ? flPath.substr(0, flPath.lastIndexOf('.')) : null;
+		let flName = flPath.indexOf('.') > 0 ? flPath.substr(flPath.lastIndexOf('.')+1) : flPath;
+		let ctxObj = getCtxByPath(secPath, _dataJson, ctxIds);
+		let editCtxObj = getCtxByPath(secPath, _editJson, ctxIds, true) || {};
+		
+		let inpVal = inpCmp.value;
+		if(ctxObj){
+			let dispVal = '';
+			if(inpCmp.type === 'date'){
+				if(inpVal){
+					inpVal = _getDateInDDMMMYYYY(inpVal);
+					dispVal = inpVal;
+				} else {
+					inpVal = '';
+					dispVal = AppI18N.t('Select Date');
+				}
+				
+				$(inpCmp).parents('.md-date-wrapper').find('.md-date-text').text(dispVal);
+			}
+			ctxObj[flName] = inpVal;
+		}
+		editCtxObj[flName] = inpVal;		
+		
 	}
 	
 	function clearLookupValue(clrBtn){
@@ -141,7 +349,6 @@
 		}
 		
 	}
-	
 	
 	function openLookupModule(lkpBtn){
 		let fieldId = $(lkpBtn).parents('.md-lookup').attr('fieldId');
@@ -282,208 +489,6 @@
 		});
 	}
 	
-	function switchInputHandler(switchCmp){
-		let fieldId = $(switchCmp).parents('.md-switch').attr('fieldId');
-		let flMd = _fieldsCache[fieldId];
-		let flPath = flMd?.fieldPath;
-		
-		if(!flMd || !flPath){
-			return;
-		}
-		
-		
-		let navObj = _navStack.at(-1);
-		let ctxIds = navObj?.ctxIds || {};
-		let secPath = flPath.indexOf('.') > 0 ? flPath.substr(0, flPath.lastIndexOf('.')) : null;
-		let flName = flPath.indexOf('.') > 0 ? flPath.substr(flPath.lastIndexOf('.')+1) : flPath;
-		let ctxObj = getCtxByPath(secPath, _dataJson, ctxIds);
-		let editCtxObj = getCtxByPath(secPath, _editJson, ctxIds, true) || {};
-		
-		if($(switchCmp).hasClass('on')){
-			ctxObj[flName] = 'N';
-			editCtxObj[flName] = 'N';
-		} else {			
-			ctxObj[flName] = 'Y';
-			editCtxObj[flName] = 'Y';
-		}
-		$(switchCmp).toggleClass('on')
-	}
-	
-	
-	function msComboSearchHandler(srchCmp){
-		let fieldId = $(srchCmp).parents('.md-msc').attr('fieldId');
-		let flMd = fieldId && _fieldsCache[fieldId];
-		let optVal = $(srchCmp).attr('value');
-		if(!fieldId || !flMd || !flMd.fieldPath){
-			return;
-		}
-		let flPath = flMd?.fieldPath;
-		let flName = flPath && flPath.indexOf('.') > 0 ? flPath.substr(flPath.lastIndexOf('.')+1) : flPath;
-		
-		//Set data to the _dataJson and _editJson
-		let navObj = _navStack.at(-1);
-		let ctxIds = navObj?.ctxIds || {};		
-		let secPath = flPath.indexOf('.') > 0 ? flPath.substr(0, flPath.lastIndexOf('.')) : null;
-		let ctxObj = getCtxByPath(secPath, _dataJson, ctxIds);
-		
-		let currSelVals = (flName && ctxObj[flName]) || ''
-		let currValArr = currSelVals ? currSelVals.split('|') : [];
-				
-		let storeFormat = flMd.storeFormat === 'FIELDS' ? 'FIELDS' : 'TEXT'
-		let storeFlMapping = storeFormat === 'FIELDS' && flMd.storeFieldMappings;
-		let storeFlName = null;
-		
-		if(typeof storeFlMapping === 'object'){
-			storeFlName = storeFlMapping[optVal];
-			currValArr = [];
-			for(let code in storeFlMapping){
-				let fl = storeFlMapping[code];
-				if(fl && ctxObj[fl] == 'Y'){
-					currValArr.push(code);
-				}
-			}			
-		}
-		let selVals = currValArr.reduce((acc, key) => {
-			  acc[key] = "Y";
-			  return acc;
-		}, {});
-		
-		let clValues = (flMd.codelist && AppCL.values(flMd.codelist)) || [];
-		if(clValues.length == 0 && Array.isArray(flMd.codelistVal)){
-			clValues = flMd.codelistVal;
-		}
-		
-		//Perform Search
-		
-		let searchStr = srchCmp.value;
-		if(searchStr){
-			searchStr = searchStr.toLowerCase().trim();
-			clValues = clValues.filter(o=>o.decode.toLowerCase().indexOf(searchStr)>=0);
-		}
-		let opt = '<div style="text-align:center;">No Data</span>'
-		if(clValues.length > 0){
-			opt = _getMsComboOptions(clValues, selVals, flMd);
-		}
-		
-		$(srchCmp).parents('.md-msc').find('.md-msc__options').html(opt);
-	}
-	
-	function msComboSelectHandler(mscOpt){
-		let fieldId = $(mscOpt).parents('.md-msc').attr('fieldId');
-		let flMd = fieldId && _fieldsCache[fieldId];
-		let optVal = $(mscOpt).attr('value');
-		if(!fieldId || !flMd || !flMd.fieldPath){
-			return;
-		}
-		
-		let flPath = flMd?.fieldPath;
-		let flName = flPath && flPath.indexOf('.') > 0 ? flPath.substr(flPath.lastIndexOf('.')+1) : flPath;
-		
-		//Set data to the _dataJson and _editJson
-		let navObj = _navStack.at(-1);
-		let ctxIds = navObj?.ctxIds || {};		
-		let secPath = flPath.indexOf('.') > 0 ? flPath.substr(0, flPath.lastIndexOf('.')) : null;
-		let ctxObj = getCtxByPath(secPath, _dataJson, ctxIds);
-		let editCtxObj = getCtxByPath(secPath, _editJson, ctxIds, true) || {};
-		
-		let currSelVals = (flName && ctxObj[flName]) || ''
-		let currValArr = currSelVals ? currSelVals.split('|') : [];
-		
-		
-		let storeFormat = flMd.storeFormat === 'FIELDS' ? 'FIELDS' : 'TEXT'
-		let storeFlMapping = storeFormat === 'FIELDS' && flMd.storeFieldMappings;
-		let storeFlName = null;
-		
-		if(typeof storeFlMapping === 'object'){
-			storeFlName = storeFlMapping[optVal];
-			currValArr = [];
-			for(let code in storeFlMapping){
-				let fl = storeFlMapping[code];
-				if(fl && ctxObj[fl] == 'Y'){
-					currValArr.push(code);
-				}
-			}			
-		}
-		
-		if(currValArr.find(v=>v==optVal)){
-			//If the current selection is already selected
-			let valInd = currValArr.findIndex(v=>v==optVal);
-			currValArr.splice(valInd, 1);
-			if(storeFlName){
-				ctxObj[storeFlName] = 'N';
-				editCtxObj[storeFlName] = 'N';
-			}
-			
-			
-			if(currValArr.length == 0){
-				$(mscOpt).parents('.md-msc').find('.md-msc__tags').html(AppI18N.t('Select...'))
-			} else {
-				$(mscOpt).parents('.md-msc').find('.md-msc__options .md-msc__option[value="'+optVal+'"] svg').remove()
-				$(mscOpt).parents('.md-msc').find('.md-msc__tags .md-msc__tag[value="'+optVal+'"]').remove();	
-			}
-		} else {
-			if(currValArr.length == 0){
-				$(mscOpt).parents('.md-msc').find('.md-msc__tags').html('')
-			}
-		
-		
-			//if the current selection is new
-			currValArr.push(optVal);
-			if(storeFlName){
-				ctxObj[storeFlName] = 'Y';
-				editCtxObj[storeFlName] = 'Y';
-			}
-			
-			$(mscOpt).parents('.md-msc').find('.md-msc__tags').append(`<div class="md-msc__tag" value="${optVal}">${AppI18N.clT(optVal, flMd.codelist)}<span class="md-msc__tag-remove md-ms-combo-clear">${MDUtils.icon('close')}</span></div>`);
-			$(mscOpt).parents('.md-msc').find('.md-msc__options .md-msc__option[value="'+optVal+'"] .md-msc__chk').html(MDUtils.icon('select'));
-		}
-		
-		if(flName){
-			ctxObj[flName] = currValArr.join('|');
-			editCtxObj[flName] = currValArr.join('|');
-		}
-		
-		
-	}
-	
-	function formFieldChangeHandler(inpCmp){
-		let fieldId = $(inpCmp).parents('.md-field-wrapper').attr('field-id');
-		let flMd = fieldId && _fieldsCache[fieldId];
-		
-		if(!fieldId || !flMd){
-			return;
-		}
-		
-		let flPath = flMd.fieldPath;
-		let navObj = _navStack.at(-1);
-		let ctxIds = navObj?.ctxIds || {};
-			
-		
-		//Set data to the _dataJson and _editJson
-		let secPath = flPath.indexOf('.') > 0 ? flPath.substr(0, flPath.lastIndexOf('.')) : null;
-		let flName = flPath.indexOf('.') > 0 ? flPath.substr(flPath.lastIndexOf('.')+1) : flPath;
-		let ctxObj = getCtxByPath(secPath, _dataJson, ctxIds);
-		let editCtxObj = getCtxByPath(secPath, _editJson, ctxIds, true) || {};
-		
-		let inpVal = inpCmp.value;
-		if(ctxObj){
-			let dispVal = '';
-			if(inpCmp.type === 'date'){
-				if(inpVal){
-					inpVal = _getDateInDDMMMYYYY(inpVal);
-					dispVal = inpVal;
-				} else {
-					inpVal = '';
-					dispVal = AppI18N.t('Select Date');
-				}
-				
-				$(inpCmp).parents('.md-date-wrapper').find('.md-date-text').text(dispVal);
-			}
-			ctxObj[flName] = inpVal;
-		}
-		editCtxObj[flName] = inpVal;		
-		
-	}
 	
 	function toggleSectionPanel(panelHeadCmp){
 		if($(panelHeadCmp).hasClass('md-panel__header')){
@@ -966,6 +971,16 @@
 			navObj.ctxIds = navObj.ctxIds ? navObj.ctxIds : {};
 			let ctxIds = navObj.ctxIds;
 
+			//Evaluate renderConditions
+			let renderRules = _activeForm.renderRules;
+			if(field.renderCondition && renderRules[field.renderCondition]){
+				let renderRule = renderRules[field.renderCondition];
+				let rulePassed = evaluateRenderRules(renderRule, _dataJson, ctxIds, _renderRulesComutations, _fieldsCache);			
+				if(!rulePassed){
+					return;
+				}
+				
+			}
 			
 			const w = field.fieldWidth;
 			const label = AppI18N.mT(field.label, _moduleId);
@@ -1091,6 +1106,7 @@
 		let recs = gridRecs || [];
 		let ctxPath = md.contextPath;
 		let ctxName = ctxPath.indexOf('.') > 0 ? ctxPath.substr(ctxPath.lastIndexOf('.')+1) : ctxPath;
+		let renderRules = _activeForm.renderRules;
 		
 		if(recs.length === 0){
 			gb.push('<tr><td style="text-align:center" colspan="'+(gf.length+2)+'"><span>No records to display</span></td></tr>')
@@ -1146,6 +1162,18 @@
 				_fieldsCache[fl.fieldId] = fl;
 				
 				gb.push('		<td class="md-field-wrapper " style="width: '+(fl.columnSize || '22ch')+';" field-id="'+fl.fieldId+'" >');
+				
+				
+				//Evaluate if the field is having renderCondition
+				if(fl.renderCondition && renderRules[fl.renderCondition]){
+					let renderRule = renderRules[fl.renderCondition];
+					let rulePassed = evaluateRenderRules(renderRule, _dataJson, navObj.ctxIds, _renderRulesComutations, _fieldsCache);			
+					if(!rulePassed){
+						continue;
+					}					
+				}
+					
+			
 				gb.push(			_buildInput(fl, _dataJson, navObj.ctxIds));	
 				gb.push('		</td>');
 			}			
@@ -1481,33 +1509,40 @@
 		}
 		
 		_activeForm = Object.values(_formMD.FORMS)[0];		
+		_renderRulesComutations = {};
 		_buildFormPage();
 		console.log(_dataJson);
 	}
 	
 	global.AppFORM = {
-		open:renderDataForm,
-		switch:switchForm,
-		navigate:formNavigate,
-		tab:formTabHandler,
-		toggle:toggleSectionPanel,
-		edit:formFieldChangeHandler,
-		pick:multiCtxRecSelect,
-		sort:sortMcGridRecs,
-		insert:insertMcRecord,
-		copy:copyMcRecord,
-		delete:deleteMcRecord,
-		mcEdit:mcRecEditHandler,
-		back:mcNavBackHandler,
-		pager:gridPaginationHandler,
-		pageSize:gridPageSizeHandler,
-		lookup:openLookupModule,
-		multiSelect:msComboSelectHandler,
-		msSearch:msComboSearchHandler,
+		open:		renderDataForm,
+		switch:		switchForm,
+		navigate:	formNavigate,
+		tab:		formTabHandler,
+		togglePanel:toggleSectionPanel,
+		
+		
+		mcRecChk:	multiCtxRecSelect,
+		insert:		insertMcRecord,
+		copy:		copyMcRecord,
+		delete:		deleteMcRecord,		
+		sort:		sortMcGridRecs,
+		pager:		gridPaginationHandler,
+		pageSize:	gridPageSizeHandler,
+		
+		lookup:		openLookupModule,		
+		comboSearch:msComboSearchHandler,		
+		
+		editField:	formFieldChangeHandler,
+		msComboSel:	msComboSelectHandler,
 		clearLookup:clearLookupValue,
-		valSwitch:switchInputHandler,
-		action:handleFormActions,
-		toggleNav:toggleNavPanel,
+		valSwitch:	switchInputHandler,
+		
+		mcRecEdit:		mcRecEditHandler,
+		mcCtxback:		mcNavBackHandler,
+		
+		action:		handleFormActions,
+		toggleNav:	toggleNavPanel,
 		
 	};
 })(window);
