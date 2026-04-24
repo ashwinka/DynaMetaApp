@@ -151,7 +151,7 @@ VALUES
 
 (gen_random_uuid()::VARCHAR, 'ACCOUNTS', '232', '232004', 'INTERCHANGE_ID',   'interchangeId',   'interchangeId',   'TEXT',   200,  'N', 'contacts$.interchangeId',
     'lbl.interchangeId',
-    '{"renderAs":"text",        "fieldWidth":"2", "columnWidth":"16ch", "allowSorting":true}',
+    '{"renderAs":"text",        "fieldWidth":"2", "columnWidth":"16ch", "allowSorting":true, "renderCondition":"ACC_E2B_CNT_Y"}',
     'EDI interchange ID for this contact'),
 
 (gen_random_uuid()::VARCHAR, 'ACCOUNTS', '232', '232005', 'E2B_CONTACT',      'e2bContact',      'e2bContact',      'TEXT',   1,    'N', 'contacts$.e2bContact',
@@ -206,3 +206,4 @@ VALUES
     'Free-text description of the contract')
 
 ON CONFLICT (MODULE_ID, TABLE_ID, FIELD_ID) DO NOTHING;
+
