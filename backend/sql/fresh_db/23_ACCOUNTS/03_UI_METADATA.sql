@@ -8,6 +8,7 @@
 -- ============================================================
 
 -- ACCOUNTS — FORM
+DELETE FROM UI_METADATA WHERE MODULE_ID = 'ACCOUNTS' AND TYPE='FORM';
 INSERT INTO UI_METADATA (ID, MODULE_ID, NAME, TYPE, METADATA_JSON) VALUES (gen_random_uuid()::VARCHAR,'ACCOUNTS','ACCOUNTS_FULL_FORM','FORM','{
   "formID": "FULL_FORM",
   "formName": "Accounts / Company Units",
@@ -83,9 +84,9 @@ INSERT INTO UI_METADATA (ID, MODULE_ID, NAME, TYPE, METADATA_JSON) VALUES (gen_r
 	"gridFields": [
 	  { "fieldId": "232001" },
 	  { "fieldId": "232003" },
-	  { "fieldId": "232004" },
+	  { "fieldId": "232006" },
 	  { "fieldId": "232005" },
-	  { "fieldId": "232006" }
+	  { "fieldId": "232004" }
 	]
   },
   {
@@ -113,6 +114,7 @@ INSERT INTO UI_METADATA (ID, MODULE_ID, NAME, TYPE, METADATA_JSON) VALUES (gen_r
 }') ON CONFLICT (NAME) DO NOTHING;
 
 -- ACCOUNTS — LISTING
+DELETE FROM UI_METADATA WHERE MODULE_ID = 'ACCOUNTS' AND TYPE='LISTING';
 INSERT INTO UI_METADATA (ID, MODULE_ID, NAME, TYPE, METADATA_JSON) VALUES (gen_random_uuid()::VARCHAR,'ACCOUNTS','ACCOUNTS_LISTING','LISTING','{
   "module": "ACCOUNTS",
   "title": "Accounts / Company Units",
@@ -140,6 +142,7 @@ INSERT INTO UI_METADATA (ID, MODULE_ID, NAME, TYPE, METADATA_JSON) VALUES (gen_r
 }') ON CONFLICT (NAME) DO NOTHING;
 
 -- ACCOUNTS — LOOKUP
+DELETE FROM UI_METADATA WHERE MODULE_ID = 'ACCOUNTS' AND TYPE='LOOKUP';
 INSERT INTO UI_METADATA (ID, MODULE_ID, NAME, TYPE, METADATA_JSON) VALUES (gen_random_uuid()::VARCHAR,'ACCOUNTS','ACCOUNTS_LOOKUP','LOOKUP','{
   "module": "ACCOUNTS",
   "title": "Accounts / Company Units",
@@ -162,6 +165,7 @@ INSERT INTO UI_METADATA (ID, MODULE_ID, NAME, TYPE, METADATA_JSON) VALUES (gen_r
 }') ON CONFLICT (NAME) DO NOTHING;
 
 -- ACCOUNTS — I18N
+DELETE FROM UI_METADATA WHERE MODULE_ID = 'ACCOUNTS' AND TYPE='I18N';
 INSERT INTO UI_METADATA (ID, MODULE_ID, NAME, TYPE, METADATA_JSON) VALUES (gen_random_uuid()::VARCHAR,'ACCOUNTS','ACCOUNTS_I18N','I18N','{
   "en": {
     "lbl.accId":                "Account ID",
@@ -290,3 +294,14 @@ INSERT INTO UI_METADATA (ID, MODULE_ID, NAME, TYPE, METADATA_JSON) VALUES (gen_r
     "lbl.widget_activeAccounts":"有効"
   }
 }') ON CONFLICT (NAME) DO NOTHING;
+
+
+
+
+
+---------------- UI render rules metadata ------------------
+INSERT INTO APP_RULES
+(ID,						 MODULE_ID,	 RULE_ID,			STATUS,			IS_ACTIVE,	IS_OOB,	RULE_TYPE,	TRIGGER_FIELDS,	CONTEXT_PATH,	
+	RULE_EXPRESSION) values
+(gen_random_uuid()::VARCHAR, 'ACCOUNTS', 'ACC_E2B_CNT_Y', 	'PUBLISHED',	'Y',		'Y',	'RENDERER', '232005',		'contacts$',	
+	'{"logic":"AND", "conditions":[{"lhsFieldId":"232005", "operator":"eq", "rhsValue":"Y"}], "expressions":[]}');
