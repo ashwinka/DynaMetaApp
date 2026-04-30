@@ -1,0 +1,623 @@
+{
+  "formID": "ICSR_FORM_R2",
+  "formName": "ICSR Cases — E2B R2 View",
+  "version": "1.0",
+  "description": "R2-specific form view. Left nav = root sections. Right panel = default panel for plain field sections + tabPanel for multi-context grids.",
+  "layout": {
+    "recordTitleField": "receiptNo",
+    "enableFilterSection": false,
+    "navigationWidth": "260px",
+    "formPanelWidth": "75%",
+    "responsive": { "webFieldsPerRow": 3, "tabletFieldsPerRow": 2, "mobileFieldsPerRow": 1 }
+  },
+  "formHeaderActions": [
+    { "actionId": "switchForm", "label": "app.switchForm", "icon": "swap", "type": "standard" },
+    { "actionId": "save",       "label": "app.save",       "icon": "save", "type": "standard" },
+    { "actionId": "cancel",     "label": "app.cancel",     "icon": "close" }
+  ],
+  "sections": [
+
+    {
+      "sectionId": "500_R2",
+      "title": "lbl.sec_r2_caseHeader",
+      "sequence": 1,
+      "sections": [
+        {
+          "sectionId": "500_R2_001",
+          "title": "lbl.sec_r2_reportIdentification",
+          "sequence": 1,
+          "fields": [
+            { "fieldId": "500001" },
+            { "fieldId": "500002" },
+            { "fieldId": "500003" },
+            { "fieldId": "500004" },
+            { "fieldId": "500005" },
+            { "fieldId": "500006" }
+          ]
+        },
+        {
+          "sectionId": "500_R2_002",
+          "title": "lbl.sec_r2_reportType",
+          "sequence": 2,
+          "fields": [
+            { "fieldId": "500007" },
+            { "fieldId": "500008" },
+            { "fieldId": "500011" },
+            { "fieldId": "500041" },
+            { "fieldId": "500015" },
+            { "fieldId": "500016" }
+          ]
+        },
+        {
+          "sectionId": "500_R2_003",
+          "title": "lbl.sec_r2_seriousness",
+          "sequence": 3,
+          "fields": [
+            { "fieldId": "500021" },
+            { "fieldId": "500022" },
+            { "fieldId": "500023" },
+            { "fieldId": "500024" },
+            { "fieldId": "500025" },
+            { "fieldId": "500026" },
+            { "fieldId": "500027" },
+            { "fieldId": "500028" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "515_R2",
+      "title": "lbl.sec_r2_reporter",
+      "sequence": 2,
+      "sections": [
+        {
+          "sectionId": "515_R2_001",
+          "title": "lbl.sec_r2_reporterQualification",
+          "tabPanel": true,
+          "sequence": 1,
+          "multiContext": true,
+          "contextPath": "reporterInformations$",
+          "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": false, "pagination": true, "pageSizeOptions": [5, 10] },
+          "fields": [
+            { "fieldId": "515004" },
+            { "fieldId": "515005" },
+            { "fieldId": "515006" },
+            { "fieldId": "515007" },
+            { "fieldId": "515008" },
+            { "fieldId": "515009" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "530_R2",
+      "title": "lbl.sec_r2_patient",
+      "sequence": 3,
+      "sections": [
+        {
+          "sectionId": "530_R2_001",
+          "title": "lbl.sec_r2_patientCore",
+          "sequence": 1,
+          "fields": [
+            { "fieldId": "530001" },
+            { "fieldId": "530009" },
+            { "fieldId": "530002" },
+            { "fieldId": "530004" },
+            { "fieldId": "530005" },
+            { "fieldId": "530006" },
+            { "fieldId": "530007" }
+          ]
+        },
+        {
+          "sectionId": "530_R2_002",
+          "title": "lbl.sec_r2_patientPhysical",
+          "sequence": 2,
+          "fields": [
+            { "fieldId": "530021" },
+            { "fieldId": "530022" },
+            { "fieldId": "530023" },
+            { "fieldId": "530024" },
+            { "fieldId": "530029" },
+            { "fieldId": "530030" },
+            { "fieldId": "530031" },
+            { "fieldId": "530032" }
+          ]
+        },
+        {
+          "sectionId": "530_R2_003",
+          "title": "lbl.sec_r2_patientMedical",
+          "sequence": 3,
+          "fields": [
+            { "fieldId": "530033" },
+            { "fieldId": "530034" }
+          ]
+        },
+        {
+          "sectionId": "530_R2_004",
+          "title": "lbl.sec_r2_patientDeath",
+          "sequence": 4,
+          "renderCondition": "RULE_ICSR_PAT_DEATH_SECTION",
+          "fields": [
+            { "fieldId": "530037" },
+            { "fieldId": "530038" },
+            { "fieldId": "530039" }
+          ]
+        },
+        {
+          "sectionId": "530_R2_005",
+          "title": "lbl.sec_r2_patientRecords",
+          "sequence": 5,
+          "fields": [
+            { "fieldId": "530049" },
+            { "fieldId": "530050" },
+            { "fieldId": "530051" },
+            { "fieldId": "530052" }
+          ]
+        },
+        {
+          "sectionId": "540_R2_001",
+          "title": "lbl.sec_medicalHistory",
+          "tabPanel": true,
+          "sequence": 6,
+          "multiContext": true,
+          "contextPath": "patient.patientMedicalHistory$",
+          "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": true, "pagination": true, "pageSizeOptions": [5, 10, 25] },
+          "fields": [
+            { "fieldId": "540001" },
+            { "fieldId": "540002" },
+            { "fieldId": "540004" },
+            { "fieldId": "540005" },
+            { "fieldId": "540006" },
+            { "fieldId": "540007" },
+            { "fieldId": "540008" }
+          ],
+          "gridFields": [
+            { "fieldId": "540001" },
+            { "fieldId": "540002" },
+            { "fieldId": "540004" },
+            { "fieldId": "540006" }
+          ]
+        },
+        {
+          "sectionId": "545_R2_001",
+          "title": "lbl.sec_pastDrugTherapies",
+          "tabPanel": true,
+          "sequence": 7,
+          "multiContext": true,
+          "contextPath": "patient.patientPastDrugTherapies$",
+          "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": true, "pagination": true, "pageSizeOptions": [5, 10, 25] },
+          "fields": [
+            { "fieldId": "545001" },
+            { "fieldId": "545009" },
+            { "fieldId": "545010" },
+            { "fieldId": "545012" },
+            { "fieldId": "545013" },
+            { "fieldId": "545020" },
+            { "fieldId": "545021" }
+          ],
+          "gridFields": [
+            { "fieldId": "545001" },
+            { "fieldId": "545009" },
+            { "fieldId": "545012" },
+            { "fieldId": "545020" },
+            { "fieldId": "545021" }
+          ]
+        },
+        {
+          "sectionId": "560_R2",
+          "title": "lbl.sec_r2_deathCauses",
+          "tabPanel": true,
+          "sequence": 8,
+          "renderCondition": "RULE_ICSR_PAT_DEATH_SECTION",
+          "sections": [
+            {
+              "sectionId": "560_R2_001",
+              "title": "lbl.sec_reportedDeathCauses",
+              "sequence": 1,
+              "multiContext": true,
+              "contextPath": "patient.deathCauseCollection$",
+              "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": false, "pagination": false },
+              "fields": [
+                { "fieldId": "560104" },
+                { "fieldId": "560102" },
+                { "fieldId": "560103" }
+              ],
+              "gridFields": [
+                { "fieldId": "560104" },
+                { "fieldId": "560102" }
+              ]
+            },
+            {
+              "sectionId": "561_R2_001",
+              "title": "lbl.sec_autopsyCauses",
+              "sequence": 2,
+              "renderCondition": "RULE_ICSR_PAT_AUTOPSY_DATE",
+              "multiContext": true,
+              "contextPath": "patient.patientAutopsyCollection$",
+              "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": false, "pagination": false },
+              "fields": [
+                { "fieldId": "561002" },
+                { "fieldId": "561003" },
+                { "fieldId": "561004" }
+              ],
+              "gridFields": [
+                { "fieldId": "561002" },
+                { "fieldId": "561003" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "565_R2",
+      "title": "lbl.sec_r2_parent",
+      "sequence": 4,
+      "renderCondition": "RULE_ICSR_PARENT_SECTION",
+      "sections": [
+        {
+          "sectionId": "565_R2_001",
+          "title": "lbl.sec_parentCore",
+          "sequence": 1,
+          "fields": [
+            { "fieldId": "565013" },
+            { "fieldId": "565010" },
+            { "fieldId": "565009" },
+            { "fieldId": "565005" },
+            { "fieldId": "565008" },
+            { "fieldId": "565015" },
+            { "fieldId": "565016" },
+            { "fieldId": "565011" },
+            { "fieldId": "565012" },
+            { "fieldId": "565004" },
+            { "fieldId": "565014" }
+          ]
+        },
+        {
+          "sectionId": "570_R2_001",
+          "title": "lbl.sec_parentPastDrugs",
+          "tabPanel": true,
+          "sequence": 2,
+          "multiContext": true,
+          "contextPath": "patient.parent.parentPastDrugTherapyCollection$",
+          "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": true, "pagination": true, "pageSizeOptions": [5, 10] },
+          "fields": [
+            { "fieldId": "570019" },
+            { "fieldId": "570005" },
+            { "fieldId": "570009" },
+            { "fieldId": "570011" },
+            { "fieldId": "570020" },
+            { "fieldId": "570010" },
+            { "fieldId": "570012" },
+            { "fieldId": "570022" },
+            { "fieldId": "570003" }
+          ],
+          "gridFields": [
+            { "fieldId": "570019" },
+            { "fieldId": "570005" },
+            { "fieldId": "570020" },
+            { "fieldId": "570022" },
+            { "fieldId": "570003" }
+          ]
+        },
+        {
+          "sectionId": "575_R2_001",
+          "title": "lbl.sec_parentMedHistory",
+          "tabPanel": true,
+          "sequence": 3,
+          "multiContext": true,
+          "contextPath": "patient.parent.parentMedHistEpisodeCollection$",
+          "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": true, "pagination": true, "pageSizeOptions": [5, 10] },
+          "fields": [
+            { "fieldId": "575010" },
+            { "fieldId": "575008" },
+            { "fieldId": "575011" },
+            { "fieldId": "575007" },
+            { "fieldId": "575003" },
+            { "fieldId": "575004" }
+          ],
+          "gridFields": [
+            { "fieldId": "575010" },
+            { "fieldId": "575011" },
+            { "fieldId": "575003" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "600_R2",
+      "title": "lbl.sec_r2_eventReactions",
+      "sequence": 5,
+      "sections": [
+        {
+          "sectionId": "600_R2_001",
+          "title": "lbl.sec_r2_reactionCore",
+          "tabPanel": true,
+          "sequence": 1,
+          "multiContext": true,
+          "contextPath": "eventReactions$",
+          "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": true, "pagination": true, "pageSizeOptions": [5, 10, 25] },
+          "sections": [
+            {
+              "sectionId": "600_R2_001_A",
+              "title": "lbl.sec_reactionTerm",
+              "sequence": 1,
+              "fields": [
+                { "fieldId": "600029" },
+                { "fieldId": "600015" },
+                { "fieldId": "600032" },
+                { "fieldId": "600024" },
+                { "fieldId": "600008" },
+                { "fieldId": "600013" },
+                { "fieldId": "600014" }
+              ]
+            },
+            {
+              "sectionId": "600_R2_001_B",
+              "title": "lbl.sec_r2_seriousnessCriteria",
+              "sequence": 2,
+              "fields": [
+                { "fieldId": "600043" },
+                { "fieldId": "600035" },
+                { "fieldId": "600039" },
+                { "fieldId": "600033" },
+                { "fieldId": "600036" },
+                { "fieldId": "600034" },
+                { "fieldId": "600040" },
+                { "fieldId": "600042" }
+              ]
+            },
+            {
+              "sectionId": "600_R2_001_C",
+              "title": "lbl.sec_reactionOutcome",
+              "sequence": 3,
+              "fields": [
+                { "fieldId": "600026" },
+                { "fieldId": "600031" }
+              ]
+            }
+          ],
+          "gridFields": [
+            { "fieldId": "600029" },
+            { "fieldId": "600015" },
+            { "fieldId": "600024" },
+            { "fieldId": "600026" },
+            { "fieldId": "600043" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "610_R2",
+      "title": "lbl.sec_r2_drugProducts",
+      "sequence": 6,
+      "sections": [
+        {
+          "sectionId": "610_R2_001",
+          "title": "lbl.sec_r2_drugCore",
+          "tabPanel": true,
+          "sequence": 1,
+          "multiContext": true,
+          "contextPath": "drugProducts$",
+          "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": true, "pagination": true, "pageSizeOptions": [5, 10, 25] },
+          "sections": [
+            {
+              "sectionId": "610_R2_001_A",
+              "title": "lbl.sec_r2_drugIdentification",
+              "sequence": 1,
+              "fields": [
+                { "fieldId": "610052" },
+                { "fieldId": "610050" },
+                { "fieldId": "610031" },
+                { "fieldId": "610074" }
+              ]
+            },
+            {
+              "sectionId": "610_R2_001_B",
+              "title": "lbl.sec_r2_drugDose",
+              "sequence": 2,
+              "fields": [
+                { "fieldId": "610011" },
+                { "fieldId": "610012" },
+                { "fieldId": "610019" },
+                { "fieldId": "610010" }
+              ]
+            },
+            {
+              "sectionId": "610_R2_001_C",
+              "title": "lbl.sec_r2_drugAction",
+              "sequence": 3,
+              "fields": [
+                { "fieldId": "610001" },
+                { "fieldId": "610017" },
+                { "fieldId": "610018" }
+              ]
+            },
+            {
+              "sectionId": "615_R2_001",
+              "title": "lbl.sec_r2_drugTherapy",
+              "sequence": 4,
+              "multiContext": true,
+              "contextPath": "drugProducts$.drugTherapies$",
+              "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": true, "pagination": true, "pageSizeOptions": [5, 10] },
+              "fields": [
+                { "fieldId": "615031" },
+                { "fieldId": "615027" },
+                { "fieldId": "615029" },
+                { "fieldId": "615007" },
+                { "fieldId": "615008" },
+                { "fieldId": "615035" },
+                { "fieldId": "615036" },
+                { "fieldId": "615012" },
+                { "fieldId": "615013" },
+                { "fieldId": "615014" },
+                { "fieldId": "615023" },
+                { "fieldId": "615009" },
+                { "fieldId": "615017" },
+                { "fieldId": "615016" }
+              ],
+              "gridFields": [
+                { "fieldId": "615031" },
+                { "fieldId": "615027" },
+                { "fieldId": "615035" },
+                { "fieldId": "615023" }
+              ]
+            },
+            {
+              "sectionId": "620_R2_001",
+              "title": "lbl.sec_drugIndications",
+              "sequence": 5,
+              "multiContext": true,
+              "contextPath": "drugProducts$.drugIndications$",
+              "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": false, "pagination": false },
+              "fields": [
+                { "fieldId": "620001" },
+                { "fieldId": "620002" }
+              ],
+              "gridFields": [
+                { "fieldId": "620001" },
+                { "fieldId": "620002" }
+              ]
+            },
+            {
+              "sectionId": "630_R2_001",
+              "title": "lbl.sec_drugApprovals",
+              "sequence": 6,
+              "multiContext": true,
+              "contextPath": "drugProducts$.drugApprovalCollection$",
+              "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": false, "pagination": true, "pageSizeOptions": [5, 10] },
+              "fields": [
+                { "fieldId": "630006" },
+                { "fieldId": "630004" },
+                { "fieldId": "630005" },
+                { "fieldId": "630026" },
+                { "fieldId": "630019" }
+              ],
+              "gridFields": [
+                { "fieldId": "630006" },
+                { "fieldId": "630004" },
+                { "fieldId": "630005" }
+              ]
+            },
+            {
+              "sectionId": "635_R2_001",
+              "title": "lbl.sec_r2_drugRelatedness",
+              "sequence": 7,
+              "multiContext": true,
+              "contextPath": "drugProducts$.drugReactionRelatednes$",
+              "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": false, "pagination": true, "pageSizeOptions": [5, 10] },
+              "fields": [
+                { "fieldId": "635004" },
+                { "fieldId": "635005" },
+                { "fieldId": "635010" },
+                { "fieldId": "635017" },
+                { "fieldId": "635008" },
+                { "fieldId": "635019" },
+                { "fieldId": "635015" }
+              ],
+              "gridFields": [
+                { "fieldId": "635004" },
+                { "fieldId": "635008" },
+                { "fieldId": "635019" },
+                { "fieldId": "635010" },
+                { "fieldId": "635017" }
+              ]
+            }
+          ],
+          "gridFields": [
+            { "fieldId": "610052" },
+            { "fieldId": "610050" },
+            { "fieldId": "610001" },
+            { "fieldId": "610017" }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sectionId": "580_R2",
+      "title": "lbl.sec_r2_study",
+      "sequence": 7,
+      "renderCondition": "RULE_ICSR_STUDY_SECTION",
+      "sections": [
+        {
+          "sectionId": "580_R2_001",
+          "title": "lbl.sec_r2_studyCore",
+          "sequence": 1,
+          "fields": [
+            { "fieldId": "580026" },
+            { "fieldId": "580034" },
+            { "fieldId": "580038" },
+            { "fieldId": "580030" },
+            { "fieldId": "580035" },
+            { "fieldId": "580001" }
+          ]
+        },
+        {
+          "sectionId": "580_R2_002",
+          "title": "lbl.sec_r2_studySubject",
+          "sequence": 2,
+          "fields": [
+            { "fieldId": "580039" },
+            { "fieldId": "580023" },
+            { "fieldId": "580004" },
+            { "fieldId": "580014" }
+          ]
+        },
+        {
+          "sectionId": "580_R2_003",
+          "title": "lbl.sec_r2_studyBlinding",
+          "sequence": 3,
+          "fields": [
+            { "fieldId": "580002" },
+            { "fieldId": "580003" },
+            { "fieldId": "580028" }
+          ]
+        },
+        {
+          "sectionId": "582_R2_001",
+          "title": "lbl.sec_studyRegistrations",
+          "tabPanel": true,
+          "sequence": 4,
+          "multiContext": true,
+          "contextPath": "study.studyRegistrationCollection$",
+          "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": false, "pagination": false },
+          "fields": [
+            { "fieldId": "582004" },
+            { "fieldId": "582003" },
+            { "fieldId": "582002" },
+            { "fieldId": "582001" }
+          ],
+          "gridFields": [
+            { "fieldId": "582004" },
+            { "fieldId": "582003" }
+          ]
+        },
+        {
+          "sectionId": "583_R2_001",
+          "title": "lbl.sec_studyCrossRefInds",
+          "tabPanel": true,
+          "sequence": 5,
+          "multiContext": true,
+          "contextPath": "study.studyCrossReferenceINDsCollection$",
+          "dataGridConfig": { "allowAdd": true, "allowDelete": true, "allowCopy": false, "pagination": false },
+          "fields": [
+            { "fieldId": "583001" },
+            { "fieldId": "583002" },
+            { "fieldId": "583003" }
+          ],
+          "gridFields": [
+            { "fieldId": "583001" },
+            { "fieldId": "583002" }
+          ]
+        }
+      ]
+    }
+
+  ]
+}
