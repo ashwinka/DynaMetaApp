@@ -1,0 +1,267 @@
+{
+  "formID": "ICSR_TRIAGE",
+  "formName": "ICSR Cases — Triage",
+  "version": "1.0",
+  "description": "Intake / triage form. Covers the ~40 fields needed to register, classify and route a new case. Full data entry is done via the Full Form after triage.",
+  "layout": {
+    "recordTitleField": "receiptNo",
+    "enableFilterSection": false,
+    "navigationWidth": "260px",
+    "formPanelWidth": "75%",
+    "responsive": { "webFieldsPerRow": 3, "tabletFieldsPerRow": 2, "mobileFieldsPerRow": 1 }
+  },
+  "formHeaderActions": [
+    { "actionId": "switchForm", "label": "app.switchForm", "icon": "swap",  "type": "standard" },
+    { "actionId": "save",       "label": "app.save",       "icon": "save",  "type": "standard" },
+    { "actionId": "cancel",     "label": "app.cancel",     "icon": "close" }
+  ],
+  "sections": [
+    {
+      "sectionId": "500",
+      "title": "lbl.sec_caseHeader",
+      "sequence": 1,
+      "sections": [
+        {
+          "sectionId": "500_001",
+          "title": "lbl.sec_caseIdentification",
+          "sequence": 1,
+          "fields": [
+            { "fieldId": "500001" },
+            { "fieldId": "500033" },
+            { "fieldId": "500031" },
+            { "fieldId": "500007" },
+            { "fieldId": "500008" },
+            { "fieldId": "500005" },
+            { "fieldId": "500006" }
+          ]
+        },
+        {
+          "sectionId": "500_002",
+          "title": "lbl.sec_reportClassification",
+          "sequence": 2,
+          "fields": [
+            { "fieldId": "500011" },
+            { "fieldId": "500041" },
+            { "fieldId": "500036" },
+            { "fieldId": "500037" },
+            { "fieldId": "500042" },
+            { "fieldId": "500015" },
+            { "fieldId": "500016" }
+          ]
+        },
+        {
+          "sectionId": "500_003",
+          "title": "lbl.sec_seriousness",
+          "sequence": 3,
+          "fields": [
+            { "fieldId": "500021" },
+            { "fieldId": "500022" },
+            { "fieldId": "500023" },
+            { "fieldId": "500024" },
+            { "fieldId": "500025" },
+            { "fieldId": "500026" },
+            { "fieldId": "500027" },
+            { "fieldId": "500028" }
+          ]
+        },
+        {
+          "sectionId": "500_004",
+          "title": "lbl.sec_assignmentOrg",
+          "sequence": 4,
+          "fields": [
+            { "fieldId": "500065" },
+            { "fieldId": "500066" },
+            { "fieldId": "500070" },
+            { "fieldId": "500071" },
+            { "fieldId": "500062" }
+          ]
+        }
+      ]
+    },
+    {
+      "sectionId": "515",
+      "title": "lbl.sec_reporterInformations",
+      "sequence": 2,
+      "sections": [
+        {
+          "sectionId": "515_001",
+          "title": "lbl.sec_reporterInformations",
+          "tabPanel": true,
+          "sequence": 1,
+          "multiContext": true,
+          "contextPath": "reporterInformations$",
+          "dataGridConfig": {
+            "allowAdd": true,
+            "allowDelete": true,
+            "allowCopy": false,
+            "pagination": true,
+            "pageSizeOptions": [5, 10]
+          },
+          "sections": [
+            {
+              "sectionId": "515_001_A",
+              "title": "lbl.sec_reporterCore",
+              "sequence": 1,
+              "fields": [
+                { "fieldId": "515001" },
+                { "fieldId": "515004" },
+                { "fieldId": "515005" }
+              ]
+            },
+            {
+              "sectionId": "515_001_B",
+              "title": "lbl.sec_reporterIdentity",
+              "sequence": 2,
+              "fields": [
+                { "fieldId": "515007" },
+                { "fieldId": "515008" },
+                { "fieldId": "515009" }
+              ]
+            },
+            {
+              "sectionId": "515_001_C",
+              "title": "lbl.sec_reporterProfessional",
+              "sequence": 3,
+              "fields": [
+                { "fieldId": "515018" },
+                { "fieldId": "515013" }
+              ]
+            },
+            {
+              "sectionId": "515_001_D",
+              "title": "lbl.sec_reporterContact",
+              "sequence": 4,
+              "fields": [
+                { "fieldId": "515028" },
+                { "fieldId": "515030" },
+                { "fieldId": "515031" }
+              ]
+            }
+          ],
+          "gridFields": [
+            { "fieldId": "515009" },
+            { "fieldId": "515004" },
+            { "fieldId": "515018" },
+            { "fieldId": "515028" },
+            { "fieldId": "515001" }
+          ]
+        }
+      ]
+    },
+    {
+      "sectionId": "530",
+      "title": "lbl.sec_patient",
+      "sequence": 3,
+      "sections": [
+        {
+          "sectionId": "530_001",
+          "title": "lbl.sec_patientCore",
+          "sequence": 1,
+          "fields": [
+            { "fieldId": "530001" },
+            { "fieldId": "530009" },
+            { "fieldId": "530002" },
+            { "fieldId": "530004" },
+            { "fieldId": "530005" },
+            { "fieldId": "530006" },
+            { "fieldId": "530007" }
+          ]
+        },
+        {
+          "sectionId": "530_002",
+          "title": "lbl.sec_patientDeath",
+          "sequence": 2,
+          "renderCondition": "RULE_ICSR_PAT_DEATH_SECTION",
+          "fields": [
+            { "fieldId": "530037" }
+          ]
+        }
+      ]
+    },
+    {
+      "sectionId": "610",
+      "title": "lbl.sec_drugProducts",
+      "sequence": 4,
+      "multiContext": true,
+      "contextPath": "drugProducts$",
+      "dataGridConfig": {
+        "allowAdd": true,
+        "allowDelete": true,
+        "allowCopy": false,
+        "pagination": true,
+        "pageSizeOptions": [5, 10]
+      },
+      "sections": [
+        {
+          "sectionId": "610_001",
+          "title": "lbl.sec_productIdentification",
+          "sequence": 1,
+          "fields": [
+            { "fieldId": "610052" },
+            { "fieldId": "610034" },
+            { "fieldId": "610050" },
+            { "fieldId": "610001" },
+            { "fieldId": "610028" }
+          ]
+        }
+      ],
+      "gridFields": [
+        { "fieldId": "610052" },
+        { "fieldId": "610050" },
+        { "fieldId": "610001" }
+      ]
+    },
+    {
+      "sectionId": "600",
+      "title": "lbl.sec_eventReactions",
+      "sequence": 5,
+      "multiContext": true,
+      "contextPath": "eventReactions$",
+      "dataGridConfig": {
+        "allowAdd": true,
+        "allowDelete": true,
+        "allowCopy": false,
+        "pagination": true,
+        "pageSizeOptions": [5, 10]
+      },
+      "sections": [
+        {
+          "sectionId": "600_001",
+          "title": "lbl.sec_reactionTerm",
+          "sequence": 1,
+          "fields": [
+            { "fieldId": "600029" },
+            { "fieldId": "600015" },
+            { "fieldId": "600016" }
+          ]
+        },
+        {
+          "sectionId": "600_002",
+          "title": "lbl.sec_reactionDates",
+          "sequence": 2,
+          "fields": [
+            { "fieldId": "600024" },
+            { "fieldId": "600013" },
+            { "fieldId": "600014" }
+          ]
+        },
+        {
+          "sectionId": "600_003",
+          "title": "lbl.sec_reactionOutcome",
+          "sequence": 3,
+          "fields": [
+            { "fieldId": "600026" },
+            { "fieldId": "600043" }
+          ]
+        }
+      ],
+      "gridFields": [
+        { "fieldId": "600029" },
+        { "fieldId": "600015" },
+        { "fieldId": "600024" },
+        { "fieldId": "600026" },
+        { "fieldId": "600043" }
+      ]
+    }
+  ]
+}
