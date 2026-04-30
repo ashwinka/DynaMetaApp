@@ -1,0 +1,2410 @@
+{
+  "formID": "ICSR_FULL_FORM",
+  "formName": "ICSR Cases Details",
+  "version": "2.0",
+  "layout": {
+    "recordTitleField": "receiptNo",
+    "enableFilterSection": false,
+    "navigationWidth": "260px",
+    "formPanelWidth": "75%",
+    "responsive": { "webFieldsPerRow": 3, "tabletFieldsPerRow": 2, "mobileFieldsPerRow": 1 }
+  },
+  "formHeaderActions": [
+	{ "actionId": "switchForm", "label": "app.switchForm",  "icon": "swap",  "type": "standard" },
+    { "actionId": "save",   	"label": "app.save",   		"icon": "save",  "type": "standard" },
+    { "actionId": "cancel", 	"label": "app.cancel", 		"icon": "close" }
+  ],
+  "sections":[{
+	  "sectionId": "500",
+	  "title": "lbl.sec_caseHeader",
+	  "sequence": 1,
+	  "sections": [
+
+		{
+		  "sectionId": "500_001",
+		  "title": "lbl.sec_caseIdentification",
+		  "sequence": 1,
+		  "fields": [
+			{ "fieldId": "500001" },
+			{ "fieldId": "500002" },
+			{ "fieldId": "500003" },
+			{ "fieldId": "500031" },
+			{ "fieldId": "500032" },
+			{ "fieldId": "500033" },
+			{ "fieldId": "500072" },
+			{ "fieldId": "500073" },
+			{ "fieldId": "500017" },
+			{ "fieldId": "500018" }
+		  ]
+		},
+
+		{
+		  "sectionId": "500_002",
+		  "title": "lbl.sec_reportClassification",
+		  "sequence": 2,
+		  "fields": [
+			{ "fieldId": "500011" },
+			{ "fieldId": "500041" },
+			{ "fieldId": "500015" },
+			{ "fieldId": "500016" },
+			{ "fieldId": "500036" },
+			{ "fieldId": "500037" },
+			{ "fieldId": "500038" },
+			{ "fieldId": "500039" },
+			{ "fieldId": "500040" },
+			{ "fieldId": "500042" },
+			{ "fieldId": "500034" },
+			{ "fieldId": "500035" },
+			{ "fieldId": "500088" }
+		  ]
+		},
+
+		{
+		  "sectionId": "500_003",
+		  "title": "lbl.sec_caseDates",
+		  "sequence": 3,
+		  "fields": [
+			{ "fieldId": "500007" },
+			{ "fieldId": "500008" },
+			{ "fieldId": "500009" },
+			{ "fieldId": "500010" },
+			{ "fieldId": "500052" },
+			{ "fieldId": "500053" },
+			{ "fieldId": "500050" },
+			{ "fieldId": "500051" },
+			{ "fieldId": "500048" },
+			{ "fieldId": "500049" },
+			{ "fieldId": "500102" }
+		  ]
+		},
+
+		{
+		  "sectionId": "500_004",
+		  "title": "lbl.sec_seriousness",
+		  "sequence": 4,
+		  "fields": [
+			{ "fieldId": "500021" },
+			{ "fieldId": "500022" },
+			{ "fieldId": "500023" },
+			{ "fieldId": "500024" },
+			{ "fieldId": "500025" },
+			{ "fieldId": "500026" },
+			{ "fieldId": "500027" },
+			{ "fieldId": "500028" }
+		  ]
+		},
+
+		{
+		  "sectionId": "500_005",
+		  "title": "lbl.sec_caseFlags",
+		  "sequence": 5,
+		  "fields": [
+			{ "fieldId": "500012" },
+			{ "fieldId": "500013" },
+			{ "fieldId": "500014" },
+			{ "fieldId": "500043" },
+			{ "fieldId": "500044" },
+			{ "fieldId": "500045" },
+			{ "fieldId": "500095" },
+			{ "fieldId": "500103" },
+			{ "fieldId": "500104" },
+			{ "fieldId": "500054" },
+			{ "fieldId": "500046" }
+		  ]
+		},
+
+		{
+		  "sectionId": "500_006",
+		  "title": "lbl.sec_assignmentOrg",
+		  "sequence": 6,
+		  "fields": [
+			{ "fieldId": "500065" },
+			{ "fieldId": "500066" },
+			{ "fieldId": "500067" },
+			{ "fieldId": "500068" },
+			{ "fieldId": "500069" },
+			{ "fieldId": "500063" },
+			{ "fieldId": "500064" },
+			{ "fieldId": "500062" },
+			{ "fieldId": "500061" },
+			{ "fieldId": "500070" },
+			{ "fieldId": "500071" },
+			{ "fieldId": "500074" }
+		  ]
+		},
+
+		{
+		  "sectionId": "500_007",
+		  "title": "lbl.sec_followUp",
+		  "sequence": 7,
+		  "fields": [
+			{ "fieldId": "500055" },
+			{ "fieldId": "500056" },
+			{ "fieldId": "500057" },
+			{ "fieldId": "500105" },
+			{ "fieldId": "500058" },
+			{ "fieldId": "500059" }
+		  ]
+		},
+
+		{
+		  "sectionId": "500_008",
+		  "title": "lbl.sec_nonCase",
+		  "sequence": 8,
+		  "renderCondition": "RULE_ICSR_NON_CASE_SECTION",
+		  "fields": [
+			{ "fieldId": "500083" },
+			{ "fieldId": "500084" },
+			{ "fieldId": "500085" },
+			{ "fieldId": "500086" },
+			{ "fieldId": "500087" }
+		  ]
+		},
+
+		{
+		  "sectionId": "500_009",
+		  "title": "lbl.sec_codingStatus",
+		  "sequence": 9,
+		  "fields": [
+			{ "fieldId": "500076" },
+			{ "fieldId": "500077" },
+			{ "fieldId": "500078" },
+			{ "fieldId": "500079" },
+			{ "fieldId": "500080" },
+			{ "fieldId": "500081" },
+			{ "fieldId": "500082" }
+		  ]
+		},
+
+		{
+		  "sectionId": "500_010",
+		  "title": "lbl.sec_adminAudit",
+		  "sequence": 10,
+		  "fields": [
+			{ "fieldId": "500047" },
+			{ "fieldId": "500099" },
+			{ "fieldId": "500100" },
+			{ "fieldId": "500101" },
+			{ "fieldId": "500102" },
+			{ "fieldId": "500096" },
+			{ "fieldId": "500097" },
+			{ "fieldId": "500098" },
+			{ "fieldId": "500089" },
+			{ "fieldId": "500090" },
+			{ "fieldId": "500091" },
+			{ "fieldId": "500092" },
+			{ "fieldId": "500093" },
+			{ "fieldId": "500094" },
+			{ "fieldId": "500106" },
+			{ "fieldId": "500107" },
+			{ "fieldId": "500108" }
+		  ]
+		},
+		{
+			  "sectionId": "510_001",
+			  "title": "lbl.sec_caseDocuments",
+			  "tabPanel": true,
+			  "sequence": 1,
+			  "multiContext": true,
+			  "contextPath": "caseDocuments$",
+			  "renderCondition": "RULE_ICSR_DOCS_SECTION",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": true,
+				"pageSizeOptions": [5, 10]
+			  },
+			  "fields": [
+				{ "fieldId": "510001" },
+				{ "fieldId": "510002" },
+				{ "fieldId": "510003" }
+			  ],
+			  "gridFields": [
+				{ "fieldId": "510001" },
+				{ "fieldId": "510002" }
+			  ]
+			}
+
+	  ]
+	},
+	{
+	  "sectionId": "515",
+	  "title": "lbl.sec_reporterInformations",
+	  "sequence": 3,
+	  "sections": [
+		{
+		  "sectionId": "515_001",
+		  "title": "lbl.sec_reporterInformations",
+		  "tabPanel": true,
+		  "sequence": 1,
+		  "multiContext": true,
+		  "contextPath": "reporterInformations$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": false,
+			"pagination": true,
+			"pageSizeOptions": [5, 10]
+		  },
+		  "sections": [
+			{
+			  "sectionId": "515_001_A",
+			  "title": "lbl.sec_reporterCore",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "515001" },
+				{ "fieldId": "515002" },
+				{ "fieldId": "515003" },
+				{ "fieldId": "515004" },
+				{ "fieldId": "515005" }
+			  ]
+			},
+			{
+			  "sectionId": "515_001_B",
+			  "title": "lbl.sec_reporterIdentity",
+			  "sequence": 2,
+			  "fields": [
+				{ "fieldId": "515006" },
+				{ "fieldId": "515007" },
+				{ "fieldId": "515008" },
+				{ "fieldId": "515009" },
+				{ "fieldId": "515010" },
+				{ "fieldId": "515011" },
+				{ "fieldId": "515012" }
+			  ]
+			},
+			{
+			  "sectionId": "515_001_C",
+			  "title": "lbl.sec_reporterProfessional",
+			  "sequence": 3,
+			  "fields": [
+				{ "fieldId": "515013" },
+				{ "fieldId": "515014" },
+				{ "fieldId": "515015" },
+				{ "fieldId": "515016" },
+				{ "fieldId": "515017" },
+				{ "fieldId": "515018" },
+				{ "fieldId": "515019" },
+				{ "fieldId": "515020" },
+				{ "fieldId": "515021" }
+			  ]
+			},
+			{
+			  "sectionId": "515_001_D",
+			  "title": "lbl.sec_reporterContact",
+			  "sequence": 4,
+			  "fields": [
+				{ "fieldId": "515022" },
+				{ "fieldId": "515023" },
+				{ "fieldId": "515024" },
+				{ "fieldId": "515025" },
+				{ "fieldId": "515026" },
+				{ "fieldId": "515027" },
+				{ "fieldId": "515028" },
+				{ "fieldId": "515029" },
+				{ "fieldId": "515030" },
+				{ "fieldId": "515031" },
+				{ "fieldId": "515032" },
+				{ "fieldId": "515033" }
+			  ]
+			}
+		  ],
+		  "gridFields": [
+			{ "fieldId": "515009" },
+			{ "fieldId": "515007" },
+			{ "fieldId": "515004" },
+			{ "fieldId": "515018" },
+			{ "fieldId": "515028" },
+			{ "fieldId": "515001" }
+		  ]
+		}
+	  ]
+	},
+	{
+	  "sectionId": "520",
+	  "title": "lbl.sec_sourceInformations",
+	  "sequence": 4,
+	  "sections": [
+		{
+		  "sectionId": "520_001",
+		  "title": "lbl.sec_sourceInformations",
+		  "tabPanel": true,
+		  "sequence": 1,
+		  "multiContext": true,
+		  "contextPath": "sourceInformations$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": false,
+			"pagination": true,
+			"pageSizeOptions": [5, 10]
+		  },
+		  "sections": [
+			{
+			  "sectionId": "520_001_A",
+			  "title": "lbl.sec_sourceCore",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "520001" },
+				{ "fieldId": "520002" },
+				{ "fieldId": "520003" },
+				{ "fieldId": "520004" },
+				{ "fieldId": "520010" },
+				{ "fieldId": "520008" }
+			  ]
+			},
+			{
+			  "sectionId": "520_001_B",
+			  "title": "lbl.sec_sourceReference",
+			  "sequence": 2,
+			  "fields": [
+				{ "fieldId": "520005" },
+				{ "fieldId": "520006" },
+				{ "fieldId": "520007" },
+				{ "fieldId": "520009" }
+			  ]
+			}
+		  ],
+		  "gridFields": [
+			{ "fieldId": "520002" },
+			{ "fieldId": "520003" },
+			{ "fieldId": "520004" },
+			{ "fieldId": "520005" },
+			{ "fieldId": "520001" }
+		  ]
+		}
+	  ]
+	},
+	{
+	  "sectionId": "530",
+	  "title": "lbl.sec_patient",
+	  "sequence": 5,
+	  "sections": [
+		{
+		  "sectionId": "530_001",
+		  "title": "lbl.sec_patientCore",
+		  "sequence": 1,
+		  "fields": [
+			{ "fieldId": "530001" },
+			{ "fieldId": "530009" },
+			{ "fieldId": "530010" },
+			{ "fieldId": "530002" },
+			{ "fieldId": "530003" },
+			{ "fieldId": "530004" },
+			{ "fieldId": "530005" },
+			{ "fieldId": "530006" },
+			{ "fieldId": "530007" },
+			{ "fieldId": "530008" }
+		  ]
+		},
+		{
+		  "sectionId": "530_002",
+		  "title": "lbl.sec_patientDemographics",
+		  "sequence": 2,
+		  "fields": [
+			{ "fieldId": "530011" },
+			{ "fieldId": "530012" },
+			{ "fieldId": "530013" },
+			{ "fieldId": "530014" },
+			{ "fieldId": "530015" },
+			{ "fieldId": "530016" },
+			{ "fieldId": "530017" },
+			{ "fieldId": "530018" },
+			{ "fieldId": "530019" },
+			{ "fieldId": "530020" }
+		  ]
+		},
+		{
+		  "sectionId": "530_003",
+		  "title": "lbl.sec_patientPhysical",
+		  "sequence": 3,
+		  "fields": [
+			{ "fieldId": "530021" },
+			{ "fieldId": "530022" },
+			{ "fieldId": "530023" },
+			{ "fieldId": "530024" },
+			{ "fieldId": "530025" },
+			{ "fieldId": "530026" },
+			{ "fieldId": "530027" },
+			{ "fieldId": "530028" },
+			{ "fieldId": "530029" },
+			{ "fieldId": "530030" },
+			{ "fieldId": "530031" },
+			{ "fieldId": "530032" }
+		  ]
+		},
+		{
+		  "sectionId": "530_004",
+		  "title": "lbl.sec_patientMedical",
+		  "sequence": 4,
+		  "fields": [
+			{ "fieldId": "530033" },
+			{ "fieldId": "530034" },
+			{ "fieldId": "530035" },
+			{ "fieldId": "530036" }
+		  ]
+		},
+		{
+		  "sectionId": "530_005",
+		  "title": "lbl.sec_patientDeath",
+		  "sequence": 5,
+		  "renderCondition": "RULE_ICSR_PAT_DEATH_SECTION",
+		  "fields": [
+			{ "fieldId": "530037" },
+			{ "fieldId": "530038" },
+			{ "fieldId": "530039" }
+		  ]
+		},
+		{
+		  "sectionId": "530_006",
+		  "title": "lbl.sec_patientContact",
+		  "sequence": 6,
+		  "renderCondition": "RULE_ICSR_PAT_CONTACT_SECTION",
+		  "fields": [
+			{ "fieldId": "530040" },
+			{ "fieldId": "530041" },
+			{ "fieldId": "530042" },
+			{ "fieldId": "530043" },
+			{ "fieldId": "530044" },
+			{ "fieldId": "530045" },
+			{ "fieldId": "530046" },
+			{ "fieldId": "530047" },
+			{ "fieldId": "530048" }
+		  ]
+		},
+		{
+		  "sectionId": "530_007",
+		  "title": "lbl.sec_patientRecords",
+		  "sequence": 7,
+		  "fields": [
+			{ "fieldId": "530049" },
+			{ "fieldId": "530050" },
+			{ "fieldId": "530051" },
+			{ "fieldId": "530052" },
+			{ "fieldId": "530053" }
+		  ]
+		},
+		{
+		  "sectionId": "530_008",
+		  "title": "lbl.sec_patientVaccine",
+		  "sequence": 8,
+		  "renderCondition": "RULE_ICSR_PAT_VACCINE_SECTION",
+		  "fields": [
+			{ "fieldId": "530054" },
+			{ "fieldId": "530055" },
+			{ "fieldId": "530056" },
+			{ "fieldId": "530057" },
+			{ "fieldId": "530058" },
+			{ "fieldId": "530059" }
+		  ]
+		},
+		{
+		  "sectionId": "530_009",
+		  "title": "lbl.sec_biologicalFather",
+		  "sequence": 9,
+		  "renderCondition": "RULE_ICSR_PAT_BIO_FATHER_SECTION",
+		  "fields": [
+			{ "fieldId": "530060" },
+			{ "fieldId": "530061" },
+			{ "fieldId": "530062" },
+			{ "fieldId": "530063" },
+			{ "fieldId": "530064" }
+		  ]
+		},
+		{
+		  "sectionId": "530_010",
+		  "title": "lbl.sec_patientAdmin",
+		  "sequence": 10,
+		  "fields": [
+			{ "fieldId": "530065" },
+			{ "fieldId": "530066" }
+		  ]
+		},
+		{
+		  "sectionId": "535",
+		  "title": "lbl.sec_patientSummary",
+		  "tabPanel":true,
+		  "sequence": 6,
+		  "sections": [
+			{
+			  "sectionId": "535_001",
+			  "title": "lbl.sec_caseNarrative",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "535001" },
+				{ "fieldId": "535002" },
+				{ "fieldId": "535003" },
+				{ "fieldId": "535004" }
+			  ]
+			},
+			{
+			  "sectionId": "535_002",
+			  "title": "lbl.sec_medicalAssessment",
+			  "sequence": 2,
+			  "fields": [
+				{ "fieldId": "535005" },
+				{ "fieldId": "535006" },
+				{ "fieldId": "535007" },
+				{ "fieldId": "535008" },
+				{ "fieldId": "535009" }
+			  ]
+			},
+			{
+			  "sectionId": "535_003",
+			  "title": "lbl.sec_clinicalNarrative",
+			  "sequence": 3,
+			  "fields": [
+				{ "fieldId": "535010" },
+				{ "fieldId": "535011" },
+				{ "fieldId": "535012" },
+				{ "fieldId": "535013" }
+			  ]
+			},
+			{
+			  "sectionId": "535_004",
+			  "title": "lbl.sec_correctiveActions",
+			  "sequence": 4,
+			  "renderCondition": "RULE_ICSR_SUMMARY_CORRECTIVE_SECTION",
+			  "fields": [
+				{ "fieldId": "535014" },
+				{ "fieldId": "535015" },
+				{ "fieldId": "535016" },
+				{ "fieldId": "535017" },
+				{ "fieldId": "535018" },
+				{ "fieldId": "535019" },
+				{ "fieldId": "535020" }
+			  ]
+			}
+		  ]
+		},
+		{
+		  "sectionId": "540_001",
+		  "title": "lbl.sec_medicalHistory",
+		  "tabPanel": true,
+		  "sequence": 7,
+		  "multiContext": true,
+		  "contextPath": "patient.patientMedicalHistory$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": true,
+			"pagination": true,
+			"pageSizeOptions": [5, 10, 25]
+		  },
+		  "sections": [
+			{
+			  "sectionId": "540_001_A",
+			  "title": "lbl.sec_medHistCore",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "540001" },
+				{ "fieldId": "540002" },
+				{ "fieldId": "540003" },
+				{ "fieldId": "540004" },
+				{ "fieldId": "540005" },
+				{ "fieldId": "540006" }
+			  ]
+			},
+			{
+			  "sectionId": "540_001_B",
+			  "title": "lbl.sec_medHistClassification",
+			  "sequence": 2,
+			  "fields": [
+				{ "fieldId": "540007" },
+				{ "fieldId": "540008" },
+				{ "fieldId": "540009" },
+				{ "fieldId": "540010" }
+			  ]
+			},
+			{
+			  "sectionId": "540_001_C",
+			  "title": "lbl.sec_medHistDuration",
+			  "sequence": 3,
+			  "fields": [
+				{ "fieldId": "540011" },
+				{ "fieldId": "540012" }
+			  ]
+			},
+			{
+			  "sectionId": "540_001_D",
+			  "title": "lbl.sec_medHistAdmin",
+			  "sequence": 4,
+			  "fields": [
+				{ "fieldId": "540013" },
+				{ "fieldId": "540014" },
+				{ "fieldId": "540015" }
+			  ]
+			}
+		  ],
+		  "gridFields": [
+			{ "fieldId": "540001" },
+			{ "fieldId": "540002" },
+			{ "fieldId": "540004" },
+			{ "fieldId": "540005" },
+			{ "fieldId": "540006" },
+			{ "fieldId": "540007" }
+		  ]
+		},
+		{
+		  "sectionId": "545_001",
+		  "title": "lbl.sec_pastDrugTherapies",
+		  "tabPanel": true,
+		  "sequence": 8,
+		  "multiContext": true,
+		  "contextPath": "patient.patientPastDrugTherapies$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": true,
+			"pagination": true,
+			"pageSizeOptions": [5, 10, 25]
+		  },
+		  "sections": [
+			{
+			  "sectionId": "545_001_A",
+			  "title": "lbl.sec_pastDrugProduct",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "545001" },
+				{ "fieldId": "545002" },
+				{ "fieldId": "545003" },
+				{ "fieldId": "545004" },
+				{ "fieldId": "545005" },
+				{ "fieldId": "545006" },
+				{ "fieldId": "545007" },
+				{ "fieldId": "545008" }
+			  ]
+			},
+			{
+			  "sectionId": "545_001_B",
+			  "title": "lbl.sec_pastDrugCoding",
+			  "sequence": 2,
+			  "fields": [
+				{ "fieldId": "545009" },
+				{ "fieldId": "545010" },
+				{ "fieldId": "545011" },
+				{ "fieldId": "545012" },
+				{ "fieldId": "545013" },
+				{ "fieldId": "545014" },
+				{ "fieldId": "545015" },
+				{ "fieldId": "545016" },
+				{ "fieldId": "545017" },
+				{ "fieldId": "545018" },
+				{ "fieldId": "545019" }
+			  ]
+			},
+			{
+			  "sectionId": "545_001_C",
+			  "title": "lbl.sec_pastDrugDates",
+			  "sequence": 3,
+			  "fields": [
+				{ "fieldId": "545020" },
+				{ "fieldId": "545021" },
+				{ "fieldId": "545022" },
+				{ "fieldId": "545023" }
+			  ]
+			},
+			{
+			  "sectionId": "545_001_D",
+			  "title": "lbl.sec_pastDrugDetails",
+			  "sequence": 4,
+			  "fields": [
+				{ "fieldId": "545024" },
+				{ "fieldId": "545025" },
+				{ "fieldId": "545026" },
+				{ "fieldId": "545027" },
+				{ "fieldId": "545028" }
+			  ]
+			},
+			{
+			  "sectionId": "546_001",
+			  "title": "lbl.sec_pastDrugSubstances",
+			  "sequence": 5,
+			  "multiContext": true,
+			  "contextPath": "patient.patientPastDrugTherapies$.patientPastDrugSubstanceCollection$",
+			  "renderCondition": "RULE_ICSR_PAST_DRUG_SUBSTANCE_R3",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": false
+			  },
+			  "fields": [
+				{ "fieldId": "546001" },
+				{ "fieldId": "546002" },
+				{ "fieldId": "546003" },
+				{ "fieldId": "546004" },
+				{ "fieldId": "546005" }
+			  ],
+			  "gridFields": [
+				{ "fieldId": "546001" },
+				{ "fieldId": "546002" },
+				{ "fieldId": "546004" },
+				{ "fieldId": "546005" }
+			  ]
+			}
+		  ],
+		  "gridFields": [
+			{ "fieldId": "545001" },
+			{ "fieldId": "545009" },
+			{ "fieldId": "545012" },
+			{ "fieldId": "545020" },
+			{ "fieldId": "545021" }
+		  ]
+		},
+		{
+		  "sectionId": "550",
+		  "title": "lbl.sec_pregnancy",
+		  "tabPanel": true,
+		  "sequence": 9,
+		  "renderCondition": "RULE_ICSR_PREGNANCY_SECTION",
+		  "sections": [
+			{
+			  "sectionId": "550_001",
+			  "title": "lbl.sec_pregnancyDetails",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "550001" },
+				{ "fieldId": "550002" },
+				{ "fieldId": "550003" },
+				{ "fieldId": "550004" },
+				{ "fieldId": "550005" },
+				{ "fieldId": "550006" },
+				{ "fieldId": "550007" },
+				{ "fieldId": "550008" },
+				{ "fieldId": "550009" },
+				{ "fieldId": "550010" },
+				{ "fieldId": "550011" }
+			  ]
+			},
+			{
+			  "sectionId": "550_002",
+			  "title": "lbl.sec_pregnancyPhysical",
+			  "sequence": 2,
+			  "fields": [
+				{ "fieldId": "550012" },
+				{ "fieldId": "550013" },
+				{ "fieldId": "550014" },
+				{ "fieldId": "550015" }
+			  ]
+			},
+			{
+			  "sectionId": "550_003",
+			  "title": "lbl.sec_pregnancyAdmin",
+			  "sequence": 3,
+			  "fields": [
+				{ "fieldId": "550016" },
+				{ "fieldId": "550017" }
+			  ]
+			},
+			{
+			  "sectionId": "552_001",
+			  "title": "lbl.sec_pregnancyOutcomes",
+			  "tabPanel": true,
+			  "sequence": 4,
+			  "multiContext": true,
+			  "contextPath": "patient.pregnancy.pregnancyOutcomes$",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": true,
+				"pageSizeOptions": [5, 10]
+			  },
+			  "sections": [
+				{
+				  "sectionId": "552_001_A",
+				  "title": "lbl.sec_outcomeCore",
+				  "sequence": 1,
+				  "fields": [
+					{ "fieldId": "552001" },
+					{ "fieldId": "552002" },
+					{ "fieldId": "552003" },
+					{ "fieldId": "552004" },
+					{ "fieldId": "552005" },
+					{ "fieldId": "552006" }
+				  ]
+				},
+				{
+				  "sectionId": "553_001",
+				  "title": "lbl.sec_prevPregnancyOutcomes",
+				  "sequence": 2,
+				  "multiContext": true,
+				  "contextPath": "patient.pregnancy.pregnancyOutcomes$.previousPregnancyOutcomes$",
+				  "dataGridConfig": {
+					"allowAdd": true,
+					"allowDelete": true,
+					"allowCopy": false,
+					"pagination": false
+				  },
+				  "fields": [
+					{ "fieldId": "553001" },
+					{ "fieldId": "553002" },
+					{ "fieldId": "553003" },
+					{ "fieldId": "553004" }
+				  ],
+				  "gridFields": [
+					{ "fieldId": "553001" },
+					{ "fieldId": "553003" },
+					{ "fieldId": "553004" }
+				  ]
+				},
+				{
+				  "sectionId": "555_001",
+				  "title": "lbl.sec_neonates",
+				  "sequence": 3,
+				  "multiContext": true,
+				  "contextPath": "patient.pregnancy.pregnancyOutcomes$.neonates$",
+				  "dataGridConfig": {
+					"allowAdd": true,
+					"allowDelete": true,
+					"allowCopy": false,
+					"pagination": false
+				  },
+				  "sections": [
+					{
+					  "sectionId": "555_001_A",
+					  "title": "lbl.sec_neonateCore",
+					  "sequence": 1,
+					  "fields": [
+						{ "fieldId": "555001" },
+						{ "fieldId": "555002" },
+						{ "fieldId": "555003" },
+						{ "fieldId": "555004" },
+						{ "fieldId": "555005" },
+						{ "fieldId": "555006" },
+						{ "fieldId": "555007" }
+					  ]
+					},
+					{
+					  "sectionId": "555_001_B",
+					  "title": "lbl.sec_neonateAnomaly",
+					  "sequence": 2,
+					  "renderCondition": "RULE_ICSR_NEONATE_ANOMALY_SECTION",
+					  "fields": [
+						{ "fieldId": "555008" },
+						{ "fieldId": "555009" }
+					  ]
+					},
+					{
+					  "sectionId": "555_001_C",
+					  "title": "lbl.sec_neonateApgar",
+					  "sequence": 3,
+					  "fields": [
+						{ "fieldId": "555010" },
+						{ "fieldId": "555011" },
+						{ "fieldId": "555012" }
+					  ]
+					},
+					{
+					  "sectionId": "555_001_D",
+					  "title": "lbl.sec_neonateNicu",
+					  "sequence": 4,
+					  "renderCondition": "RULE_ICSR_NEONATE_NICU_SECTION",
+					  "fields": [
+						{ "fieldId": "555013" },
+						{ "fieldId": "555014" },
+						{ "fieldId": "555015" },
+						{ "fieldId": "555016" }
+					  ]
+					},
+					{
+					  "sectionId": "555_001_E",
+					  "title": "lbl.sec_neonateOther",
+					  "sequence": 5,
+					  "fields": [
+						{ "fieldId": "555017" },
+						{ "fieldId": "555018" }
+					  ]
+					},
+					{
+					  "sectionId": "556_001",
+					  "title": "lbl.sec_neonateChildren",
+					  "sequence": 6,
+					  "multiContext": true,
+					  "contextPath": "patient.pregnancy.pregnancyOutcomes$.neonates$.childCollection$",
+					  "dataGridConfig": {
+						"allowAdd": true,
+						"allowDelete": true,
+						"allowCopy": false,
+						"pagination": false
+					  },
+					  "fields": [
+						{ "fieldId": "556001" },
+						{ "fieldId": "556002" },
+						{ "fieldId": "556003" },
+						{ "fieldId": "556004" },
+						{ "fieldId": "556005" },
+						{ "fieldId": "556006" },
+						{ "fieldId": "556007" },
+						{ "fieldId": "556008" }
+					  ],
+					  "gridFields": [
+						{ "fieldId": "556001" },
+						{ "fieldId": "556002" },
+						{ "fieldId": "556007" },
+						{ "fieldId": "556008" }
+					  ]
+					}
+				  ],
+				  "gridFields": [
+					{ "fieldId": "555001" },
+					{ "fieldId": "555002" },
+					{ "fieldId": "555004" },
+					{ "fieldId": "555008" }
+				  ]
+				}
+			  ],
+			  "gridFields": [
+				{ "fieldId": "552001" },
+				{ "fieldId": "552002" },
+				{ "fieldId": "552004" },
+				{ "fieldId": "552005" }
+			  ]
+			}
+		  ]
+		},
+		{
+		  "sectionId": "560",
+		  "title": "lbl.sec_deathCauses",
+		  "sequence": 10,
+		  "renderCondition": "RULE_ICSR_PAT_DEATH_SECTION",
+		  "sections": [
+			{
+			  "sectionId": "560_001",
+			  "title": "lbl.sec_reportedDeathCauses",
+			  "tabPanel": true,
+			  "sequence": 1,
+			  "multiContext": true,
+			  "contextPath": "patient.deathCauseCollection$",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": false
+			  },
+			  "fields": [
+				{ "fieldId": "560104" },
+				{ "fieldId": "560102" },
+				{ "fieldId": "560103" }
+			  ],
+			  "gridFields": [
+				{ "fieldId": "560104" },
+				{ "fieldId": "560102" },
+				{ "fieldId": "560103" }
+			  ]
+			},
+			{
+			  "sectionId": "561_001",
+			  "title": "lbl.sec_autopsyCauses",
+			  "tabPanel": true,
+			  "sequence": 2,
+			  "renderCondition": "RULE_ICSR_PAT_AUTOPSY_DATE",
+			  "multiContext": true,
+			  "contextPath": "patient.patientAutopsyCollection$",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": false
+			  },
+			  "fields": [
+				{ "fieldId": "561002" },
+				{ "fieldId": "561003" },
+				{ "fieldId": "561004" }
+			  ],
+			  "gridFields": [
+				{ "fieldId": "561002" },
+				{ "fieldId": "561003" },
+				{ "fieldId": "561004" }
+			  ]
+			}
+		  ]
+		}
+		
+	  ]
+	},
+	{
+	  "sectionId": "565",
+	  "title": "lbl.sec_parent",
+	  "sequence": 11,
+	  "renderCondition": "RULE_ICSR_PARENT_SECTION",
+	  "sections": [
+		{
+		  "sectionId": "565_001",
+		  "title": "lbl.sec_parentCore",
+		  "sequence": 1,
+		  "fields": [
+			{ "fieldId": "565013" },
+			{ "fieldId": "565010" },
+			{ "fieldId": "565009" },
+			{ "fieldId": "565005" },
+			{ "fieldId": "565008" },
+			{ "fieldId": "565002" },
+			{ "fieldId": "565004" }
+		  ]
+		},
+		{
+		  "sectionId": "565_002",
+		  "title": "lbl.sec_parentPhysical",
+		  "sequence": 2,
+		  "fields": [
+			{ "fieldId": "565015" },
+			{ "fieldId": "565016" },
+			{ "fieldId": "565011" },
+			{ "fieldId": "565012" }
+		  ]
+		},
+		{
+		  "sectionId": "565_003",
+		  "title": "lbl.sec_parentMedical",
+		  "sequence": 3,
+		  "fields": [
+			{ "fieldId": "565014" }
+		  ]
+		},
+		{
+		  "sectionId": "565_004",
+		  "title": "lbl.sec_parentVaccine",
+		  "sequence": 4,
+		  "renderCondition": "RULE_ICSR_PARENT_VACCINE_SECTION",
+		  "fields": [
+			{ "fieldId": "565006" },
+			{ "fieldId": "565007" }
+		  ]
+		},
+		{
+		  "sectionId": "565_005",
+		  "title": "lbl.sec_parentAdmin",
+		  "sequence": 5,
+		  "fields": [
+			{ "fieldId": "565001" },
+			{ "fieldId": "565003" }
+		  ]
+		},
+		{
+		  "sectionId": "570_001",
+		  "title": "lbl.sec_parentPastDrugs",
+		  "tabPanel": true,
+		  "sequence": 6,
+		  "multiContext": true,
+		  "contextPath": "patient.parent.parentPastDrugTherapyCollection$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": true,
+			"pagination": true,
+			"pageSizeOptions": [5, 10, 25]
+		  },
+		  "sections": [
+			{
+			  "sectionId": "570_001_A",
+			  "title": "lbl.sec_parDrugProduct",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "570019" },
+				{ "fieldId": "570018" },
+				{ "fieldId": "570007" },
+				{ "fieldId": "570021" },
+				{ "fieldId": "570024" }
+			  ]
+			},
+			{
+			  "sectionId": "570_001_B",
+			  "title": "lbl.sec_parDrugIdentifiers",
+			  "sequence": 2,
+			  "fields": [
+				{ "fieldId": "570013" },
+				{ "fieldId": "570014" },
+				{ "fieldId": "570015" },
+				{ "fieldId": "570016" },
+				{ "fieldId": "570017" },
+				{ "fieldId": "570025" },
+				{ "fieldId": "570026" },
+				{ "fieldId": "570008" }
+			  ]
+			},
+			{
+			  "sectionId": "570_001_C",
+			  "title": "lbl.sec_parDrugTherapy",
+			  "sequence": 3,
+			  "fields": [
+				{ "fieldId": "570022" },
+				{ "fieldId": "570003" },
+				{ "fieldId": "570005" },
+				{ "fieldId": "570009" },
+				{ "fieldId": "570011" },
+				{ "fieldId": "570020" },
+				{ "fieldId": "570010" },
+				{ "fieldId": "570012" }
+			  ]
+			},
+			{
+			  "sectionId": "570_001_D",
+			  "title": "lbl.sec_parDrugForm",
+			  "sequence": 4,
+			  "fields": [
+				{ "fieldId": "570004" },
+				{ "fieldId": "570023" },
+				{ "fieldId": "570001" },
+				{ "fieldId": "570002" },
+				{ "fieldId": "570006" }
+			  ]
+			},
+			{
+			  "sectionId": "571_001",
+			  "title": "lbl.sec_parDrugSubstances",
+			  "sequence": 5,
+			  "multiContext": true,
+			  "contextPath": "patient.parent.parentPastDrugTherapyCollection$.parentPastDrugSubstanceCollection$",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": false
+			  },
+			  "fields": [
+				{ "fieldId": "571003" },
+				{ "fieldId": "571005" },
+				{ "fieldId": "571004" },
+				{ "fieldId": "571001" },
+				{ "fieldId": "571002" }
+			  ],
+			  "gridFields": [
+				{ "fieldId": "571003" },
+				{ "fieldId": "571001" },
+				{ "fieldId": "571002" }
+			  ]
+			}
+		  ],
+		  "gridFields": [
+			{ "fieldId": "570019" },
+			{ "fieldId": "570022" },
+			{ "fieldId": "570003" },
+			{ "fieldId": "570005" },
+			{ "fieldId": "570020" }
+		  ]
+		},
+		{
+		  "sectionId": "575_001",
+		  "title": "lbl.sec_parentMedHistory",
+		  "tabPanel": true,
+		  "sequence": 7,
+		  "multiContext": true,
+		  "contextPath": "patient.parent.parentMedHistEpisodeCollection$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": true,
+			"pagination": true,
+			"pageSizeOptions": [5, 10, 25]
+		  },
+		  "sections": [
+			{
+			  "sectionId": "575_001_A",
+			  "title": "lbl.sec_parMedHistCore",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "575010" },
+				{ "fieldId": "575008" },
+				{ "fieldId": "575009" },
+				{ "fieldId": "575011" },
+				{ "fieldId": "575007" },
+				{ "fieldId": "575003" },
+				{ "fieldId": "575004" }
+			  ]
+			},
+			{
+			  "sectionId": "575_001_B",
+			  "title": "lbl.sec_parMedHistDuration",
+			  "sequence": 2,
+			  "renderCondition": "RULE_ICSR_PAR_MED_HIST_END_DATE",
+			  "fields": [
+				{ "fieldId": "575005" },
+				{ "fieldId": "575006" }
+			  ]
+			},
+			{
+			  "sectionId": "575_001_C",
+			  "title": "lbl.sec_parMedHistAdmin",
+			  "sequence": 3,
+			  "fields": [
+				{ "fieldId": "575001" },
+				{ "fieldId": "575002" }
+			  ]
+			}
+		  ],
+		  "gridFields": [
+			{ "fieldId": "575010" },
+			{ "fieldId": "575008" },
+			{ "fieldId": "575011" },
+			{ "fieldId": "575003" },
+			{ "fieldId": "575004" }
+		  ]
+		}
+	  ]
+	},
+	{
+	  "sectionId": "580",
+	  "title": "lbl.sec_study",
+	  "sequence": 12,
+	  "renderCondition": "RULE_ICSR_STUDY_SECTION",
+	  "sections": [
+		{
+		  "sectionId": "580_001",
+		  "title": "lbl.sec_studyIdentification",
+		  "sequence": 1,
+		  "fields": [
+			{ "fieldId": "580026" },
+			{ "fieldId": "580034" },
+			{ "fieldId": "580037" },
+			{ "fieldId": "580027" },
+			{ "fieldId": "580033" }
+		  ]
+		},
+		{
+		  "sectionId": "580_002",
+		  "title": "lbl.sec_studyDesign",
+		  "sequence": 2,
+		  "fields": [
+			{ "fieldId": "580038" },
+			{ "fieldId": "580030" },
+			{ "fieldId": "580035" },
+			{ "fieldId": "580001" }
+		  ]
+		},
+		{
+		  "sectionId": "580_003",
+		  "title": "lbl.sec_studySubject",
+		  "sequence": 3,
+		  "fields": [
+			{ "fieldId": "580039" },
+			{ "fieldId": "580023" },
+			{ "fieldId": "580006" },
+			{ "fieldId": "580007" },
+			{ "fieldId": "580011" },
+			{ "fieldId": "580040" },
+			{ "fieldId": "580029" },
+			{ "fieldId": "580031" }
+		  ]
+		},
+		{
+		  "sectionId": "580_004",
+		  "title": "lbl.sec_studySite",
+		  "sequence": 4,
+		  "fields": [
+			{ "fieldId": "580004" },
+			{ "fieldId": "580014" },
+			{ "fieldId": "580012" },
+			{ "fieldId": "580013" }
+		  ]
+		},
+		{
+		  "sectionId": "580_005",
+		  "title": "lbl.sec_studyRegulatoryIds",
+		  "sequence": 5,
+		  "fields": [
+			{ "fieldId": "580009" },
+			{ "fieldId": "580019" },
+			{ "fieldId": "580024" },
+			{ "fieldId": "580018" },
+			{ "fieldId": "580020" },
+			{ "fieldId": "580015" }
+		  ]
+		},
+		{
+		  "sectionId": "580_006",
+		  "title": "lbl.sec_studyBlinding",
+		  "sequence": 6,
+		  "fields": [
+			{ "fieldId": "580002" },
+			{ "fieldId": "580003" },
+			{ "fieldId": "580028" },
+			{ "fieldId": "580041" }
+		  ]
+		},
+		{
+		  "sectionId": "580_007",
+		  "title": "lbl.sec_studyDates",
+		  "sequence": 7,
+		  "fields": [
+			{ "fieldId": "580036" },
+			{ "fieldId": "580032" },
+			{ "fieldId": "580008" },
+			{ "fieldId": "580005" }
+		  ]
+		},
+		{
+		  "sectionId": "580_008",
+		  "title": "lbl.sec_studyAdmin",
+		  "sequence": 8,
+		  "fields": [
+			{ "fieldId": "580025" },
+			{ "fieldId": "580016" },
+			{ "fieldId": "580017" },
+			{ "fieldId": "580021" },
+			{ "fieldId": "580022" },
+			{ "fieldId": "580010" }
+		  ]
+		},
+		{
+		  "sectionId": "582_001",
+		  "title": "lbl.sec_studyRegistrations",
+		  "tabPanel": true,
+		  "sequence": 9,
+		  "multiContext": true,
+		  "contextPath": "study.studyRegistrationCollection$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": false,
+			"pagination": true,
+			"pageSizeOptions": [5, 10]
+		  },
+		  "fields": [
+			{ "fieldId": "582004" },
+			{ "fieldId": "582003" },
+			{ "fieldId": "582005" },
+			{ "fieldId": "582002" },
+			{ "fieldId": "582001" }
+		  ],
+		  "gridFields": [
+			{ "fieldId": "582004" },
+			{ "fieldId": "582003" },
+			{ "fieldId": "582005" },
+			{ "fieldId": "582002" }
+		  ]
+		},
+		{
+		  "sectionId": "583_001",
+		  "title": "lbl.sec_studyCrossRefInds",
+		  "tabPanel": true,
+		  "sequence": 10,
+		  "multiContext": true,
+		  "contextPath": "study.studyCrossReferenceINDsCollection$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": false,
+			"pagination": false
+		  },
+		  "fields": [
+			{ "fieldId": "583001" },
+			{ "fieldId": "583002" },
+			{ "fieldId": "583003" },
+			{ "fieldId": "583004" }
+		  ],
+		  "gridFields": [
+			{ "fieldId": "583001" },
+			{ "fieldId": "583002" },
+			{ "fieldId": "583003" }
+		  ]
+		}
+	  ]
+	},
+	{
+	  "sectionId": "600",
+	  "title": "lbl.sec_eventReactions",
+	  "sequence": 13,
+	  "multiContext": true,
+	  "contextPath": "eventReactions$",
+	  "dataGridConfig": {
+		"allowAdd": true,
+		"allowDelete": true,
+		"allowCopy": true,
+		"pagination": true,
+		"pageSizeOptions": [5, 10, 25]
+	  },
+	  "sections": [
+		{
+		  "sectionId": "600_001",
+		  "title": "lbl.sec_reactionTerm",
+		  "sequence": 1,
+		  "fields": [
+			{ "fieldId": "600029" },
+			{ "fieldId": "600015" },
+			{ "fieldId": "600016" },
+			{ "fieldId": "600032" },
+			{ "fieldId": "600030" },
+			{ "fieldId": "600023" }
+		  ]
+		},
+		{
+		  "sectionId": "600_002",
+		  "title": "lbl.sec_reactionDates",
+		  "sequence": 2,
+		  "fields": [
+			{ "fieldId": "600024" },
+			{ "fieldId": "600008" },
+			{ "fieldId": "600013" },
+			{ "fieldId": "600014" },
+			{ "fieldId": "600046" },
+			{ "fieldId": "600047" },
+			{ "fieldId": "600044" },
+			{ "fieldId": "600045" }
+		  ]
+		},
+		{
+		  "sectionId": "600_003",
+		  "title": "lbl.sec_seriousness",
+		  "sequence": 3,
+		  "fields": [
+			{ "fieldId": "600043" },
+			{ "fieldId": "600035" },
+			{ "fieldId": "600039" },
+			{ "fieldId": "600033" },
+			{ "fieldId": "600036" },
+			{ "fieldId": "600034" },
+			{ "fieldId": "600040" },
+			{ "fieldId": "600041" },
+			{ "fieldId": "600042" }
+		  ]
+		},
+		{
+		  "sectionId": "600_004",
+		  "title": "lbl.sec_hospitalization",
+		  "sequence": 4,
+		  "renderCondition": "RULE_ICSR_REACT_HOSPITALIZATION",
+		  "fields": [
+			{ "fieldId": "600037" },
+			{ "fieldId": "600038" }
+		  ]
+		},
+		{
+		  "sectionId": "600_005",
+		  "title": "lbl.sec_reactionOutcome",
+		  "sequence": 5,
+		  "fields": [
+			{ "fieldId": "600026" },
+			{ "fieldId": "600031" },
+			{ "fieldId": "600018" },
+			{ "fieldId": "600050" }
+		  ]
+		},
+		{
+		  "sectionId": "600_006",
+		  "title": "lbl.sec_reactionCause",
+		  "sequence": 6,
+		  "fields": [
+			{ "fieldId": "600005" },
+			{ "fieldId": "600006" },
+			{ "fieldId": "600007" },
+			{ "fieldId": "600025" }
+		  ]
+		},
+		{
+		  "sectionId": "600_007",
+		  "title": "lbl.sec_reactionTreatment",
+		  "sequence": 7,
+		  "fields": [
+			{ "fieldId": "600049" },
+			{ "fieldId": "600048" }
+		  ]
+		},
+		{
+		  "sectionId": "600_008",
+		  "title": "lbl.sec_reactionLocation",
+		  "sequence": 8,
+		  "fields": [
+			{ "fieldId": "600010" },
+			{ "fieldId": "600011" },
+			{ "fieldId": "600059" },
+			{ "fieldId": "600053" },
+			{ "fieldId": "600028" },
+			{ "fieldId": "600001" }
+		  ]
+		},
+		{
+		  "sectionId": "600_009",
+		  "title": "lbl.sec_reactionClassification",
+		  "sequence": 9,
+		  "fields": [
+			{ "fieldId": "600009" },
+			{ "fieldId": "600027" },
+			{ "fieldId": "600003" },
+			{ "fieldId": "600021" },
+			{ "fieldId": "600012" },
+			{ "fieldId": "600004" },
+			{ "fieldId": "600019" },
+			{ "fieldId": "600022" }
+		  ]
+		},
+		{
+		  "sectionId": "602_001",
+		  "title": "lbl.sec_vaccineReaction",
+		  "sequence": 10,
+		  "renderCondition": "RULE_ICSR_REACT_VACCINE_SECTION",
+		  "fields": [
+			{ "fieldId": "602007" },
+			{ "fieldId": "602001" },
+			{ "fieldId": "602008" },
+			{ "fieldId": "602002" },
+			{ "fieldId": "602004" },
+			{ "fieldId": "602005" },
+			{ "fieldId": "602006" },
+			{ "fieldId": "602003" },
+			{ "fieldId": "602009" }
+		  ]
+		},
+		{
+		  "sectionId": "600_010",
+		  "title": "lbl.sec_deviceReaction",
+		  "sequence": 11,
+		  "renderCondition": "RULE_ICSR_REACT_DEVICE_SECTION",
+		  "fields": [
+			{ "fieldId": "600051" },
+			{ "fieldId": "600052" },
+			{ "fieldId": "600057" },
+			{ "fieldId": "600058" },
+			{ "fieldId": "600060" },
+			{ "fieldId": "600061" },
+			{ "fieldId": "600056" },
+			{ "fieldId": "600054" },
+			{ "fieldId": "600062" },
+			{ "fieldId": "600063" },
+			{ "fieldId": "600065" },
+			{ "fieldId": "600064" }
+		  ]
+		},
+		{
+		  "sectionId": "600_011",
+		  "title": "lbl.sec_similarIncidents",
+		  "sequence": 12,
+		  "renderCondition": "RULE_ICSR_REACT_DEVICE_SECTION",
+		  "fields": [
+			{ "fieldId": "600074" },
+			{ "fieldId": "600068" },
+			{ "fieldId": "600075" },
+			{ "fieldId": "600067" },
+			{ "fieldId": "600069" },
+			{ "fieldId": "600070" },
+			{ "fieldId": "600066" },
+			{ "fieldId": "600071" },
+			{ "fieldId": "600072" },
+			{ "fieldId": "600077" },
+			{ "fieldId": "600078" },
+			{ "fieldId": "600079" },
+			{ "fieldId": "600080" },
+			{ "fieldId": "600081" },
+			{ "fieldId": "600076" }
+		  ]
+		},
+		{
+		  "sectionId": "603_001",
+		  "title": "lbl.sec_similarIncidentData",
+		  "tabPanel": true,
+		  "sequence": 13,
+		  "renderCondition": "RULE_ICSR_REACT_DEVICE_SECTION",
+		  "multiContext": true,
+		  "contextPath": "eventReactions$.similarIncidentAndDeviceCollection$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": false,
+			"pagination": false
+		  },
+		  "fields": [
+			{ "fieldId": "603006" },
+			{ "fieldId": "603003" },
+			{ "fieldId": "603001" },
+			{ "fieldId": "603002" },
+			{ "fieldId": "603004" },
+			{ "fieldId": "603005" },
+			{ "fieldId": "603007" },
+			{ "fieldId": "603008" }
+		  ],
+		  "gridFields": [
+			{ "fieldId": "603006" },
+			{ "fieldId": "603003" },
+			{ "fieldId": "603001" },
+			{ "fieldId": "603002" }
+		  ]
+		},
+		{
+		  "sectionId": "600_012",
+		  "title": "lbl.sec_reactionAdmin",
+		  "sequence": 14,
+		  "fields": [
+			{ "fieldId": "600017" },
+			{ "fieldId": "600020" },
+			{ "fieldId": "600002" },
+			{ "fieldId": "600073" },
+			{ "fieldId": "600055" }
+		  ]
+		}
+	  ],
+	  "gridFields": [
+		{ "fieldId": "600029" },
+		{ "fieldId": "600015" },
+		{ "fieldId": "600024" },
+		{ "fieldId": "600026" },
+		{ "fieldId": "600043" },
+		{ "fieldId": "600031" },
+		{ "fieldId": "600032" }
+	  ]
+	},
+	{
+	  "sectionId": "610",
+	  "title": "lbl.sec_drugProducts",
+	  "sequence": 14,
+	  "multiContext": true,
+	  "contextPath": "drugProducts$",
+	  "dataGridConfig": {
+		"allowAdd": true,
+		"allowDelete": true,
+		"allowCopy": true,
+		"pagination": true,
+		"pageSizeOptions": [5, 10, 25]
+	  },
+	  "sections": [
+		{
+		  "sectionId": "610_001",
+		  "title": "lbl.sec_productIdentification",
+		  "sequence": 1,
+		  "fields": [
+			{ "fieldId": "610052" },
+			{ "fieldId": "610034" },
+			{ "fieldId": "610035" },
+			{ "fieldId": "610027" },
+			{ "fieldId": "610063" },
+			{ "fieldId": "610069" },
+			{ "fieldId": "610057" },
+			{ "fieldId": "610048" }
+		  ]
+		},
+		{
+		  "sectionId": "610_002",
+		  "title": "lbl.sec_productIdentifiers",
+		  "sequence": 2,
+		  "fields": [
+			{ "fieldId": "610032" },
+			{ "fieldId": "610033" },
+			{ "fieldId": "610036" },
+			{ "fieldId": "610040" },
+			{ "fieldId": "610041" },
+			{ "fieldId": "610074" },
+			{ "fieldId": "610029" },
+			{ "fieldId": "610038" },
+			{ "fieldId": "610037" },
+			{ "fieldId": "610026" },
+			{ "fieldId": "610054" }
+		  ]
+		},
+		{
+		  "sectionId": "610_003",
+		  "title": "lbl.sec_productClassification",
+		  "sequence": 3,
+		  "fields": [
+			{ "fieldId": "610050" },
+			{ "fieldId": "610051" },
+			{ "fieldId": "610067" },
+			{ "fieldId": "610062" },
+			{ "fieldId": "610006" },
+			{ "fieldId": "610031" }
+		  ]
+		},
+		{
+		  "sectionId": "610_004",
+		  "title": "lbl.sec_productDosage",
+		  "sequence": 4,
+		  "fields": [
+			{ "fieldId": "610065" },
+			{ "fieldId": "610066" },
+			{ "fieldId": "610024" },
+			{ "fieldId": "610009" },
+			{ "fieldId": "610014" },
+			{ "fieldId": "610025" },
+			{ "fieldId": "610011" },
+			{ "fieldId": "610012" },
+			{ "fieldId": "610019" },
+			{ "fieldId": "610010" }
+		  ]
+		},
+		{
+		  "sectionId": "610_005",
+		  "title": "lbl.sec_productDechallenge",
+		  "sequence": 5,
+		  "fields": [
+			{ "fieldId": "610001" },
+			{ "fieldId": "610017" },
+			{ "fieldId": "610018" }
+		  ]
+		},
+		{
+		  "sectionId": "610_006",
+		  "title": "lbl.sec_productFlags",
+		  "sequence": 6,
+		  "fields": [
+			{ "fieldId": "610028" },
+			{ "fieldId": "610046" },
+			{ "fieldId": "610047" },
+			{ "fieldId": "610030" },
+			{ "fieldId": "610004" },
+			{ "fieldId": "610049" },
+			{ "fieldId": "610059" },
+			{ "fieldId": "610060" },
+			{ "fieldId": "610061" },
+			{ "fieldId": "610008" },
+			{ "fieldId": "610013" },
+			{ "fieldId": "610055" },
+			{ "fieldId": "610056" }
+		  ]
+		},
+		{
+		  "sectionId": "612_001",
+		  "title": "lbl.sec_activeSubstances",
+		  "tabPanel": true,
+		  "sequence": 7,
+		  "multiContext": true,
+		  "contextPath": "drugProducts$.activeSubstances$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": false,
+			"pagination": false
+		  },
+		  "fields": [
+			{ "fieldId": "612003" },
+			{ "fieldId": "612009" },
+			{ "fieldId": "612008" },
+			{ "fieldId": "612006" },
+			{ "fieldId": "612007" },
+			{ "fieldId": "612004" },
+			{ "fieldId": "612005" },
+			{ "fieldId": "612001" },
+			{ "fieldId": "612002" }
+		  ],
+		  "gridFields": [
+			{ "fieldId": "612003" },
+			{ "fieldId": "612006" },
+			{ "fieldId": "612007" }
+		  ]
+		},
+		{
+		  "sectionId": "620_001",
+		  "title": "lbl.sec_drugIndications",
+		  "tabPanel": true,
+		  "sequence": 8,
+		  "multiContext": true,
+		  "contextPath": "drugProducts$.drugIndications$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": false,
+			"pagination": false
+		  },
+		  "fields": [
+			{ "fieldId": "620001" },
+			{ "fieldId": "620002" },
+			{ "fieldId": "620003" }
+		  ],
+		  "gridFields": [
+			{ "fieldId": "620001" },
+			{ "fieldId": "620002" }
+		  ]
+		},
+		{
+		  "sectionId": "615_001",
+		  "title": "lbl.sec_drugTherapies",
+		  "tabPanel": true,
+		  "sequence": 9,
+		  "multiContext": true,
+		  "contextPath": "drugProducts$.drugTherapies$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": true,
+			"pagination": true,
+			"pageSizeOptions": [5, 10]
+		  },
+		  "sections": [
+			{
+			  "sectionId": "615_001_A",
+			  "title": "lbl.sec_therapyDates",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "615031" },
+				{ "fieldId": "615032" },
+				{ "fieldId": "615027" },
+				{ "fieldId": "615028" },
+				{ "fieldId": "615029" },
+				{ "fieldId": "615026" },
+				{ "fieldId": "615007" },
+				{ "fieldId": "615008" }
+			  ]
+			},
+			{
+			  "sectionId": "615_001_B",
+			  "title": "lbl.sec_therapyDose",
+			  "sequence": 2,
+			  "fields": [
+				{ "fieldId": "615035" },
+				{ "fieldId": "615036" },
+				{ "fieldId": "615003" },
+				{ "fieldId": "615004" },
+				{ "fieldId": "615033" },
+				{ "fieldId": "615034" },
+				{ "fieldId": "615001" },
+				{ "fieldId": "615002" },
+				{ "fieldId": "615005" }
+			  ]
+			},
+			{
+			  "sectionId": "615_001_C",
+			  "title": "lbl.sec_therapyFrequency",
+			  "sequence": 3,
+			  "fields": [
+				{ "fieldId": "615012" },
+				{ "fieldId": "615013" },
+				{ "fieldId": "615014" },
+				{ "fieldId": "615006" }
+			  ]
+			},
+			{
+			  "sectionId": "615_001_D",
+			  "title": "lbl.sec_therapyRoute",
+			  "sequence": 4,
+			  "fields": [
+				{ "fieldId": "615023" },
+				{ "fieldId": "615025" },
+				{ "fieldId": "615024" },
+				{ "fieldId": "615020" },
+				{ "fieldId": "615009" },
+				{ "fieldId": "615022" },
+				{ "fieldId": "615021" },
+				{ "fieldId": "615010" },
+				{ "fieldId": "615011" }
+			  ]
+			},
+			{
+			  "sectionId": "615_001_E",
+			  "title": "lbl.sec_therapyLot",
+			  "sequence": 5,
+			  "fields": [
+				{ "fieldId": "615017" },
+				{ "fieldId": "615016" },
+				{ "fieldId": "615030" },
+				{ "fieldId": "615037" },
+				{ "fieldId": "615015" }
+			  ]
+			},
+			{
+			  "sectionId": "615_001_F",
+			  "title": "lbl.sec_therapyDoctor",
+			  "sequence": 6,
+			  "fields": [
+				{ "fieldId": "615043" },
+				{ "fieldId": "615039" },
+				{ "fieldId": "615041" },
+				{ "fieldId": "615040" },
+				{ "fieldId": "615042" },
+				{ "fieldId": "615038" }
+			  ]
+			},
+			{
+			  "sectionId": "617_001",
+			  "title": "lbl.sec_vaccFacility",
+			  "sequence": 7,
+			  "renderCondition": "RULE_ICSR_DRUG_VACCINE_SECTION",
+			  "multiContext": true,
+			  "contextPath": "drugProducts$.drugTherapies$.drugTherapyVaccineCollection$",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": false
+			  },
+			  "fields": [
+				{ "fieldId": "617007" },
+				{ "fieldId": "617011" },
+				{ "fieldId": "617001" },
+				{ "fieldId": "617002" },
+				{ "fieldId": "617003" },
+				{ "fieldId": "617009" },
+				{ "fieldId": "617008" },
+				{ "fieldId": "617004" },
+				{ "fieldId": "617010" },
+				{ "fieldId": "617005" },
+				{ "fieldId": "617006" }
+			  ],
+			  "gridFields": [
+				{ "fieldId": "617007" },
+				{ "fieldId": "617011" },
+				{ "fieldId": "617004" }
+			  ]
+			}
+		  ],
+		  "gridFields": [
+			{ "fieldId": "615031" },
+			{ "fieldId": "615027" },
+			{ "fieldId": "615035" },
+			{ "fieldId": "615036" },
+			{ "fieldId": "615023" }
+		  ]
+		},
+		{
+		  "sectionId": "630_001",
+		  "title": "lbl.sec_drugApprovals",
+		  "tabPanel": true,
+		  "sequence": 10,
+		  "multiContext": true,
+		  "contextPath": "drugProducts$.drugApprovalCollection$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": false,
+			"pagination": true,
+			"pageSizeOptions": [5, 10]
+		  },
+		  "fields": [
+			{ "fieldId": "630006" },
+			{ "fieldId": "630004" },
+			{ "fieldId": "630005" },
+			{ "fieldId": "630026" },
+			{ "fieldId": "630019" },
+			{ "fieldId": "630018" },
+			{ "fieldId": "630025" },
+			{ "fieldId": "630024" },
+			{ "fieldId": "630029" },
+			{ "fieldId": "630007" },
+			{ "fieldId": "630011" },
+			{ "fieldId": "630013" },
+			{ "fieldId": "630015" },
+			{ "fieldId": "630022" },
+			{ "fieldId": "630014" },
+			{ "fieldId": "630021" },
+			{ "fieldId": "630030" }
+		  ],
+		  "gridFields": [
+			{ "fieldId": "630006" },
+			{ "fieldId": "630004" },
+			{ "fieldId": "630005" },
+			{ "fieldId": "630026" }
+		  ]
+		},
+		{
+		  "sectionId": "625_001",
+		  "title": "lbl.sec_productDevices",
+		  "tabPanel": true,
+		  "sequence": 11,
+		  "renderCondition": "RULE_ICSR_DRUG_DEVICE_SECTION",
+		  "multiContext": true,
+		  "contextPath": "drugProducts$.productDevices$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": false,
+			"pagination": true,
+			"pageSizeOptions": [5, 10]
+		  },
+		  "sections": [
+			{
+			  "sectionId": "625_001_A",
+			  "title": "lbl.sec_deviceIdentification",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "625005" },
+				{ "fieldId": "625008" },
+				{ "fieldId": "625038" },
+				{ "fieldId": "625039" },
+				{ "fieldId": "625064" },
+				{ "fieldId": "625063" },
+				{ "fieldId": "625076" },
+				{ "fieldId": "625006" },
+				{ "fieldId": "625047" },
+				{ "fieldId": "625073" },
+				{ "fieldId": "625018" },
+				{ "fieldId": "625007" },
+				{ "fieldId": "625002" },
+				{ "fieldId": "625035" },
+				{ "fieldId": "625003" }
+			  ]
+			},
+			{
+			  "sectionId": "625_001_B",
+			  "title": "lbl.sec_deviceDates",
+			  "sequence": 2,
+			  "fields": [
+				{ "fieldId": "625025" },
+				{ "fieldId": "625024" },
+				{ "fieldId": "625014" },
+				{ "fieldId": "625013" },
+				{ "fieldId": "625027" },
+				{ "fieldId": "625026" },
+				{ "fieldId": "625016" },
+				{ "fieldId": "625017" },
+				{ "fieldId": "625066" },
+				{ "fieldId": "625028" }
+			  ]
+			},
+			{
+			  "sectionId": "625_001_C",
+			  "title": "lbl.sec_deviceEvaluation",
+			  "sequence": 3,
+			  "fields": [
+				{ "fieldId": "625022" },
+				{ "fieldId": "625067" },
+				{ "fieldId": "625012" },
+				{ "fieldId": "625068" },
+				{ "fieldId": "625015" },
+				{ "fieldId": "625011" },
+				{ "fieldId": "625077" },
+				{ "fieldId": "625055" },
+				{ "fieldId": "625042" },
+				{ "fieldId": "625043" },
+				{ "fieldId": "625044" },
+				{ "fieldId": "625057" },
+				{ "fieldId": "625060" },
+				{ "fieldId": "625062" },
+				{ "fieldId": "625074" },
+				{ "fieldId": "625085" },
+				{ "fieldId": "625086" },
+				{ "fieldId": "625087" }
+			  ]
+			},
+			{
+			  "sectionId": "625_001_D",
+			  "title": "lbl.sec_deviceNomenclature",
+			  "sequence": 4,
+			  "fields": [
+				{ "fieldId": "625052" },
+				{ "fieldId": "625053" },
+				{ "fieldId": "625054" },
+				{ "fieldId": "625019" },
+				{ "fieldId": "625020" },
+				{ "fieldId": "625021" }
+			  ]
+			},
+			{
+			  "sectionId": "625_001_E",
+			  "title": "lbl.sec_deviceReporting",
+			  "sequence": 5,
+			  "fields": [
+				{ "fieldId": "625009" },
+				{ "fieldId": "625048" },
+				{ "fieldId": "625049" },
+				{ "fieldId": "625046" },
+				{ "fieldId": "625069" },
+				{ "fieldId": "625034" },
+				{ "fieldId": "625070" },
+				{ "fieldId": "625045" },
+				{ "fieldId": "625072" },
+				{ "fieldId": "625078" },
+				{ "fieldId": "625079" },
+				{ "fieldId": "625041" },
+				{ "fieldId": "625071" },
+				{ "fieldId": "625082" },
+				{ "fieldId": "625081" },
+				{ "fieldId": "625051" },
+				{ "fieldId": "625001" },
+				{ "fieldId": "625010" },
+				{ "fieldId": "625023" }
+			  ]
+			},
+			{
+			  "sectionId": "627_001",
+			  "title": "lbl.sec_deviceManufacturers",
+			  "sequence": 6,
+			  "multiContext": true,
+			  "contextPath": "drugProducts$.productDevices$.deviceManufacturerers$",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": false
+			  },
+			  "fields": [
+				{ "fieldId": "627005" },
+				{ "fieldId": "627004" },
+				{ "fieldId": "627003" },
+				{ "fieldId": "627001" },
+				{ "fieldId": "627006" },
+				{ "fieldId": "627002" }
+			  ],
+			  "gridFields": [
+				{ "fieldId": "627005" },
+				{ "fieldId": "627002" }
+			  ]
+			},
+			{
+			  "sectionId": "628_001",
+			  "title": "lbl.sec_deviceProblemEval",
+			  "sequence": 7,
+			  "multiContext": true,
+			  "contextPath": "drugProducts$.productDevices$.deviceProblemEvaluationCollection$",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": false
+			  },
+			  "fields": [
+				{ "fieldId": "628001" },
+				{ "fieldId": "629002" }
+			  ],
+			  "gridFields": [
+				{ "fieldId": "628001" },
+				{ "fieldId": "629002" }
+			  ]
+			},
+			{
+			  "sectionId": "629_001",
+			  "title": "lbl.sec_deviceImdrfEval",
+			  "sequence": 8,
+			  "multiContext": true,
+			  "contextPath": "drugProducts$.productDevices$.deviceProblemEvaluationIMDRFCollection$",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": false
+			  },
+			  "fields": [
+				{ "fieldId": "629005" },
+				{ "fieldId": "629006" },
+				{ "fieldId": "629007" },
+				{ "fieldId": "629008" },
+				{ "fieldId": "629009" }
+			  ],
+			  "gridFields": [
+				{ "fieldId": "629005" },
+				{ "fieldId": "629006" }
+			  ]
+			}
+		  ],
+		  "gridFields": [
+			{ "fieldId": "625005" },
+			{ "fieldId": "625076" },
+			{ "fieldId": "625047" },
+			{ "fieldId": "625018" }
+		  ]
+		},
+		{
+		  "sectionId": "635_001",
+		  "title": "lbl.sec_drugRelatedness",
+		  "tabPanel": true,
+		  "sequence": 12,
+		  "multiContext": true,
+		  "contextPath": "drugProducts$.drugReactionRelatednes$",
+		  "dataGridConfig": {
+			"allowAdd": true,
+			"allowDelete": true,
+			"allowCopy": false,
+			"pagination": true,
+			"pageSizeOptions": [5, 10]
+		  },
+		  "sections": [
+			{
+			  "sectionId": "635_001_A",
+			  "title": "lbl.sec_relatednessCore",
+			  "sequence": 1,
+			  "fields": [
+				{ "fieldId": "635004" },
+				{ "fieldId": "635002" },
+				{ "fieldId": "635018" },
+				{ "fieldId": "635005" },
+				{ "fieldId": "635010" },
+				{ "fieldId": "635017" },
+				{ "fieldId": "635015" }
+			  ]
+			},
+			{
+			  "sectionId": "635_001_B",
+			  "title": "lbl.sec_causality",
+			  "sequence": 2,
+			  "fields": [
+				{ "fieldId": "635008" },
+				{ "fieldId": "635019" },
+				{ "fieldId": "635009" },
+				{ "fieldId": "635020" },
+				{ "fieldId": "635016" }
+			  ]
+			},
+			{
+			  "sectionId": "635_001_C",
+			  "title": "lbl.sec_latency",
+			  "sequence": 3,
+			  "fields": [
+				{ "fieldId": "635022" },
+				{ "fieldId": "635023" },
+				{ "fieldId": "635012" },
+				{ "fieldId": "635013" }
+			  ]
+			},
+			{
+			  "sectionId": "635_001_D",
+			  "title": "lbl.sec_relatednessFlags",
+			  "sequence": 4,
+			  "fields": [
+				{ "fieldId": "635006" },
+				{ "fieldId": "635007" },
+				{ "fieldId": "635001" },
+				{ "fieldId": "635003" },
+				{ "fieldId": "635014" },
+				{ "fieldId": "635024" },
+				{ "fieldId": "635011" },
+				{ "fieldId": "635021" }
+			  ]
+			},
+			{
+			  "sectionId": "636_001",
+			  "title": "lbl.sec_reactionLabellings",
+			  "sequence": 5,
+			  "multiContext": true,
+			  "contextPath": "drugProducts$.drugReactionRelatednes$.drugReactionLabellings$",
+			  "dataGridConfig": {
+				"allowAdd": true,
+				"allowDelete": true,
+				"allowCopy": false,
+				"pagination": false
+			  },
+			  "fields": [
+				{ "fieldId": "636002" },
+				{ "fieldId": "636003" },
+				{ "fieldId": "636004" },
+				{ "fieldId": "636005" },
+				{ "fieldId": "636006" },
+				{ "fieldId": "636001" }
+			  ],
+			  "gridFields": [
+				{ "fieldId": "636002" },
+				{ "fieldId": "636003" },
+				{ "fieldId": "636006" }
+			  ]
+			}
+		  ],
+		  "gridFields": [
+			{ "fieldId": "635004" },
+			{ "fieldId": "635008" },
+			{ "fieldId": "635019" },
+			{ "fieldId": "635010" },
+			{ "fieldId": "635017" }
+		  ]
+		}
+	  ],
+	  "gridFields": [
+		{ "fieldId": "610052" },
+		{ "fieldId": "610050" },
+		{ "fieldId": "610001" },
+		{ "fieldId": "610017" },
+		{ "fieldId": "610018" }
+	  ]
+	},
+	{
+	  "sectionId": "640",
+	  "title": "lbl.sec_labTests",
+	  "sequence": 15,
+	  "multiContext": true,
+	  "contextPath": "labTests$",
+	  "dataGridConfig": {
+		"allowAdd": true,
+		"allowDelete": true,
+		"allowCopy": true,
+		"pagination": true,
+		"pageSizeOptions": [5, 10, 25]
+	  },
+	  "sections": [
+		{
+		  "sectionId": "640_001",
+		  "title": "lbl.sec_labTestCore",
+		  "sequence": 1,
+		  "fields": [
+			{ "fieldId": "640009" },
+			{ "fieldId": "640010" },
+			{ "fieldId": "640011" },
+			{ "fieldId": "640008" }
+		  ]
+		},
+		{
+		  "sectionId": "640_002",
+		  "title": "lbl.sec_labTestResult",
+		  "sequence": 2,
+		  "fields": [
+			{ "fieldId": "640013" },
+			{ "fieldId": "640012" },
+			{ "fieldId": "640014" },
+			{ "fieldId": "640007" },
+			{ "fieldId": "640006" },
+			{ "fieldId": "640005" }
+		  ]
+		},
+		{
+		  "sectionId": "640_003",
+		  "title": "lbl.sec_labTestAdmin",
+		  "sequence": 3,
+		  "fields": [
+			{ "fieldId": "640001" },
+			{ "fieldId": "640004" },
+			{ "fieldId": "640002" },
+			{ "fieldId": "640003" }
+		  ]
+		}
+	  ],
+	  "gridFields": [
+		{ "fieldId": "640009" },
+		{ "fieldId": "640008" },
+		{ "fieldId": "640013" },
+		{ "fieldId": "640012" },
+		{ "fieldId": "640014" }
+	  ]
+	},
+	{
+	  "sectionId": "645",
+	  "title": "lbl.sec_literature",
+	  "sequence": 16,
+	  "multiContext": true,
+	  "contextPath": "literatureCollection$",
+	  "dataGridConfig": {
+		"allowAdd": true,
+		"allowDelete": true,
+		"allowCopy": false,
+		"pagination": true,
+		"pageSizeOptions": [5, 10]
+	  },
+	  "sections": [
+		{
+		  "sectionId": "645_001",
+		  "title": "lbl.sec_literatureCore",
+		  "sequence": 1,
+		  "fields": [
+			{ "fieldId": "645009" },
+			{ "fieldId": "645002" },
+			{ "fieldId": "645007" },
+			{ "fieldId": "645003" },
+			{ "fieldId": "645008" }
+		  ]
+		},
+		{
+		  "sectionId": "645_002",
+		  "title": "lbl.sec_publicationDetails",
+		  "sequence": 2,
+		  "fields": [
+			{ "fieldId": "645012" },
+			{ "fieldId": "645004" },
+			{ "fieldId": "645006" },
+			{ "fieldId": "645010" },
+			{ "fieldId": "645011" }
+		  ]
+		},
+		{
+		  "sectionId": "645_003",
+		  "title": "lbl.sec_literatureAdmin",
+		  "sequence": 3,
+		  "fields": [
+			{ "fieldId": "645001" },
+			{ "fieldId": "645013" },
+			{ "fieldId": "645005" }
+		  ]
+		}
+	  ],
+	  "gridFields": [
+		{ "fieldId": "645009" },
+		{ "fieldId": "645002" },
+		{ "fieldId": "645007" },
+		{ "fieldId": "645012" }
+	  ]
+	}
+
+  ]
+}
