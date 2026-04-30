@@ -103,12 +103,18 @@
 		}
 	}
 	
-	function resolveFormMd(fmMd, flMdMap, renderRuleMap, triggerFieldImpacts, rlInd){
+	function resolveFormMd(fmMd, currFormFields, flMdMap, renderRuleMap, triggerFieldImpacts, rlInd, level, parentSecPath){
 		let fields = fmMd.fields || [];
+		let sectionPath = fmMd.tabPanel || fmMd.multiContext ? parentSecPath + '.' + fmMd.sectionId : parentSecPath;
 		
 		for(let f of fields){
 			let flMd = flMdMap[f.fieldId];
 			if(flMd){resolveFieldMd(f, flMd);}
+			
+			currFormFields[f.fieldId] = f;
+			//Set the section path for field jump or fieldd navigation from error window
+			f.sectionPath = sectionPath;
+			
 			
 			if(f.renderCondition && rlInd[f.renderCondition]){
 				let renderRule = rlInd[f.renderCondition];
@@ -123,6 +129,19 @@
 			}
 		}
 		
+		if(fmMd.renderCondition && rlInd[fmMd.renderCondition]){
+			let renderRule = rlInd[fmMd.renderCondition];
+			renderRuleMap[renderRule.ruleId] = renderRule;
+			resolveRenderRulesFieldImpacts(renderRule, triggerFieldImpacts, fmMd.sectionId, 'sectionRender');
+		}
+		
+		if(fmMd.gridActionsRender && rlInd[fmMd.gridActionsRender]){
+			let renderRule = rlInd[fmMd.gridActionsRender];
+			renderRuleMap[renderRule.ruleId] = renderRule;
+			resolveRenderRulesFieldImpacts(renderRule, triggerFieldImpacts, fmMd.sectionId, 'gridActionsRender');
+		}
+		
+		
 		let gridFields = fmMd.gridFields || [];
 		for(let f of gridFields){
 			let flMd = flMdMap[f.fieldId];
@@ -131,20 +150,8 @@
 		
 		let sections = fmMd.sections || [];
 		for(let sec of sections){
-			resolveFormMd(sec, flMdMap, renderRuleMap, triggerFieldImpacts, rlInd);
-			
-			if(sec.renderCondition && rlInd[sec.renderCondition]){
-				let renderRule = rlInd[sec.renderCondition];
-				renderRuleMap[renderRule.ruleId] = renderRule;
-				resolveRenderRulesFieldImpacts(renderRule, triggerFieldImpacts, sec.sectionId, 'sectionRender');
-			}
-			
-			if(sec.gridActionsRender && rlInd[sec.gridActionsRender]){
-				let renderRule = rlInd[sec.gridActionsRender];
-				renderRuleMap[renderRule.ruleId] = renderRule;
-				resolveRenderRulesFieldImpacts(renderRule, triggerFieldImpacts, sec.sectionId, 'gridActionsRender');
-			}
-			
+			sec.sectionPath = sectionPath;
+			resolveFormMd(sec, currFormFields, flMdMap, renderRuleMap, triggerFieldImpacts, rlInd, (level+1), sectionPath);
 		}
 	}
 	
@@ -175,12 +182,18 @@
 		for(let fmId in fmsMd){
 			let renderRuleMap = {};
 			let triggerFieldImpacts = {};
-			resolveFormMd(fmsMd[fmId], flMdMap, renderRuleMap, triggerFieldImpacts, rlInd)
-
+			let currFormFields = {...flMdMap};
+			
+			
+			let sections = fmsMd[fmId].sections || [];
+			for(let sec of sections){				 
+				resolveFormMd(sec, currFormFields, flMdMap, renderRuleMap, triggerFieldImpacts, rlInd, 1, sec.sectionId);
+			}
+		
 			fmsMd[fmId].triggerFieldImpacts = triggerFieldImpacts;
 			fmsMd[fmId].renderRules = renderRuleMap;
+			fmsMd[fmId].fieldsCache = currFormFields;
 		}
-		
 		return mdBundle;
 		
 	}
@@ -218,6 +231,10 @@
 		return (metadata?.formMetadata && metadata?.formMetadata.FORMS[formId])|| {};	
 		
 	}
+	async function getModuleFields(moduleId){
+		let metadata = await _getMdPack(moduleId);
+		return metadata.fields || {};		
+	}
 	
 	async function getLookupMd(moduleId){
 		let metadata = await _getMdPack(moduleId);
@@ -225,6 +242,6 @@
 		
 	}
 	
-	global.AppMD = { listing: getListingMd , forms:getAllFormsMd, form:getFormsMd, lookup:getLookupMd};
+	global.AppMD = { listing: getListingMd , forms:getAllFormsMd, form:getFormsMd, fields:getModuleFields, lookup:getLookupMd};
 	
 })(window);
