@@ -3,6 +3,7 @@ package com.metadyna.moduleData.controller;
 import com.metadyna.common.model.ApiResponse;
 import com.metadyna.common.model.PageResponse;
 import com.metadyna.common.security.PrivilegeChecker;
+import com.metadyna.moduleData.model.DataSaveResponse;
 import com.metadyna.moduleData.model.PatchRequest;
 import com.metadyna.moduleData.model.SearchCriteria;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -55,7 +56,7 @@ public class DataController {
 
     @PostMapping("/create")
     @Operation(summary = "Save a new record (full JSON payload)")
-    public ResponseEntity<ApiResponse<Map<String, Object>>> saveRecord(
+    public ResponseEntity<ApiResponse<DataSaveResponse>> saveRecord(
             @RequestHeader("X-Tenant-ID") String tenantId,
             @PathVariable String moduleId,
             @RequestBody Map<String, Object> payload) {
@@ -68,7 +69,7 @@ public class DataController {
 
     @PutMapping("/save/{id}")
     @Operation(summary = "Full update of an existing record (saveObject strategy)")
-    public ResponseEntity<ApiResponse<Map<String, Object>>> updateRecord(
+    public ResponseEntity<ApiResponse<DataSaveResponse>> updateRecord(
             @RequestHeader("X-Tenant-ID") String tenantId,
             @PathVariable String moduleId,
             @PathVariable String id,
@@ -82,7 +83,7 @@ public class DataController {
 
     @PatchMapping("/patch/{id}")
     @Operation(summary = "Delta update — updatedJson for changes, deletedRec for removals")
-    public ResponseEntity<ApiResponse<Map<String, Object>>> patchRecord(
+    public ResponseEntity<ApiResponse<DataSaveResponse>> patchRecord(
             @RequestHeader("X-Tenant-ID") String tenantId,
             @PathVariable String moduleId,
             @PathVariable String id,
