@@ -251,7 +251,7 @@ function registerAppClickEvents(){
 		}
 		
 		//Handle Form Lookup data selection clear [md-lookup__clear]
-		if($('.case-edit-app .md-lookup-clear').has(e.target)[0] || $(e.target).hasClass('md-lookup-clear')){
+		if($(e.target).parents('.case-edit-app')[0] && ($(e.target).parents('.md-lookup-clear')[0] || $(e.target).hasClass('md-lookup-clear'))){
 			//ls-table-field
 			let lkpBtn = $(e.target).hasClass('md-lookup-clear') ? e.target : $('.md-lookup-clear').has(e.target)[0];
 			AppFORM.clearLookup(lkpBtn);
@@ -259,10 +259,18 @@ function registerAppClickEvents(){
 		}
 		
 		//Handle switch input component changes [md-switch__track]
-		if($('.case-edit-app .md-switch__track').has(e.target)[0] || $(e.target).hasClass('md-switch__track')){
+		if($(e.target).parents('.case-edit-app')[0] && ($(e.target).parents('.md-switch__track')[0] || $(e.target).hasClass('md-switch__track'))){
 			//ls-table-field
 			let switchCmp = $(e.target).hasClass('md-switch__track') ? e.target : $('.md-switch__track').has(e.target)[0];
 			AppFORM.valSwitch(switchCmp);
+			
+		}
+		
+		//Open the form Error popup [app-bar__err-btn]
+		if($(e.target).parents('.case-edit-app')[0] && ($(e.target).parents('.app-bar__err-btn')[0] || $(e.target).hasClass('app-bar__err-btn'))){
+			//ls-table-field
+			let errBtn = $(e.target).hasClass('app-bar__err-btn') ? e.target : $('.app-bar__err-btn').has(e.target)[0];
+			AppFORM.errorWin(errBtn);
 			
 		}
 	});
