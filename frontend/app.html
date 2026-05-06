@@ -59,7 +59,17 @@
 
 <!-- CASE EDIT OVERLAY -->
 <div id="case-edit-overlay" class="case-edit-overlay">
-  <div id="case-edit-app" class="case-edit-app"></></div>
+	<div id="case-edit-app" class="case-edit-app"></div>	
+</div>
+<!-- CASE EDIT Error overlay -->
+<div class="md-modal-backdrop" id="errorPopupBackdrop" style="display:none;">
+	<div class="md-modal" role="alertdialog" aria-modal="true" aria-labelledby="errPopupTitle" onclick="event.stopPropagation()">
+		<div class="md-modal__header err-modal-header">
+			<span class="md-modal__title" id="errPopupTitle" style="display:flex; align-items:baseline; gap:8px;"></span>
+			<button class="md-icon-btn" aria-label="Close" style="color:white" onclick="$('#errorPopupBackdrop').hide()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+		</div>
+		<div class="md-modal__body md-err-modal__body"> <p class="err-summary"></p> <div class="err-list"></div></div>			
+	</div>
 </div>
 
 <!-- Module-specific metadata and data files are loaded dynamically by
