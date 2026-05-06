@@ -9,6 +9,8 @@ import com.metadyna.moduleData.component.JsonAssembler;
 import com.metadyna.moduleData.component.JsonDisassembler;
 import com.metadyna.moduleData.component.ListingQueryEngine;
 import com.metadyna.moduleData.component.RecordFetchQueryEngine;
+import com.metadyna.moduleData.model.DataSaveErrors;
+import com.metadyna.moduleData.model.DataSaveResponse;
 import com.metadyna.moduleData.model.SearchCriteria;
 import com.metadyna.moduleData.model.TableOperation;
 import com.metadyna.metadata.model.ModuleMetadata;
@@ -84,7 +86,7 @@ public class DataService {
 
     // ── Save (POST) ───────────────────────────────────────────────────────────
 
-    public Map<String, Object> createModuleDataRecord(
+    public DataSaveResponse createModuleDataRecord(
             String moduleId,
             Map<String, Object> payload,
             String tenantId) {
@@ -99,16 +101,21 @@ public class DataService {
             throw new ModuleDataException("ID_NULL", "Data Record ID is empty", HttpStatus.BAD_REQUEST);
         }
         queryEngine.fetchBaseDataRecord(id, root, metadata, jdbc).ifPresent(rec-> {throw new ModuleDataException("ERROR","ID already exists",HttpStatus.BAD_REQUEST);});
-
-        List<TableOperation> ops = jsonDisassembler.disassembleFull(payload, null, "SAVE", metadata);
+        List<DataSaveErrors> errors = new ArrayList<>();
+        Map<String, String> ctxIds = new HashMap<>();
+        List<TableOperation> ops = jsonDisassembler.disassembleFull(payload, null, "SAVE", metadata, ctxIds, errors);
         saveEngine.executeOperations(ops, jdbc);
 
-        return getModuleDataRecordById(moduleId, id, tenantId);
+        Map<String, Object> dbJsonObj = getModuleDataRecordById(moduleId, id, tenantId);
+        DataSaveResponse resp = new DataSaveResponse();
+        resp.setDataRecord(dbJsonObj);
+        resp.setErrors(errors);
+        return resp;
     }
 
     // ── Full Update (PUT) ─────────────────────────────────────────────────────
 
-    public Map<String, Object> saveModuleDataRecord(
+    public DataSaveResponse saveModuleDataRecord(
             String moduleId,
             String id,
             Map<String, Object> payload,
@@ -123,16 +130,20 @@ public class DataService {
         }
         Map<String, Object> dbJsonObj = getModuleDataRecordById(moduleId, id, tenantId);
         String saveType = "UPDATE";
-
-        List<TableOperation> ops = jsonDisassembler.disassembleFull(payload, dbJsonObj, saveType, metadata);
+        List<DataSaveErrors> errors = new ArrayList<>();
+        Map<String, String> ctxIds = new HashMap<>();
+        List<TableOperation> ops = jsonDisassembler.disassembleFull(payload, dbJsonObj, saveType, metadata, ctxIds, errors);
         saveEngine.executeOperations(ops, jdbc);
 
-        return getModuleDataRecordById(moduleId, id, tenantId);
+        DataSaveResponse resp = new DataSaveResponse();
+        resp.setDataRecord(dbJsonObj);
+        resp.setErrors(errors);
+        return resp;
     }
 
     // ── Delta Update (PATCH) ──────────────────────────────────────────────────
 
-    public Map<String, Object> patchModuleDataRecord(
+    public DataSaveResponse patchModuleDataRecord(
             String moduleId,
             String id,
             Map<String, Object> updatedJson,
@@ -151,11 +162,17 @@ public class DataService {
             throw new ModuleDataException("REC_NULL", "Data Record not found", HttpStatus.BAD_REQUEST);
         }
         String saveType = "PATCH";
-        List<TableOperation> ops = jsonDisassembler.disassembleFull(updatedJson, dbJsonObj, saveType, metadata);
+        List<DataSaveErrors> errors = new ArrayList<>();
+        Map<String, String> ctxIds = new HashMap<>();
+        List<TableOperation> ops = jsonDisassembler.disassembleFull(updatedJson, dbJsonObj, saveType, metadata, ctxIds, errors);
         jsonDisassembler.collectDeleteOps(deletedRec, dbJsonObj, root, metadata, ops);
         saveEngine.executeOperations(ops, jdbc);
 
-        return getModuleDataRecordById(moduleId, id, tenantId);
+        DataSaveResponse resp = new DataSaveResponse();
+        resp.setDataRecord(dbJsonObj);
+        resp.setErrors(errors);
+        resp.setEditDataRecord(updatedJson);
+        return resp;
     }
 
     // ── Delete ────────────────────────────────────────────────────────────────
