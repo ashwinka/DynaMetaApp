@@ -4,6 +4,7 @@
 	let _dataJson 	= {};
 	let _editJson 	= {};
 	let _delRecJson = {};
+	let _errors = [];
 	
 	let _moduleId = null;
 	let _formMD = {};
@@ -36,6 +37,92 @@
 		}
 		return svg;
 	}
+	
+	function showErrorPopup(){
+		let errorJson = _errors;
+		if (!errorJson || errorJson.length === 0) return;
+
+		const ERR_TYPE = {
+			ERROR: {
+				rowClass:    'err-row--error',
+				label: AppI18N.t('Errors'),
+				iconColor:   'var(--md-error)',
+				icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`
+			},
+			WARNING: {
+				rowClass:    'err-row--warning',
+				label: AppI18N.t('Warnings'),
+				iconColor:   'var(--md-warning)',
+				icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`
+			},
+			INFO: {
+				rowClass:    'err-row--info',
+				label: AppI18N.t('Infos'),
+				iconColor:   'var(--md-primary)',
+				icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`
+			}
+		};
+		
+		const priority = { ERROR: 1, WARNING: 2, INFO: 3 };
+
+		// Count by type
+		const counts = { ERROR: 0, WARNING: 0, INFO: 0 };
+		errorJson.forEach(e => { const t = e.severity || 'ERROR'; if (counts[t] !== undefined) counts[t]++; });
+		const total = counts.ERROR + counts.WARNING + counts.INFO;
+
+		// Build rows grouped by type order: error → warning → info
+		sorted = errorJson.sort((a, b) => priority[a.severity] - priority[b.severity]);
+		
+		const rows = sorted.map(e => {
+			const cfg = ERR_TYPE[e.severity || 'ERROR'];
+			const ctxParts = 'CTX'
+			return `
+			<div class="err-row ${cfg.rowClass}">
+				<div class="err-row__icon" style="color:${cfg.iconColor}">${cfg.icon}</div>
+				<div class="err-row__body">
+					<div class="err-row__message">
+					  <span class="err-type-badge err-type-badge--${e.severity || 'ERROR'}">${(e.severity || 'ERROR').toUpperCase()}</span>
+					  <span>${e.message}</span>
+					</div>
+					<div class="err-row__meta">						
+						${e.ruleId ? `<span class="err-rule">Rule: ${e.ruleId}</span>` : ''}
+						${ctxParts ? `<span class="err-ctx-label">Context:</span>${ctxParts}` : ''}
+						<span class="err-field-id">Field: ${_activeForm.fieldsCache[e.fieldId] ?AppI18N.mT(_activeForm.fieldsCache[_errors[0].fieldId].label, _moduleId) : 'e.fieldId'}</span>
+						
+					</div>
+				</div>
+				<button class="err-nav-btn" title="Go to field"
+					onclick="navigateToField('${e.fieldId}', ${JSON.stringify(e.ctxIds || {})})">
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<polyline points="9 18 15 12 9 6"/>
+					</svg>
+					Go to field
+				</button>
+			</div>`;
+		}).join('');
+
+		// Header: show highest severity present
+		const headerType = counts.ERROR > 0 ? 'ERROR' : counts.warning > 0 ? 'WARNING' : 'INFO';
+		const headerCfg  = ERR_TYPE[headerType];
+		const headerTitle = counts.ERROR > 0 ? 'Validation Errors' : counts.warning > 0 ? 'Validation Warnings' : 'Validation Info';
+		const summaryMsg  = 'Please review the below errors:'
+
+		// Count badges in header
+		let countBadges = [];
+		for(let sev in counts){
+			if(counts[sev] > 0){
+				countBadges.push(`<span class="err-count-badge err-count-badge--${sev}">${ERR_TYPE[sev]?.label} ${counts[sev]}</span>`)
+			}
+		}
+	
+		
+		$('#errorPopupBackdrop #errPopupTitle').html(`<span>${headerCfg.icon}</span>${headerTitle}<span style="display:flex; gap:4px; margin-left:4px;    align-items: center;flex-direction: row;">${countBadges.join('')}</span>`);
+		$('#errorPopupBackdrop .err-summary').html(summaryMsg)
+		$('#errorPopupBackdrop .err-list').html(rows)
+		
+		$('#errorPopupBackdrop').show();
+	}
+	
 	
 	function _buildBreadcrumb(secMd){
 		let bc = [];
@@ -225,13 +312,13 @@
 			if(flPath.indexOf('$') > 0){
 				//pick all the ctxIds matched ones and udate the result.
 				let repPathArr = getMultiCtxPathArr(flPath);
-				let currFlCtxIdMap = (repPathArr, currSecIdMap);
+				let currFlCtxIdMap = getMultiCtxIdStr(repPathArr, currSecIdMap);
 				
 				for(let cacheRes of computationCache){
 					let resCtxIds = cacheRes.ctxPaths;
 					let matchedCtx = true;
 					for(let p of repPathArr){
-						if(!resCtxIds[p] || currFlCtxIdMap[p] != resCtxIds[p]){
+						if(!resCtxIds[p] || !currSecIdMap[p] || currSecIdMap[p] != resCtxIds[p]){
 							matchedCtx = false;
 							break;
 						}
@@ -595,8 +682,8 @@
 	
 	function copyMcRecord(cpyBtn){
 		let mdGridCmp = $(cpyBtn).parents('.md-grid')[0];
-		let secId = mdGridCmp?.getAttribute('id');
-		let md = _sectionCache[mdGridCmp.id];
+		let secId = mdGridCmp?.getAttribute('section-id');
+		let md = _sectionCache[secId];
 		let ctxPath = md.contextPath;
 		let gridState = _getGridState(ctxPath);
 		
@@ -644,8 +731,8 @@
 	
 	function deleteMcRecord(delBtn){
 		let mdGridCmp = $(delBtn).parents('.md-grid')[0];
-		let secId = mdGridCmp?.getAttribute('id');
-		let md = _sectionCache[mdGridCmp.id];
+		let secId = mdGridCmp?.getAttribute('section-id');
+		let md = _sectionCache[secId];
 		let ctxPath = md.contextPath;
 		let gridState = _getGridState(ctxPath);
 		
@@ -715,8 +802,10 @@
 	
 	function gridPaginationHandler(pagerBtn){
 		let mdGridCmp = $(pagerBtn).parents('.md-grid')[0];
-		let secId = mdGridCmp?.getAttribute('id');
-		let md = _sectionCache[mdGridCmp.id];
+		
+		let secId = mdGridCmp?.getAttribute('section-id');
+		let md = _sectionCache[secId];
+		
 		let ctxPath = md?.contextPath;
 		let gridState = _getGridState(ctxPath);
 		
@@ -732,8 +821,10 @@
 	
 	function gridPageSizeHandler(pageCombo){
 		let mdGridCmp = $(pageCombo).parents('.md-grid')[0];
-		let secId = mdGridCmp?.getAttribute('id');
-		let md = _sectionCache[mdGridCmp.id];
+
+		let secId = mdGridCmp?.getAttribute('section-id');
+		let md = _sectionCache[secId];
+		
 		let ctxPath = md.contextPath;
 		let gridState = _getGridState(ctxPath);
 		
@@ -750,8 +841,8 @@
 	
 	function insertMcRecord(addBtnCmp){
 		let mdGridCmp = $(addBtnCmp).parents('.md-grid')[0];
-		let secId = mdGridCmp?.getAttribute('id');
-		let md = _sectionCache[mdGridCmp.id];
+		let secId = mdGridCmp?.getAttribute('section-id');
+		let md = _sectionCache[secId];
 		let ctxPath = md.contextPath;
 		let gridState = _getGridState(ctxPath);
 		
@@ -793,8 +884,8 @@
 	
 	function sortMcGridRecs(sortCol){
 		let mdGridCmp = $(sortCol).parents('.md-grid')[0];
-		let secId = mdGridCmp?.getAttribute('id');
-		let md = _sectionCache[mdGridCmp.id];
+		let secId = mdGridCmp?.getAttribute('section-id');
+		let md = _sectionCache[secId];
 		let gridState = _getGridState(md.contextPath);
 		let fieldId = sortCol.getAttribute('field-id');
 		
@@ -960,13 +1051,22 @@
 		let respJson = {};
 		if (_isNew) {
 		  // New record — POST full payload
-			respJson = await AppAPI.update(_moduleId, _dataJson)
+			respJson = await AppAPI.update(_moduleId, _dataJson);
 			
 		} else {
-		  respJson = await AppAPI.patch(_moduleId, _editJson, _delRecJson)
+		  respJson = await AppAPI.patch(_moduleId, _editJson, _delRecJson);
+		  _editJson = respJson.data.editDataRecord;
+		  
+		}
+		//_dataJson = respJson.data.dataRecord;
+		_errors = respJson.data.errors || [];
+		if(_errors?.length > 0){
+			window.MDUtils.toast('Saved successfully partially with the errors.', 'warning', 'Saved');
+			showErrorPopup();
+		} else {
+			window.MDUtils.toast('Saved successfully.', 'success', 'Saved');
 		}
 		
-		window.MDUtils.toast('Saved successfully.', 'success', 'Saved');
 		
 	}
 	
@@ -1216,7 +1316,7 @@
 	}
 	
 	function _reRenderFormGridRecs(md){
-		let mdGridCmp = $('.md-grid[id="'+md.sectionId+'"]')[0];
+		let mdGridCmp = $('.md-grid[section-id="'+md.sectionId+'"]')[0];
 		let gridState = _getGridState(md.contextPath);
 		let gridRecs = _getMultiCtxRecs(md) || [];
 		let gridRecHtml = _renderFormGridRecs(gridRecs, md, gridState);
@@ -1436,7 +1536,7 @@
 		$('.md-nav .md-nav__item').removeClass('active');
 		$('.md-nav .md-nav__item[data-section-id="'+navObj.sectionId+'"]').addClass('active');
 		
-		$('.case-edit-app .md-breadcrumb').html(_buildBreadcrumb());
+		$('.case-edit-app .md-breadcrumb .md-breadcrum-items-wrap').html(_buildBreadcrumb());
 		
 		//Tab panel
 		let tabPnl = _renderSectionTab(secMd, navObj.mcRecId)
@@ -1581,7 +1681,17 @@
 		let fd = [];
 		//Right Form Details Panel
 		fd.push('<div class="md-form-panel">');
-		fd.push('	<div class="md-breadcrumb"></div>');
+		fd.push(`	
+		<div class="md-breadcrumb" style="flex-direction: row;justify-content: space-between;">
+		  <div class="md-breadcrum-items-wrap" style="display: flex;align-items: center;gap: 4px;"></div>
+		  <div class="app-bar__actions">
+			<!-- Validation error indicator — hidden when no errors -->
+			  <button class="app-bar__err-btn has-errors" title="View validation messages" style="display: inline-flex;">
+				  ${MDUtils.icon('warn')}
+				  <span class="app-bar__err-count" id="errIndicatorCount">5</span>
+			  </button>
+		  </div>		
+		</div>`);
 		fd.push('	<div class="md-tabbar"></div>');	
 		fd.push('	<div class="md-section-content"></div>');	
 		fd.push('</div>');
@@ -1703,6 +1813,8 @@
 		
 		action:		handleFormActions,
 		toggleNav:	toggleNavPanel,
+		
+		errorWin: 	showErrorPopup
 		
 	};
 })(window);
